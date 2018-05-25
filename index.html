@@ -27,9 +27,7 @@ while ($row = mysql_fetch_array($result)) {
    echo "ID:".$row{'userid'}."Name:".$row{'uername'}."Password: ". //display the results
    $row{'password'}."email:".$row{'email'}."accountType:".$row{'accountType'}."gamerTag:".$row{'gamerTag'}."<br>";
 }
-//close the connection
-mysql_close($dbhandle);
-?>
+
 
 	
 	
@@ -128,5 +126,8 @@ Time:<br>
 <br>
 <input type="button" value="Submit">
 
+//close the connection
+mysql_close($dbhandle);
+?>
 </body>
 </html>
