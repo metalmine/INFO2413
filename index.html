@@ -1,9 +1,10 @@
+
 <?php
 $servername = "localhost";
 $username = "username";
 $password = "password";
 
-$db = mysqli_connect('localhost','username','password','mhwData')
+$db = mysql_connect('localhost','username','password','mhwData')
  or die('Error connecting to MySQL server.');
 ?>
 
@@ -17,30 +18,20 @@ $db = mysqli_connect('localhost','username','password','mhwData')
 <Body>
 	
 
+<?php
+
+$sql = "SELECT userId, username, password, email, accountType, gamerTag FROM user");
+$result = $conn->query($sql);
 
 
-
-//connection to the database
-$dbhandle = mysql_connect($name, $Gamertage)
-  or die("Unable to connect to MySQL");
-echo "Connected to MySQL<br>";
-
-//select a database to work with
-$selected = mysql_select_db("mhwData",$dbhandle)
-  or die("Could not select mhwdata");
-
-//execute the SQL query and return records
-$result = mysql_query("SELECT userId, username,password, email, accountType, gamerTag FROM user");
-
-//fetch tha data from the database
-while ($row = mysql_fetch_array($result)) {
-   echo "ID:".$row{'userid'}."Name:".$row{'uername'}."Password: ". //display the results
-   $row{'password'}."email:".$row{'email'}."accountType:".$row{'accountType'}."gamerTag:".$row{'gamerTag'}."<br>";
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<br> userIdid: ". $row["userId"]. " - username: ". $row["username"]. "<br>";
+    }
+} else {
+    echo "0 results";
 }
-
-
-	
-	
+?>	
 	
 <div align="Right">
 	<a href="url">Login</a><br>
@@ -136,8 +127,8 @@ Time:<br>
 <br>
 <input type="button" value="Submit">
 
-	
-$conn->close();
+<?php 	
+mysqli_close($conn); 
 ?>
 </body>
 </html>
