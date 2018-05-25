@@ -1,11 +1,17 @@
 
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
+$servername = 'localhost';
+$username = 'root';
+$password = ' ';
 
-$db = mysql_connect('localhost','username','password','mhwData')
- or die('Error connecting to MySQL server.');
+require_once 'MHData.php';
+ 
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    echo "Connected to $ at $host successfully.";
+} catch (PDOException $pe) {
+    die("Could not connect to the database $dbname :" . $pe->getMessage());
+}
 ?>
 
 
@@ -132,5 +138,7 @@ mysqli_close($conn);
 ?>
 </body>
 </html>
+
+
 
 
