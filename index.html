@@ -1,3 +1,13 @@
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+$db = mysqli_connect('localhost','username','password','mhwData')
+ or die('Error connecting to MySQL server.');
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -5,10 +15,10 @@
 <meta charset="utf-8">
 </head>
 <Body>
+	
 
-<?php
-$name = "name";
-$GameerTag = "Gametag"; 
+
+
 
 //connection to the database
 $dbhandle = mysql_connect($name, $Gamertage)
@@ -126,8 +136,10 @@ Time:<br>
 <br>
 <input type="button" value="Submit">
 
-//close the connection
-mysql_close($dbhandle);
+	
+$conn->close();
 ?>
 </body>
 </html>
+
+
