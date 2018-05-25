@@ -1,3 +1,20 @@
+
+<?php
+$servername = 'localhost';
+$username = 'root';
+$password = ' ';
+
+require_once 'MHData.php';
+ 
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    echo "Connected to $ at $host successfully.";
+} catch (PDOException $pe) {
+    die("Could not connect to the database $dbname :" . $pe->getMessage());
+}
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -5,7 +22,23 @@
 <meta charset="utf-8">
 </head>
 <Body>
+	
 
+<?php
+
+$sql = "SELECT userId, username, password, email, accountType, gamerTag FROM user");
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<br> userIdid: ". $row["userId"]. " - username: ". $row["username"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+?>	
+	
 <div align="Right">
 	<a href="url">Login</a><br>
 	<a href="url">Register</a><br>
@@ -100,5 +133,12 @@ Time:<br>
 <br>
 <input type="button" value="Submit">
 
+<?php 	
+mysqli_close($conn); 
+?>
 </body>
 </html>
+
+
+
+
