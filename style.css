@@ -1,0 +1,14 @@
+#inputBar
+	{
+		width: 150px;
+
+	}
+	body{
+	background:url(Assets/monsters/09.png) no-repeat;
+	background-color:rgba(146,115,112,1);
+	color: #ffffff;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+	font-family:"Verdana",verdana,sans;
+	font-size:1em;
+	height: auto;
+}

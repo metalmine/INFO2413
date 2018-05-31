@@ -18,8 +18,14 @@ try {
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<TITLE> MHW Run Agregator</TITLE>
-<meta charset="utf-8">
+	<TITLE> MHW Run Agregator</TITLE>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<style>
+
+	</style>
 </head>
 <Body>
 	
@@ -29,37 +35,45 @@ try {
 $sql = "SELECT userId, username, password, email, accountType, gamerTag FROM user");
 $result = $conn->query($sql);
 
+	<div align="Right">
+		<a href="url">Login</a><br>
+		<a href="url">Register</a><br>
+	</div>
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "<br> userIdid: ". $row["userId"]. " - username: ". $row["username"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-?>	
-	
-<div align="Right">
-	<a href="url">Login</a><br>
-	<a href="url">Register</a><br>
+
+
+Character Name:<br>
+
+
+<div class="control">
+	<div id="inputBar">
+		<input class="input" type="text" name="name"><br>
+	</div>
 </div>
 
-<center>
-Character Name:<br>
-<input type="text" name="name"><br>
 GamerTag:<br>
-<input type="text" name="gamerTag"><br>
+<div id="inputBar">
+	<div class="control">
+		<input class="input" type="text" name="gamerTag"><br>
+	</div>
+</div>
+
 Platform:<br>
-<form>
+
+<div class="control">
+  <div class="select">
 	<select name="platform">
 		<option  value="ps4">PS4</option>
 		<option  value="xbone">Xbox ONE</option>
 		<option	 value="pc">PC</option>
 		
 	</select>
-</form>
+  </div>
+</div>
+
 Weapon:<br>
-<form>
+<div class="control">
+  <div class="select">
 	<select name="weapon">
 		<option id="w01" value="longSword">Long Sword</option>
 		<option id="w02" value="greatSword">Great Sword</option>
@@ -76,62 +90,92 @@ Weapon:<br>
 		<option id="w13" value="lightBowgun">Light Bowgun</option>
 		<option id="w14" value="heavyBowgun">Heavy Bowgun</option>
 	</select>
-</form>
+  </div>
+</div>
+
+
+
 Rank:<br>
-<form>
-  <input id="l" type="radio" name="rank" value="low" checked> Low<br>
-  <input id="h" type="radio" name="rank" value="high"> High<br>
-  <input id="t" type="radio" name="rank" value="tempered"> Tempered<br>
-</form>
+
+<div class="control">
+	  <label class="radio">
+		<input  id="l" type="radio" name="rank" value="low" checked>
+		Low
+	  </label>
+  <br>
+	  <label class="radio">
+		<input id="h" type="radio" name="rank" value="high">
+		High
+	  </label>
+  <br>
+	  <label class="radio">
+		<input id="t" type="radio" name="rank" value="tempered">
+		Tempered
+	  </label>
+  <br>
+  
+</div>
+
 
 Monster:<br>
-<form>
-	<select name="monster">
-		<option id="m01" value="anjanath">Anajanath</option>
-		<option id="m02H" value="azureRathlos">Azure Rathlos</option>
-		<option id="m02" value="barroth">Barroth</option>
-		<option id="m03" value="bazelgeuse">Bazelgeuse</option>
-		<option id="m04" value="blackDiablos">Black Diablos</option>
-		<option id="m05" value="diablos">Diablos</option>
-		<option id="m06" value="dodogama">Dodogama</option>
-		<option id="m07" value="greatGirros">Great Girros</option>
-		<option id="m08" value="greatJagras">Great Jagras</option>
-		<option id="m09" value="jyuratodus">Jyuratodus</option>
-		<option id="m10" value="kirin">Kirin</option>
-		<option id="m11" value="kuluYaKu">Kulu-Ya-Ku</option>
-		<option id="m12" value="kushalaDaora">Kushala Daora</option>
-		<option id="m13" value="lavasioth">Lavasioth</option>
-		<option id="m14" value="legiana">Legiana</option>
-		<option id="m15" value="nergigante">Nergigante</option>
-		<option id="m16" value="odogaron">Odogaron</option>
-		<option id="m17" value="paolumu">Paolumu</option>
-		<option id="m18" value="pinkRathian">Pink Rathian</option>
-		<option id="m19" value="pukeiPukei">Pukei-Pukei</option>
-		<option id="m20" value="radobaan">Radobaan</option>
-		<option id="m21" value="Rathalos">Rathalos</option>
-		<option id="m22" value="rathian">Rathian</option>
-		<option id="m23" value="teostra">Teostra</option>
-		<option id="m24" value="tobiKadachi">Tobi-Kadachi</option>
-		<option id="m25" value="tzitziYaKu">Tzitzi-Ya-Ku</option>
-		<option id="m26" value="vaalHazak">Vaal Hazak</option>
-		<option id="m27" value="xenoJiiva">Xeno'jiiva</option>
-		<option id="m28" value="zorahMagdaros">Zorah Magdaros</option>
-		
-	
-	</select>
-</form>
+<div alignclass="control">
+	<div class="select">
+		<select name="monster">
+			<option id="m01" value="anjanath">Anajanath</option>
+			<option id="m02H" value="azureRathlos">Azure Rathlos</option>
+			<option id="m02" value="barroth">Barroth</option>
+			<option id="m03" value="bazelgeuse">Bazelgeuse</option>
+			<option id="m04" value="blackDiablos">Black Diablos</option>
+			<option id="m05" value="diablos">Diablos</option>
+			<option id="m06" value="dodogama">Dodogama</option>
+			<option id="m07" value="greatGirros">Great Girros</option>
+			<option id="m08" value="greatJagras">Great Jagras</option>
+			<option id="m09" value="jyuratodus">Jyuratodus</option>
+			<option id="m10" value="kirin">Kirin</option>
+			<option id="m11" value="kuluYaKu">Kulu-Ya-Ku</option>
+			<option id="m12" value="kushalaDaora">Kushala Daora</option>
+			<option id="m13" value="lavasioth">Lavasioth</option>
+			<option id="m14" value="legiana">Legiana</option>
+			<option id="m15" value="nergigante">Nergigante</option>
+			<option id="m16" value="odogaron">Odogaron</option>
+			<option id="m17" value="paolumu">Paolumu</option>
+			<option id="m18" value="pinkRathian">Pink Rathian</option>
+			<option id="m19" value="pukeiPukei">Pukei-Pukei</option>
+			<option id="m20" value="radobaan">Radobaan</option>
+			<option id="m21" value="Rathalos">Rathalos</option>
+			<option id="m22" value="rathian">Rathian</option>
+			<option id="m23" value="teostra">Teostra</option>
+			<option id="m24" value="tobiKadachi">Tobi-Kadachi</option>
+			<option id="m25" value="tzitziYaKu">Tzitzi-Ya-Ku</option>
+			<option id="m26" value="vaalHazak">Vaal Hazak</option>
+			<option id="m27" value="xenoJiiva">Xeno'jiiva</option>
+			<!--<option id="m28" value="zorahMagdaros">Zorah Magdaros</option>-->
+		</select>
+	</div>
+</div>
 <!--Anjanath Azure Rathalos  Barroth  Bazelgeuse  Black Diablos  Diablos  Dodogama  Great Girros  Great Jagras  Jyuratodus Kirin Kulu-Ya-Ku Kushala Daora Lavasioth Legiana Nergigante  Odogaron Paolumu Pink Rathian Pukei-Pukei Radobaan Rathalos  Rathian  Teostra  Tobi-Kadachi Tzitzi-Ya-Ku Uragaan  Vaal Hazak  Xeno'jiiva  Zorah Magdaros-->
 Map:
-<form>
-	<select name="map">
-		<option id="map01L" value="ancientForest">Ancient Forest</option>
-	</select>
-</form>
-<br>
+<div class="control">
+  <div class="select">
+		<select name="map">
+			<option id="map01" value="ancientForest">Ancient Forest</option>
+			<option id="map02" value="wildspireWaste">Wildspire Waste</option>
+			<option id="map03" value="coralHighlands">Coral Highlands</option>
+			<option id="map04" value="rottenVale">Rotten Vale</option>
+			<option id="map05" value="eldersRecess">Eldre's Recess</option>
+		
+		</select>
+	  </div>
+</div>
+		<br>
+
 Time:<br>
-<input type="text" name="time"><br>
-<br>
-<input type="button" value="Submit">
+	<div class="control">
+		<input type="text" name="time"><br>
+			<br>
+	</div>
+		<input type="button" value="Submit">
+
 
 <?php 	
 mysqli_close($conn); 
