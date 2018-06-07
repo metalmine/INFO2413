@@ -3,6 +3,12 @@
 		width: 150px;
 
 	}
+	
+#loginBar
+	{
+		width: 400px;
+
+	}
 	body{
 	background:url(Assets/monsters/09.png) no-repeat;
 	background-color:rgba(146,115,112,1);
@@ -11,4 +17,50 @@
 	font-family:"Verdana",verdana,sans;
 	font-size:1em;
 	height: auto;
+}
+
+#runSubmitPopOut{
+	background: black;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	text-align: CENTER;
+}
+
+
+
+//Testing
+
+nav a 
+{
+text-decoration: none;
+padding: 20px;
+display: block; 
+background-color: black; 
+border-left: white solid;
+text-align: center;
+}
+
+nav a:link 
+{ 
+color: pink;
+}
+
+nav a:visited 
+{ 
+color: pink;
+}
+
+nav a:hover 
+{
+color: pink;
+background: linear-gradient(to right, white, black);
+}
+nav 
+{
+float: left;
+min-width: 25%;
+font-weight: bold;
+letter-spacing: 0.1em;
+display: block;
 }
