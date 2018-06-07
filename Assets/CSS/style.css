@@ -20,10 +20,14 @@
 }
 
 #runSubmitPopOut{
-	background: black;
+	background: #44575A;
 	margin: auto;
 	width: 50%;
 	padding: 10px;
+	box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	-webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	-moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	float-right:
 }
 
 
