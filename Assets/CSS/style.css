@@ -11,7 +11,7 @@
 	}
 	body{
 	background:url(../monsters/09.png) no-repeat;
-	background-color:rgba(146,115,112,1);
+	background-color:#927370;
 	color: #ffffff;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 	font-family:"Verdana",verdana,sans;
@@ -20,10 +20,14 @@
 }
 
 #runSubmitPopOut{
-	background: black;
+	background: #44575A;
 	margin: auto;
 	width: 50%;
 	padding: 10px;
+	box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	-webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	-moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	float-right:
 }
 
 
