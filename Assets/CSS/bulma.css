@@ -3174,6 +3174,7 @@ a.box:active {
 .select {
   display: inline-block;
   max-width: 100%;
+  width: 150px;
   position: relative;
   vertical-align: top;
 }
