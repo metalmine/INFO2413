@@ -1,7 +1,5 @@
-#inputBar
-	{
-		width: 150px;
-	}
+/* IDs */
+
 	
 #loginBar
 	{
@@ -37,6 +35,18 @@
 		width:200px; 
 		float:left;
 }
+
+
+/*Classes*/
+.navBar
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.inputBar
+	{
+		width: 200px;
+	}
 
 
 

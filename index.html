@@ -37,7 +37,7 @@ $result = $conn->query($sql);
 
 ?>
 <div>
-<div>
+<!--<div>
 		<nav class="level">
 		  <p class="level-item has-text-centered">
 			<a class="button" href="login.html">Login</a>
@@ -49,58 +49,109 @@ $result = $conn->query($sql);
 			<a class="button" href="index.html">Submit Run</a>
 		  </p>
 		</nav>
-	</div>
+	</div>-->
+	<!-- Main container -->
+<nav class="level navBar">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <p class="subtitle is-5">
+        <strong>Monster Hunter</strong> Data Comparator
+      </p>
+    </div>
+    <div class="level-item">
+      <div class="field has-addons">
+        <p class="control">
+          <input class="input" type="text" placeholder="Monster, Weapon, IGN">
+        </p>
+        <p class="control">
+          <button class="button">
+            Search
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="level-right">
+    <p class="level-item"><strong>Home</strong></p>
+    <!-- Hidden when Logged in-->
+    <p class="level-item"><a>Login</a></p>
+	<p class="level-item"><a>Register</a></p>
+    <!-- Hidden when Logged out-->
+    <p class="level-item"><a>Account</a></p>
+    <p class="level-item"><a class="button is-success">New Run</a></p>
+  </div>
+</nav>
+	
+	
 <br>
 <br>
 
 
 
-
+<!--Submit Form-->
 <div id="runSubmitPopOut"> 
 
-	<div id="inputBar">
+	<div class="inputBar">
 		<div class="control">
-			<input class="input" type="text" name="name" placeholder="Character Name"><br>
+		  <div class="select">
+				<select name="characterName">
+					<option>Pick Character</option>		
+				</select>
+			  </div>
 		</div>
 	</div>
 	<br>
-	<div id="inputBar">
+	
+	<div class="inputBar">
 		<div class="control">
-			<input class="input" type="text" name="gamerTag" placeholder="GamerTag"><br>
+			<div class="select">
+				<select name="platformID">
+					<option>Pick Platform ID</option>		
+				</select>
+				<br>
+			</div>
 		</div>
 	</div>
 	<br>
-	<div class="control">
-	  <div class="select">
-		<select name="platform">
-			<option>Platform</option>
-			<option  value="ps4">PS4</option>
-			<option  value="xbone">Xbox ONE</option>
-			<option	 value="pc">PC</option>
-		</select>
-	  </div>
+	
+	<div class="inputBar">
+		<div class="control">
+		  <div class="select">
+			<select name="platform">
+				<option>Platform</option>
+				<option  value="ps4">PS4</option>
+				<option  value="xbone">Xbox ONE</option>
+				<option	 value="pc">PC</option>
+			</select>
+		  </div>
+		</div>
 	</div>
-
-	<div class="control">
-	  <div class="select">
-		<select name="weapon">
-			<option>Weapon</option>
-			<option id="w01" value="longSword">Long Sword</option>
-			<option id="w02" value="greatSword">Great Sword</option>
-			<option id="w03" value="dualSword">Dual Blades</option>
-			<option id="w04" value="swordAndSheild">Sword and Sheild</option>
-			<option id="w05" value="switchAxe">Switch Axe</option>
-			<option id="w06" value="chargeBlade">Charge Blade</option>
-			<option id="w07" value="hammer">Hammer</option>
-			<option id="w08" value="huntingHorn">Hunting Horn</option>
-			<option id="w09" value="lance">Lance</option>
-			<option id="w10" value="gunLance">Gunlance</option>
-			<option id="w11" value="insectGlaive">Insect Glaive</option>
-			<option id="w12" value="bow">Bow</option>
-			<option id="w13" value="lightBowgun">Light Bowgun</option>
-			<option id="w14" value="heavyBowgun">Heavy Bowgun</option>
-		</select>
-	  </div>
+	
+	<div class="inputBar">
+		<div class="control">
+		  <div class="select">
+			<select name="weapon">
+				<option>Weapon</option>
+				<!--<option id="w01" value="longSword">Long Sword</option>
+				<option id="w02" value="greatSword">Great Sword</option>
+				<option id="w03" value="dualSword">Dual Blades</option>
+				<option id="w04" value="swordAndSheild">Sword and Sheild</option>
+				<option id="w05" value="switchAxe">Switch Axe</option>
+				<option id="w06" value="chargeBlade">Charge Blade</option>
+				<option id="w07" value="hammer">Hammer</option>
+				<option id="w08" value="huntingHorn">Hunting Horn</option>
+				<option id="w09" value="lance">Lance</option>
+				<option id="w10" value="gunLance">Gunlance</option>
+				<option id="w11" value="insectGlaive">Insect Glaive</option>
+				<option id="w12" value="bow">Bow</option>
+				<option id="w13" value="lightBowgun">Light Bowgun</option>
+				<option id="w14" value="heavyBowgun">Heavy Bowgun</option>-->
+			</select>
+		  </div>
+		</div>
 	</div>
 	<br>
 	
@@ -135,58 +186,62 @@ $result = $conn->query($sql);
 	  
 	</div>
 	<br>
-	<div class="control">
-		<div class="select">
-			<select name="monster">
-				<option>Monster</option>
-				<option id="m01" value="anjanath">Anajanath</option>
-				<option id="m02H" value="azureRathlos">Azure Rathlos</option>
-				<option id="m02" value="barroth">Barroth</option>
-				<option id="m03" value="bazelgeuse">Bazelgeuse</option>
-				<option id="m04" value="blackDiablos">Black Diablos</option>
-				<option id="m05" value="diablos">Diablos</option>
-				<option id="m06" value="dodogama">Dodogama</option>
-				<option id="m07" value="greatGirros">Great Girros</option>
-				<option id="m08" value="greatJagras">Great Jagras</option>
-				<option id="m09" value="jyuratodus">Jyuratodus</option>
-				<option id="m10" value="kirin">Kirin</option>
-				<option id="m11" value="kuluYaKu">Kulu-Ya-Ku</option>
-				<option id="m12" value="kushalaDaora">Kushala Daora</option>
-				<option id="m13" value="lavasioth">Lavasioth</option>
-				<option id="m14" value="legiana">Legiana</option>
-				<option id="m15" value="nergigante">Nergigante</option>
-				<option id="m16" value="odogaron">Odogaron</option>
-				<option id="m17" value="paolumu">Paolumu</option>
-				<option id="m18" value="pinkRathian">Pink Rathian</option>
-				<option id="m19" value="pukeiPukei">Pukei-Pukei</option>
-				<option id="m20" value="radobaan">Radobaan</option>
-				<option id="m21" value="Rathalos">Rathalos</option>
-				<option id="m22" value="rathian">Rathian</option>
-				<option id="m23" value="teostra">Teostra</option>
-				<option id="m24" value="tobiKadachi">Tobi-Kadachi</option>
-				<option id="m25" value="tzitziYaKu">Tzitzi-Ya-Ku</option>
-				<option id="m26" value="vaalHazak">Vaal Hazak</option>
-				<option id="m27" value="xenoJiiva">Xeno'jiiva</option>
-				<!--<option id="m28" value="zorahMagdaros">Zorah Magdaros</option>-->
-			</select>
+	
+		<div class="control">
+		  <div class="select">
+				<select name="map">
+					<option>Map</option>
+					<!--<option id="map01" value="ancientForest">Ancient Forest</option>
+					<option id="map02" value="wildspireWaste">Wildspire Waste</option>
+					<option id="map03" value="coralHighlands">Coral Highlands</option>
+					<option id="map04" value="rottenVale">Rotten Vale</option>
+					<option id="map05" value="eldersRecess">Eldre's Recess</option>-->
+				
+				</select>
+			  </div>
 		</div>
-	</div>
-	<br>
+	
+	
+		<div class="control">
+			<div class="select">
+				<select name="monster">
+					<option>Monster       </option>
+					<!--<option id="m01" value="anjanath">Anajanath</option>
+					<option id="m02H" value="azureRathlos">Azure Rathlos</option>
+					<option id="m02" value="barroth">Barroth</option>
+					<option id="m03" value="bazelgeuse">Bazelgeuse</option>
+					<option id="m04" value="blackDiablos">Black Diablos</option>
+					<option id="m05" value="diablos">Diablos</option>
+					<option id="m06" value="dodogama">Dodogama</option>
+					<option id="m07" value="greatGirros">Great Girros</option>
+					<option id="m08" value="greatJagras">Great Jagras</option>
+					<option id="m09" value="jyuratodus">Jyuratodus</option>
+					<option id="m10" value="kirin">Kirin</option>
+					<option id="m11" value="kuluYaKu">Kulu-Ya-Ku</option>
+					<option id="m12" value="kushalaDaora">Kushala Daora</option>
+					<option id="m13" value="lavasioth">Lavasioth</option>
+					<option id="m14" value="legiana">Legiana</option>
+					<option id="m15" value="nergigante">Nergigante</option>
+					<option id="m16" value="odogaron">Odogaron</option>
+					<option id="m17" value="paolumu">Paolumu</option>
+					<option id="m18" value="pinkRathian">Pink Rathian</option>
+					<option id="m19" value="pukeiPukei">Pukei-Pukei</option>
+					<option id="m20" value="radobaan">Radobaan</option>
+					<option id="m21" value="Rathalos">Rathalos</option>
+					<option id="m22" value="rathian">Rathian</option>
+					<option id="m23" value="teostra">Teostra</option>
+					<option id="m24" value="tobiKadachi">Tobi-Kadachi</option>
+					<option id="m25" value="tzitziYaKu">Tzitzi-Ya-Ku</option>
+					<option id="m26" value="vaalHazak">Vaal Hazak</option>
+					<option id="m27" value="xenoJiiva">Xeno'jiiva</option>-->
+					<!--<option id="m28" value="zorahMagdaros">Zorah Magdaros</option>-->
+				</select>
+			</div>
+		</div>
+	
 	<!--Anjanath Azure Rathalos  Barroth  Bazelgeuse  Black Diablos  Diablos  Dodogama  Great Girros  Great Jagras  Jyuratodus Kirin Kulu-Ya-Ku Kushala Daora Lavasioth Legiana Nergigante  Odogaron Paolumu Pink Rathian Pukei-Pukei Radobaan Rathalos  Rathian  Teostra  Tobi-Kadachi Tzitzi-Ya-Ku Uragaan  Vaal Hazak  Xeno'jiiva  Zorah Magdaros-->
 	
-	<div class="control">
-	  <div class="select">
-			<select name="map">
-				<option>Map</option>
-				<option id="map01" value="ancientForest">Ancient Forest</option>
-				<option id="map02" value="wildspireWaste">Wildspire Waste</option>
-				<option id="map03" value="coralHighlands">Coral Highlands</option>
-				<option id="map04" value="rottenVale">Rotten Vale</option>
-				<option id="map05" value="eldersRecess">Eldre's Recess</option>
-			
-			</select>
-		  </div>
-	</div>
+	
 </div>
 <?php 	
 mysqli_close($conn); 
