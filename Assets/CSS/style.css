@@ -48,7 +48,17 @@
 		width: 200px;
 	}
 
-
+.radio > label > input{ /* HIDE RADIO */
+  visibility: hidden; 
+  position: absolute; 
+}
+.radio > label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.radio > label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
 
 
 
