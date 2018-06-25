@@ -1,0 +1,58 @@
+/* IDs */
+
+	
+#loginBar
+	{
+		width: 400px;
+
+	}
+	body{
+	background:url(../monsters/09.png) no-repeat;
+	background-color:#927370;
+	color: #ffffff;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+	font-family:"Verdana",verdana,sans;
+	font-size:1em;
+	height: auto;
+}
+
+#runSubmitPopOut{
+	background: #44575A;
+	background-color: rgba(0, 0, 0, 0.8);
+	
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	-webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	-moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+	float-right:
+}
+
+
+#mainLabels
+{
+		width:200px; 
+		float:left;
+}
+
+
+/*Classes*/
+.navBar
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.inputBar
+	{
+		width: 200px;
+	}
+
+
+
+
+
+
+//Testing
+
+
