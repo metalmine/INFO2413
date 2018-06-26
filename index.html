@@ -1,18 +1,4 @@
 
-<?php
-$servername = 'localhost';
-$username = 'root';
-$password = ' ';
-
-require_once 'MHData.php';
- 
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    echo "Connected to $ at $host successfully.";
-} catch (PDOException $pe) {
-    die("Could not connect to the database $dbname :" . $pe->getMessage());
-}
-?>
 
 
 <!DOCTYPE HTML>
@@ -26,6 +12,9 @@ try {
 	<style>
 
 	</style>
+	<script>
+
+	</script>
 </head>
 <Body>
 	
@@ -36,20 +25,32 @@ $sql = "SELECT userId, username, password, email, accountType, gamerTag FROM use
 $result = $conn->query($sql);
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div>
-<!--<div>
-		<nav class="level">
-		  <p class="level-item has-text-centered">
-			<a class="button" href="login.html">Login</a>
-		  </p>
-		  <p class="level-item has-text-centered">
-			<a class="button" href="register.html">Register</a>
-		  </p>
-		  <p class="level-item has-text-centered">
-			<a class="button" href="index.html">Submit Run</a>
-		  </p>
-		</nav>
-	</div>-->
+
 	<!-- Main container -->
 <nav class="level navBar">
   <!-- Left side -->
@@ -83,15 +84,51 @@ $result = $conn->query($sql);
     <p class="level-item"><a>Account</a></p>
     <p class="level-item"><a class="button is-success">New Run</a></p>
   </div>
+
 </nav>
+
 	
 	
 <br>
 <br>
+<!-- Card testing 
+<div class="cardFormat">
 
+	<div class="card">
+	  <div class="card-image">
+		<figure class="image is-4by3">
+		  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+		</figure>
+	  </div>
+	  <div class="card-content">
+		<div class="media">
+		  <div class="media-left">
+			<figure class="image is-48x48">
+			  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+			</figure>
+		  </div>
+		  <div class="media-content">
+			<p class="title is-4">John Smith</p>
+			<p class="subtitle is-6">@johnsmith</p>
+		  </div>
+		</div>
 
-
-<!--Submit Form-->
+		<div class="content">
+		  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+		  <a href="#">#css</a> <a href="#">#responsive</a>
+		  <br>
+		  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+		</div>
+	  </div>
+	</div>
+</div>
+-->
+<!-- Modal Testing -->
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+  
 <div id="runSubmitPopOut"> 
 
 	<div class="inputBar">
@@ -238,6 +275,18 @@ $result = $conn->query($sql);
 				</select>
 			</div>
 		</div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+</div>
+
+
+
+
+
+
+<!--Submit Form-->
+
 	
 	<!--Anjanath Azure Rathalos  Barroth  Bazelgeuse  Black Diablos  Diablos  Dodogama  Great Girros  Great Jagras  Jyuratodus Kirin Kulu-Ya-Ku Kushala Daora Lavasioth Legiana Nergigante  Odogaron Paolumu Pink Rathian Pukei-Pukei Radobaan Rathalos  Rathian  Teostra  Tobi-Kadachi Tzitzi-Ya-Ku Uragaan  Vaal Hazak  Xeno'jiiva  Zorah Magdaros-->
 	
