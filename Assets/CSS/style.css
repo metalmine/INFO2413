@@ -3,17 +3,20 @@
 	
 #loginBar
 	{
-		width: 400px;
+		width: 100%;
+        padding: 5px;
 
 	}
-	body{
-	background:url(../monsters/09.png) no-repeat;
-	background-color:#927370;
+body{
+	background:url(../monsters/09.png) no-repeat center;
+	background-color:#000000;
+        /*#927370*/
 	color: #ffffff;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 	font-family:"Verdana",verdana,sans;
 	font-size:1em;
-	height: auto;
+	height: 100%;
+    position:fixed;
 }
 
 #runSubmitPopOut{
@@ -22,12 +25,19 @@
 	
 	margin: auto;
 	width: 50%;
-	padding: 10px;
+    height: auto;
+	padding: 5px;
 	box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
 	-webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
 	-moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-	float-right:
+	
 }
+/*#runSubmitPopOut {
+  float:left;
+  width: 400px;
+  
+
+}*/
 
 
 #mainLabels
@@ -36,29 +46,23 @@
 		float:left;
 }
 
+#mainContainer
+{
+  
+}
+
 
 /*Classes*/
-.navBar
+.navBarFormat
 {
 	padding-left: 10px;
 	padding-right: 10px;
+    
 }
-.inputBar
-	{
-		width: 200px;
-	}
 
-.radio > label > input{ /* HIDE RADIO */
-  visibility: hidden; 
-  position: absolute; 
-}
-.radio > label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:2px solid transparent;
-}
-.radio > label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
-}
+
+
+
 
 
 
