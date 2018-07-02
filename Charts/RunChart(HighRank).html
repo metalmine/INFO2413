@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.round {
+    border-radius: 50%;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<a href="WeaponChart.html" class="button round">&#8249;</a>
+<a href="WeaponChart.html" class="button round">&#8250;</a>
+
+<br> <br>
+<a href="RunChart(LowRank).html" class="button">Low Rank</a>
+<a href="RunChart(HighRank).html" class="button">High Rank</a>
+<a href="RunChart(Tempered).html" class="button">Tempered</a>
+
+<script src="Chart.js"></script>
+<canvas id="myChart" width="100" height="100"></canvas>
+
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["Anjanath",
+			"Azure Rathalos",
+			"Barroth",
+			"Bazelgeuse",
+			"Deviljho",
+			"Diablos",
+			"Black Diablos",
+			"Dodogama",
+			"Great Girros",
+			"Great Jagras",
+			"Jyuratodus", 
+			"Kirin", 
+			"Kulu-Ya-Ku",
+			"Kushala Daora",
+			"Lavasioth", 
+			"Legiana", 
+			"Nergigante", 
+			"Odigaron",
+			"Paolumu", 
+			"Pukei-Pukei",
+			"Radobaan", 
+			"Rathalos",
+			"Rathian", 
+			"Pink Rathian",
+			"Teostra", 
+			"Tobi-Kadachi", 
+			"Tzitzi-Ya-Ku", 
+			"Uragaan",
+			"Vaal Hazak",
+			"Xeno'jiiva",
+			"Zorah Magdaros"
+	
+			
+			],
+        datasets: [{
+            label: 'Average Run time Per Monster (High Rank)',
+            data: [12, 39, 3, 5, 2, 3, 26, 4, 7, 10, 5, 3 ,6, 9, 4, 6, 2, 7, 2, 7, 2, 7, 9, 3, 1 ,7 ,4, 5, 5, 2 ,8],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 99, 132, 0.2)'
+				
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+				'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+				'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+				 'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+				'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+				'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+				 'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+				'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+				'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+	        layout: {
+            padding: {
+                left: 200,
+                right: 200,
+                top: 50,
+                bottom: 200
+            }
+        }
+	}	
+});
+</script>
+</body>
+
+
+</html>
