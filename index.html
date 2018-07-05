@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php include "connect.php"; ?>
 <html lang="en">
 <head>
 	<TITLE> MHW Run Agregator</TITLE>
@@ -6,6 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 	<link rel="stylesheet" href="Assets/CSS/style.css">
+  
 	<style>
 
 	</style>
@@ -22,6 +24,7 @@ function modalToggleReg() {
     var element = document.getElementById("runDivReg");
     element.classList.toggle("is-active");
 }
+    
 	</script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -41,7 +44,7 @@ function modalToggleReg() {
     <div class="level-item">
       <div class="field has-addons">
         <p class="control">
-          <input class="input" type="text" placeholder="Monster, Weapon, IGN">
+          <input id="searchBar" class="input" type="text" placeholder="Monster, Weapon, IGN">
         </p>
         <p class="control">
           <button class="button">
@@ -68,13 +71,15 @@ function modalToggleReg() {
 
 <br>
 <br>
+    
 <!-- Modal Runs -->
 <div id="runDivRun" class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
   
 <div id="runSubmitPopOut"> 
-
+    <h2 align="center">Enter run informtion.</h2>
+    <br>
 	<div class="inputBar">
 		<div class="control">
 		  <div class="select">
@@ -177,124 +182,173 @@ function modalToggleReg() {
     <button class="button is-success">Submit Run</button>
   </div>
     <button class="modal-close is-large" aria-label="close" onclick="modalToggleRun()"></button>
+   
 </div>
 
 	
 </div>
+<!-- Modals Login/Reg -->
     
-<div id="runDivLogin" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div id="runSubmitPopOut"> 
-        <div>
-            <h3 align=CENTER>Login</h3>
-		<div class="field" id="loginBar">
-		  <p class="control has-icons-left has-icons-right">
-			<input class="input" type="email" placeholder="Email">
-			<span class="icon is-small is-left">
-			  <i class="fas fa-envelope"></i>
-			</span>
-			<span class="icon is-small is-right">
-			  <i class="fas fa-check"></i>
-			</span>
-		  </p>
-		</div>
-		<div class="field" id="loginBar">
-		  <p class="control has-icons-left">
-			<input class="input" type="password" placeholder="Password">
-			<span class="icon is-small is-left">
-			  <i class="fas fa-lock"></i>
-			</span>
-		  </p>
-		</div>
-		<div class="field">
-		  <p class="control">
-			<button class="button is-success">
-			  Login
-			</button>
-		  </p>
-		</div>
-        </div>
-         <button class="modal-close is-large" aria-label="close" onclick="modalToggleLogin()"></button>
-        
-      </div>
-    </div>
+            <div id="runDivLogin" class="modal">
+              <div class="modal-background"></div>
+              <div class="modal-content">
+                <div id="runSubmitPopOut"> 
+                    <div>
+                        <h3 align=CENTER>Login</h3>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                          <i class="fas fa-check"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="field">
+                      <p class="control">
+                        <button class="button is-success">
+                          Login
+                        </button>
+                      </p>
+                    </div>
+                    </div>
+                     <button class="modal-close is-large" aria-label="close" onclick="modalToggleLogin()"></button>
 
-</div>
-          
-<div id="runDivReg" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-  
-    <div id="runSubmitPopOut">
-        <div class="field" id="loginBar">
-		  <p class="control has-icons-left has-icons-right">
-			<input class="input" type="userName" placeholder="Username">
-		
-		  </p>
-		</div>
-		<div class="field" id="loginBar">
-		  <p class="control has-icons-left has-icons-right">
-			<input class="input" type="email" placeholder="Email">
-		
-		  </p>
-		</div>
-		<div class="field" id="loginBar">
-		  <p class="control has-icons-left">
-			<input class="input" type="password" placeholder="Password">
-			<span class="icon is-small is-left">
-			  <i class="fas fa-lock"></i>
-			</span>
-		  </p>
-		</div>
-		<div class="field" id="loginBar">
-		  <p class="control has-icons-left">
-			<input class="input" type="confirmPassword" placeholder="Confirm Password">
-			<span class="icon is-small is-left">
-			  <i class="fas fa-lock"></i>
-			</span>
-		  </p>
-		</div>
-		<div class="inputBar">
-			<div class="control">
-				<div class="select">
-					<select name="platformRegister">
-						<option>Pick Platform</option>
-						<option>PS4</option>
-						<option>PC</option>
-						<option>XBox ONE</option>
-					</select>
-				</div>
-			</div>
-		</div>
-	<br>
-		<div class="field" id="loginBar">
-		  <p class="control has-icons-left">
-			<input class="input" type="platformIDRegister" placeholder="Platform ID">
-		  </p>
-		</div>
-    <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-      <br/>
-      <input type="submit" value="Submit">
-    </form>
-		<div class="field">
-		  <p class="control">
-			<button class="button is-success">
-			  Register
-			</button>
-		  </p>
-		</div>
-        
-        
-      </div>
-       <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
+                  </div>
+                </div>
+
+            </div>
+
+            <div id="runDivReg" class="modal">
+              <div class="modal-background"></div>
+              <div class="modal-content">
+                 
+                <div id="runSubmitPopOut">
+                     <h3 align=CENTER>Registration</h3>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="userName" placeholder="Username">
+
+                      </p>
+                    </div>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email">
+
+                      </p>
+                    </div>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left">
+                        <input class="input" type="confirmPassword" placeholder="Confirm Password">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="inputBar">
+                        <div class="control">
+                            <div class="select">
+                                <select name="platformRegister">
+                                    <option>Pick Platform</option>
+                                    <option>PS4</option>
+                                    <option>PC</option>
+                                    <option>XBox ONE</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                <br>
+                    <div class="field" id="loginBar">
+                      <p class="control has-icons-left">
+                        <input class="input" type="platformIDRegister" placeholder="Platform ID">
+                      </p>
+                    </div>
+                <form action="?" method="POST">
+                  <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
+                  <br/>
+                  <input type="submit" value="Submit">
+                </form>
+                    <div class="field">
+                      <p class="control">
+                        <button class="button is-success">
+                          Register
+                        </button>
+                      </p>
+                    </div>
+
+
+                  </div>
+                   <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
+                </div>
+            </div>
+    
+        <!-- Graphs and main page -->
+    <div class="columns">
+    <!-- left card --> 
+<div class="">
+    <div class="column is-one-third">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+              
+              <br>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
     </div>
+    </div>
+    <!-- Graph-->
+    <div> </div>
+    <!-- List -->
+    <div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Hunter Name</th>
+      <th>Time</th>
+      <th>Weapon</th>
+      <th>Platform</th>
+      <th>TA</th>
+     
+    </tr>
+  </thead>
+  <tfoot>
+    
+  </tfoot>
+  <tbody>
+
+  </tbody>
+</table>
 </div>
-    
-        
-    
-        
+</div>    
 </div>	
 </Body>
 </html>

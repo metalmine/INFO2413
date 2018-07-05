@@ -16,6 +16,7 @@ body{
 	font-family:"Verdana",verdana,sans;
 	font-size:1em;
 	height: 100%;
+    width: 100%;
     position:fixed;
 }
 
@@ -26,7 +27,7 @@ body{
 	margin: auto;
 	width: 50%;
     height: auto;
-	padding: 5px;
+	padding: 10px;
 	box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
 	-webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
 	-moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
