@@ -28,11 +28,11 @@
     <Body>
         <div>
             <!-- Main container -->
-            <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+            <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <p class="subtitle is-5">
-                        <strong>Monster Hunter</strong> Data Comparator
-                    </p>
+                    <figure class="image responsive">
+                        <img src="Assets/logo/logo.png">
+                    </figure>
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                         <span aria-hidden="true">Home</span>
                         <span aria-hidden="true">Submit Run</span>
@@ -41,20 +41,25 @@
                         <span aria-hidden="true">Registration</span>
                     </a>
                 </div>
-                <nav class="level navbar-menu navBarFormat container">
+                <nav class="level navbar-menu container">
                     <div class="level-left">
-                        <p class="level-item"><strong>Home</strong></p>
+                        <p class="level-item">
+                            <a class="button is-dark">Home</button>
+                        </p>
                         <!-- Hidden when Logged in-->
-                        <p class="level-item"><a onclick="modalToggleLogin()">Login</a></p>
-                        <p class="level-item"><a onclick="modalToggleReg()">Register</a></p>
+                        <p class="level-item">
+                            <a class="button is-dark" onclick="modalToggleLogin()">Login</a>
+                        </p>
+                        <p class="level-item">
+                            <a class="button is-dark" onclick="modalToggleReg()">Register</a>
+                        </p>
                         <!-- Hidden when Logged out-->
-                        <p class="level-item"><a>Account</a></p>
+                        <p class="level-item"><a class="button is-dark">Account</a></p>
 
                     </div>
                     <div class="level-right">
-                        <p class="level-itemm has-text-centered">
-                            <!--<a class="button is-success">New Run</a>-->
-                            <button class="button is-primary modal-button" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</button>
+                        <p class="level-item has-text-centered">
+                            <a class="button is-primary modal-button" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
                         </p>
                     </div>
                 </nav>
@@ -64,17 +69,57 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title is-white">
-                            Monster Hunter 
+                            SpeedRun Comparator
                         </h1>
                         <h2 class="subtitle">
-                            Speedrun Comparator
+                            Filters
                         </h2>
+                        <!-- Filter options -->
+                        <div>
+                            <form class="container">
+                                <div class="select">
+                                    <select>
+                                        <!-- Use JS to grab list of monsters available and add them as options-->
+                                        <option> Select Monster</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select>
+                                        <!-- Use JS to grab list of weapon types available and add them as options-->
+                                        <option> Select Weapon Type</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select>
+                                        <!-- Use JS to grab list of weapons available and add them as options-->
+                                        <option> Select Weapon</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select>
+                                        <!-- Difficulty Options -->
+                                        <option> Select Difficulty</option>
+                                        <option> Low </option>
+                                        <option> High </option>
+                                        <option> Tempered </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <div class="field" id="playerFieldWidth">
+                                        <div class="control">
+                                            <input class="input is-rounded" type="text" placeholder="Hunter ID">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
             <!-- Data Display -->
-            <section>
-                <div class="card">
+            <section role="main container">
+                <!-- Summar Card -->
+                <div class="card has-text-centered is-wide">
                     <div class="card-image">
                         <figure class="image is-4by3">
                             <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
@@ -82,29 +127,33 @@
                     </div>
                     <div class="card-content">
                         <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">John Smith</p>
-                                <p class="subtitle is-6">@johnsmith</p>
-                            </div>
+                            <h1>
+                                Weapon Use Chart
+                            </h1>
                         </div>
-
                         <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
-                            <br>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>ID</th>
+                                        <th>Speed</th>
+                                        <th>Weapon</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
+                    <!-- replace # with a number-->
+                    <footer class="card-footer">
+                        <a hreff="#" class="card-footer-item">Hunters: #</a>
+                        <a hreff="#" class="card-footer-item">Runs: #</a>
+                    </footer>
                 </div>
+                <!-- Insert Graph Here -->
+                <!-- Insert List Here -->
             </section>
             <hr>
-
             <!-- Modal Runs -->
             <div id="runDivRun" class="modal">
                 <p class"is-unselectable modalTitle">Submit New Run</p>
@@ -249,7 +298,7 @@
                             <!-- Username Textfield -->
                             <div class="field" id="loginBar">
                                 <p class="control has-icons-left has-icons-right">
-                                    <input class="input" type="userName" placeholder="Username">
+                                    <input class="input" type="userName" placeholder="Hunter ID">
                                 </p>
                             </div>
                             <!-- Email Textfield -->

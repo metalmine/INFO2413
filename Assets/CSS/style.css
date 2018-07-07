@@ -25,7 +25,9 @@ body{
     box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
     -webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
     -moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-
+}
+#playerFieldWidth{
+    max-width: 200px;
 }
 #mainLabels{
     width:200px; 
@@ -34,19 +36,16 @@ body{
 #mainContainer{
 
 }
-#filterHero{
-    background-color=#000000;
-}
-
 /*Classes*/
-.navBarFormat{
-    padding-left: 10px;
-    padding-right: 10px;
-
-}
 .modalTitle{
     text-align: center;
 }
-//Testing
-
-
+.responsive{
+    width:100%;
+    height:auto;
+    max-width:150px;
+    max-height:86px;
+}
+.card.is-wide{
+    width: 350px;
+}
