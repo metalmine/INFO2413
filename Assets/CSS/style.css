@@ -1,8 +1,5 @@
 /* IDs */
-
-
-#loginBar
-{
+#loginBar{
     width: 100%;
     padding: 5px;
 
@@ -18,7 +15,6 @@ body{
     height: 100%;
     position:fixed;
 }
-
 #runSubmitPopOut{
     background: #44575A;
     background-color: rgba(0, 0, 0, 0.8);
@@ -31,33 +27,24 @@ body{
     -moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
 
 }
-/*#runSubmitPopOut {
-float:left;
-width: 400px;
-}*/
-
-
-#mainLabels
-{
+#mainLabels{
     width:200px; 
     float:left;
 }
-
-#mainContainer
-{
+#mainContainer{
 
 }
-
+#filterHero{
+    background-color=#000000;
+}
 
 /*Classes*/
-.navBarFormat
-{
+.navBarFormat{
     padding-left: 10px;
     padding-right: 10px;
 
 }
-.modalTitle
-{
+.modalTitle{
     text-align: center;
 }
 //Testing
