@@ -1,63 +1,63 @@
 /* IDs */
 
-	
-#loginBar
-	{
-		width: 100%;
-        padding: 5px;
 
-	}
+#loginBar
+{
+    width: 100%;
+    padding: 5px;
+
+}
 body{
-	background:url(../monsters/09.png) no-repeat center;
-	background-color:#000000;
-        /*#927370*/
-	color: #ffffff;
-	text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-	font-family:"Verdana",verdana,sans;
-	font-size:1em;
-	height: 100%;
+    background:url(../monsters/09.png) no-repeat center;
+    background-color:#000000;
+    /*#927370*/
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-family:"Verdana",verdana,sans;
+    font-size:1em;
+    height: 100%;
     position:fixed;
 }
 
 #runSubmitPopOut{
-	background: #44575A;
-	background-color: rgba(0, 0, 0, 0.8);
-	
-	margin: auto;
-	width: 50%;
+    background: #44575A;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    margin: auto;
+    width: 50%;
     height: auto;
-	padding: 5px;
-	box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-	-webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-	-moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-	
+    padding: 5px;
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+    -webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+    -moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
+
 }
 /*#runSubmitPopOut {
-  float:left;
-  width: 400px;
-  
+float:left;
+width: 400px;
+
 
 }*/
 
 
 #mainLabels
 {
-		width:200px; 
-		float:left;
+    width:200px; 
+    float:left;
 }
 
 #mainContainer
 {
-  
+
 }
 
 
 /*Classes*/
 .navBarFormat
 {
-	padding-left: 10px;
-	padding-right: 10px;
-    
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 
