@@ -41,7 +41,7 @@
                         <span aria-hidden="true">Registration</span>
                     </a>
                 </div>
-                <nav class="level navbar-menu navBarFormat">
+                <nav class="level navbar-menu navBarFormat container">
                     <div class="level-left">
                         <p class="level-item"><strong>Home</strong></p>
                         <!-- Hidden when Logged in-->
@@ -200,23 +200,65 @@
             </div>
             <!-- Modal Login -->
             <div id="runDivLogin" class="modal">
-                <p class="is-unselectable modalTitle">Login</p>
+                <form>
+                    <p class="is-unselectable modalTitle">Login</p>
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div id="runSubmitPopOut"> 
+                            <div>
+                                <h3 align=CENTER>Login</h3>
+                                <div class="field" id="loginBar">
+                                    <p class="control has-icons-left has-icons-right">
+                                        <input class="input" type="email" placeholder="Email">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="field" id="loginBar">
+                                    <p class="control has-icons-left">
+                                        <input class="input" type="password" placeholder="Password">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <button class="button is-success">
+                                            Login
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="modal-close is-large" aria-label="close" onclick="modalToggleLogin()"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>  
+            <!-- Modal Registration -->
+            <div id="runDivReg" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
-                    <div id="runSubmitPopOut"> 
-                        <div>
-                            <h3 align=CENTER>Login</h3>
+                    <div id="runSubmitPopOut">
+                        <form>
+                            <p class="is-unselectable modalTitle">Register</p>
+                            <!-- Username Textfield -->
+                            <div class="field" id="loginBar">
+                                <p class="control has-icons-left has-icons-right">
+                                    <input class="input" type="userName" placeholder="Username">
+                                </p>
+                            </div>
+                            <!-- Email Textfield -->
                             <div class="field" id="loginBar">
                                 <p class="control has-icons-left has-icons-right">
                                     <input class="input" type="email" placeholder="Email">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check"></i>
-                                    </span>
                                 </p>
                             </div>
+                            <!-- Password Textfield -->
                             <div class="field" id="loginBar">
                                 <p class="control has-icons-left">
                                     <input class="input" type="password" placeholder="Password">
@@ -225,85 +267,46 @@
                                     </span>
                                 </p>
                             </div>
-                            <div class="field">
-                                <p class="control">
-                                    <button class="button is-success">
-                                        Login
-                                    </button>
+                            <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
+                            <div class="field" id="loginBar">
+                                <p class="control has-icons-left">
+                                    <input class="input" type="confirmPassword" placeholder="Confirm Password">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
                                 </p>
                             </div>
-                        </div>
-                        <button class="modal-close is-large" aria-label="close" onclick="modalToggleLogin()"></button>
-
-                    </div>
-                </div>
-            </div>  
-            <!-- Modal Registration -->
-            <div id="runDivReg" class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-content">
-                    <div id="runSubmitPopOut">
-                        <p class="is-unselectable modalTitle">Register</p>
-                        <!-- Username Textfield -->
-                        <div class="field" id="loginBar">
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="userName" placeholder="Username">
-                            </p>
-                        </div>
-                        <!-- Email Textfield -->
-                        <div class="field" id="loginBar">
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="Email">
-                            </p>
-                        </div>
-                        <!-- Password Textfield -->
-                        <div class="field" id="loginBar">
-                            <p class="control has-icons-left">
-                                <input class="input" type="password" placeholder="Password">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
-                        <div class="field" id="loginBar">
-                            <p class="control has-icons-left">
-                                <input class="input" type="confirmPassword" placeholder="Confirm Password">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <!-- Primary Platform Selection -->
-                        <div class="inputBar" id="loginBar">
-                            <div class="control">
-                                <div class="select">
-                                    <select name="platformRegister">
-                                        <option>Select Your Game Primary Platform</option>
-                                        <option>Playstation 4</option>
-                                        <option>Laptop / Desktop Computer</option>
-                                        <option>XBox One</option>
-                                    </select>
+                            <!-- Primary Platform Selection -->
+                            <div class="inputBar" id="loginBar">
+                                <div class="control">
+                                    <div class="select">
+                                        <select name="platformRegister">
+                                            <option>Select Your Game Primary Platform</option>
+                                            <option>Playstation 4</option>
+                                            <option>Laptop / Desktop Computer</option>
+                                            <option>XBox One</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Platform ID Textfield -->
-                        <div class="field" id="loginBar">
-                            <p class="control has-icons-left">
-                                <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
-                            </p>
-                        </div>
-                        <hr>
-                        <form action="?" method="POST">
-                            <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-                            <input type="submit" value="Submit" id="loginBar" class="button is-outlined is-primary">
+                            <!-- Platform ID Textfield -->
+                            <div class="field" id="loginBar">
+                                <p class="control has-icons-left">
+                                    <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
+                                </p>
+                            </div>
+                            <hr>
+                            <form action="?" method="POST">
+                                <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
+                                <input type="submit" value="Submit" id="loginBar" class="button is-outlined is-primary">
+                            </form>
+                            <hr>
+                            <div class="field">
+                                <p class="control">
+                                    <button class="button is-success" id="loginBar">Register</button>
+                                </p>
+                            </div>
                         </form>
-                        <hr>
-                        <div class="field">
-                            <p class="control">
-                                <button class="button is-success" id="loginBar">Register</button>
-                            </p>
-                        </div>
                     </div>
                     <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
                 </div>
