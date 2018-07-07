@@ -44,7 +44,7 @@
                 <nav class="level navbar-menu container">
                     <div class="level-left">
                         <p class="level-item">
-                            <a class="button is-dark">Home</button>
+                            <a class="button is-dark">Home</a>
                         </p>
                         <!-- Hidden when Logged in-->
                         <p class="level-item">
@@ -55,9 +55,6 @@
                         </p>
                         <!-- Hidden when Logged out-->
                         <p class="level-item"><a class="button is-dark">Account</a></p>
-
-                    </div>
-                    <div class="level-right">
                         <p class="level-item has-text-centered">
                             <a class="button is-primary modal-button" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
                         </p>
