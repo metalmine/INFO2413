@@ -22,7 +22,6 @@ body{
 #runSubmitPopOut{
     background: #44575A;
     background-color: rgba(0, 0, 0, 0.8);
-
     margin: auto;
     width: 50%;
     height: auto;
@@ -35,8 +34,6 @@ body{
 /*#runSubmitPopOut {
 float:left;
 width: 400px;
-
-
 }*/
 
 
@@ -59,14 +56,10 @@ width: 400px;
     padding-right: 10px;
 
 }
-
-
-
-
-
-
-
-
+.modalTitle
+{
+    text-align: center;
+}
 //Testing
 
 

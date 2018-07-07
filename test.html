@@ -33,7 +33,7 @@
                 <div class="level-left">
                     <div class="level-item">
                         <p class="subtitle is-5">
-                            <strong>Monster Hunter</strong> Data Comparator
+                            <strong>Monster Hunter</strong>Data Comparator
                         </p>
                     </div>
                     <div class="level-item">
@@ -42,9 +42,7 @@
                                 <input class="input" type="text" placeholder="Monster, Weapon, IGN">
                             </p>
                             <p class="control">
-                                <button class="button">
-                                    Search
-                                </button>
+                                <button class="button">Search</button>
                             </p>
                         </div>
                     </div>
@@ -62,11 +60,10 @@
             </nav>
             <!-- Modal Runs -->
             <div id="runDivRun" class="modal">
+                <p class"is-unselectable modalTitle">Submit New Run</p>
                 <div class="modal-background"></div>
                 <div class="modal-content">
-
                     <div id="runSubmitPopOut"> 
-
                         <div class="inputBar">
                             <div class="control">
                                 <div class="select">
@@ -77,7 +74,6 @@
                             </div>
                         </div>
                         <br>
-
                         <div class="inputBar">
                             <div class="control">
                                 <div class="select">
@@ -155,7 +151,9 @@
                     <button class="modal-close is-large" aria-label="close" onclick="modalToggleRun()"></button>
                 </div>
             </div>
+            <!-- Modal Login -->
             <div id="runDivLogin" class="modal">
+                <p class="is-unselectable modalTitle">Login</p>
                 <div class="modal-background"></div>
                 <div class="modal-content">
                     <div id="runSubmitPopOut"> 
@@ -192,22 +190,26 @@
 
                     </div>
                 </div>
-            </div>     
+            </div>  
+            <!-- Modal Registration -->
             <div id="runDivReg" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
-
                     <div id="runSubmitPopOut">
+                        <p class="is-unselectable modalTitle">Register</p>
+                        <!-- Username Textfield -->
                         <div class="field" id="loginBar">
                             <p class="control has-icons-left has-icons-right">
                                 <input class="input" type="userName" placeholder="Username">
                             </p>
                         </div>
+                        <!-- Email Textfield -->
                         <div class="field" id="loginBar">
                             <p class="control has-icons-left has-icons-right">
                                 <input class="input" type="email" placeholder="Email">
                             </p>
                         </div>
+                        <!-- Password Textfield -->
                         <div class="field" id="loginBar">
                             <p class="control has-icons-left">
                                 <input class="input" type="password" placeholder="Password">
@@ -216,6 +218,7 @@
                                 </span>
                             </p>
                         </div>
+                        <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
                         <div class="field" id="loginBar">
                             <p class="control has-icons-left">
                                 <input class="input" type="confirmPassword" placeholder="Confirm Password">
@@ -224,38 +227,40 @@
                                 </span>
                             </p>
                         </div>
-                        <div class="inputBar">
+                        <!-- Primary Platform Selection -->
+                        <div class="inputBar" id="loginBar">
                             <div class="control">
                                 <div class="select">
                                     <select name="platformRegister">
-                                        <option>Pick Platform</option>
-                                        <option>PS4</option>
-                                        <option>PC</option>
-                                        <option>XBox ONE</option>
+                                        <option>Select Your Game Primary Platform</option>
+                                        <option>Playstation 4</option>
+                                        <option>Laptop / Desktop Computer</option>
+                                        <option>XBox One</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        <!-- Platform ID Textfield -->
                         <div class="field" id="loginBar">
                             <p class="control has-icons-left">
-                                <input class="input" type="platformIDRegister" placeholder="Platform ID">
+                                <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
                             </p>
                         </div>
+                        <hr>
                         <form action="?" method="POST">
                             <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-                            <br/>
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit" id="loginBar" class="button is-outlined is-primary">
                         </form>
+                        <hr>
                         <div class="field">
                             <p class="control">
-                                <button class="button is-success">Register</button>
+                                <button class="button is-success" id="loginBar">Register</button>
                             </p>
                         </div>
                     </div>
                     <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
                 </div>
-                <button class="modal-close is-large" aria-label="close" onclick="modalToggleRun()"></button>
+                <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
             </div>  
         </div>	
     </Body>
