@@ -28,6 +28,7 @@ body{
 }
 #playerFieldWidth{
     max-width: 200px;
+    display: inline-block;
 }
 #mainLabels{
     width:200px; 
