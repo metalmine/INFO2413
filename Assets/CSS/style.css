@@ -5,7 +5,7 @@
 
 }
 body{
-    background:url(../monsters/09.png) no-repeat center;
+    background:url(/*../monsters/09.png*/) no-repeat center;
     background-color:#000000;
     /*#927370*/
     color: #ffffff;
@@ -49,4 +49,7 @@ body{
 }
 .card.is-wide{
     width: 350px;
+}
+#formHoriz{
+    field is-horizontal;
 }

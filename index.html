@@ -74,37 +74,61 @@
                         <!-- Filter options -->
                         <div>
                             <form class="field is-horizontal">
-                                <div class="select">
-                                    <select>
-                                        <!-- Use JS to grab list of monsters available and add them as options-->
-                                        <option> Select Monster</option>
-                                    </select>
-                                </div>
-                                <div class="select">
-                                    <select>
-                                        <!-- Use JS to grab list of weapon types available and add them as options-->
-                                        <option> Select Weapon Type</option>
-                                    </select>
-                                </div>
-                                <div class="select">
-                                    <select>
-                                        <!-- Use JS to grab list of weapons available and add them as options-->
-                                        <option> Select Weapon</option>
-                                    </select>
-                                </div>
-                                <div class="select">
-                                    <select>
-                                        <!-- Difficulty Options -->
-                                        <option> Select Difficulty</option>
-                                        <option> Low </option>
-                                        <option> High </option>
-                                        <option> Tempered </option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <div class="field" id="playerFieldWidth">
-                                        <div class="control" id="playerFieldWidth">
-                                            <input class="input is-rounded" type="text" placeholder="Hunter ID">
+                                <div class="form-body">
+                                    <div class="field is-grouped is-grouped-centered">
+                                        <div class="field has-addons has-addons-right">
+                                            <p class="control">
+                                                <span class="select">
+                                                    <select>
+                                                        <option> Low</option>
+                                                        <option> High</option>
+                                                        <option> Tempered</option>
+                                                    </select>
+                                                </span>
+                                            </p>
+                                            <p class="control">
+                                                <span class="select">
+                                                    <select>
+                                                        <!-- Use JS to grab list of monsters available and add them as options-->
+                                                        <option> Select Monster</option>
+                                                    </select>
+                                                </span>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-primary">
+                                                    Search
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <div class="field has-addons has-addons-right">
+                                            <p class="control">
+                                                <span class="select">
+                                                    <select>
+                                                        <!-- Insert Weapon Types here i.e. GSD -->
+                                                        <option> WEP </option>
+                                                    </select>
+                                                </span>
+                                            </p>
+                                            <p class="control">
+                                                <span class="select">
+                                                    <select>
+                                                        <!-- Use JS to grab list of weapons of said type available and add them as options-->
+                                                        <option> Select Weapon</option>
+                                                    </select>
+                                                </span>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-primary">
+                                                    Filter
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="field" id="playerFieldWidth">
+                                                <div class="control" id="playerFieldWidth">
+                                                    <input class="input is-rounded" type="text" placeholder="Hunter ID">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
