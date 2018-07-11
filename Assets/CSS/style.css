@@ -15,17 +15,7 @@ body{
     height: 100%;
     position:fixed;
 }
-#runSubmitPopOut{
-    background: #44575A;
-    background-color: rgba(0, 0, 0, 0.8);
-    margin: auto;
-    width: 50%;
-    height: auto;
-    padding: 5px;
-    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-    -webkit box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-    -moz box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.6);
-}
+
 #playerFieldWidth{
     max-width: 200px;
     display: inline-block;
@@ -53,3 +43,5 @@ body{
 #formHoriz{
     field is-horizontal;
 }
+/* imports*/
+$modal-background-background-color:rgba($white, 0.86)

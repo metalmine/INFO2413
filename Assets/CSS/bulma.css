@@ -5882,7 +5882,7 @@ a.dropdown-item.is-active {
 .message-body pre code {
   background-color: transparent;
 }
-
+$modal-background-background-color: rgba($white, 0.86)
 .modal {
   align-items: center;
   display: none;

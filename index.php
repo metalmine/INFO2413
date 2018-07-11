@@ -3,9 +3,10 @@
     <head>
         <TITLE> MHW Run Agregator</TITLE>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="Assets/CSS/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-        <link rel="stylesheet" href="Assets/CSS/style.css">
+
         <style>
 
         </style>
@@ -62,7 +63,7 @@
                 </nav>
             </nav>
             <!-- Run Filter -->
-            <section class="hero is-dark is-bold">
+            <section class="hero is-light is-bold">
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title is-white">
@@ -75,7 +76,11 @@
                         <div>
                             <form class="field is-horizontal">
                                 <div class="form-body">
-                                    <div class="field is-grouped is-grouped-centered">
+                                    <div class="field=label is-normal">
+                                        <label class="label">Search Monsters by Difficulty | Optional filters by weapon and Hunter ID</label>
+                                    </div>
+                                    <div class="field-body">
+
                                         <div class="field has-addons has-addons-right">
                                             <p class="control">
                                                 <span class="select">
@@ -313,11 +318,12 @@
             <div id="runDivReg" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
-                    <div id="runSubmitPopOut">
-                        <form>
+                    <form class="field is-horizontal">
+                        <div class="form-body">
                             <p class="is-unselectable modalTitle">Register</p>
                             <!-- Username Textfield -->
                             <div class="field" id="loginBar">
+                                <label class="label">Choose a unique Hunter ID</label>
                                 <p class="control has-icons-left has-icons-right">
                                     <input class="input" type="userName" placeholder="Hunter ID">
                                 </p>
@@ -346,22 +352,18 @@
                                     </span>
                                 </p>
                             </div>
-                            <!-- Primary Platform Selection -->
-                            <div class="inputBar" id="loginBar">
-                                <div class="control">
-                                    <div class="select">
-                                        <select name="platformRegister">
-                                            <option>Select Your Game Primary Platform</option>
-                                            <option>Playstation 4</option>
-                                            <option>Laptop / Desktop Computer</option>
-                                            <option>XBox One</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- Platform ID Textfield -->
-                            <div class="field" id="loginBar">
-                                <p class="control has-icons-left">
+                            <div class="field has-addons" id="loginBar">
+                                <p class="control">
+                                    <span class="select">
+                                        <select>
+                                            <option>PC / Laptop</option>
+                                            <option>XBox One</option>
+                                            <option>Playstaion 4</option>
+                                        </select>
+                                    </span>
+                                </p>
+                                <p class="control">
                                     <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
                                 </p>
                             </div>
@@ -376,9 +378,8 @@
                                     <button class="button is-success" id="loginBar">Register</button>
                                 </p>
                             </div>
-                        </form>
-                    </div>
-                    <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
+                        </div>
+                    </form>
                 </div>
                 <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
             </div>  
