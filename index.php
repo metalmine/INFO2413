@@ -26,7 +26,7 @@
                                 <img src="Assets/logo/logo.png">
                             </figure>
                             <!-- Navbar Buttons -->
-                            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                            <div class="navbar-burger" aria-label="menu" aria-expanded="false">
                                 <span aria-hidden="true">Home</span>
                                 <span aria-hidden="true">Submit Run</span>
                                 <!-- Show when Logged in -->
@@ -34,7 +34,7 @@
                                 <!-- Show when Logged out -->
                                 <span aria-hidden="true">Login</span>
                                 <span aria-hidden="true">Registration</span>
-                            </a>
+                            </div>
                         </div>
                         <!-- Desktop Menu-->
                         <div id="navbarMenuHeroA" class="navbar-menu">
@@ -67,14 +67,14 @@
                     </h2>
                     <!-- Filter options -->
                     <div>
-                        <form class="field is-horizontal">
+                        <form class="field">
                             <div class="form-body">
-                                <div class="field-body container">
+                                <div class="field-body">
                                     <!-- Monster Selection -->
-                                    <div class="field=label is-normal">
-                                        <label class="label is-unselectable">Search Monsters by Difficulty</label>
+                                    <div class="field-label is-normal">
+                                        <label class="label is-unselectable">Monster</label>
                                     </div>
-                                    <div class="field has-addons has-addons-right">
+                                    <div class="field has-addons">
                                         <p class="control">
                                             <span class="select">
                                                 <select>
@@ -99,10 +99,10 @@
                                         </p>
                                     </div>
                                     <!-- Weapon Selection -->
-                                    <div class="field=label is-normal">
-                                        <label class="label is-unselectable">Search Weapons by Type</label>
+                                    <div class="field-label is-normal">
+                                        <label class="label is-unselectable">Weapon</label>
                                     </div>
-                                    <div class="field has-addons has-addons-right">
+                                    <div class="field has-addons">
                                         <p class="control">
                                             <span class="select">
                                                 <select>
@@ -126,8 +126,8 @@
                                         </p>
                                     </div>
                                     <!-- Hunter Search -->
-                                    <div class="field=label is-normal">
-                                        <label class="label is-unselectable">Look up a Specific Hunter</label>
+                                    <div class="field-label is-norml">
+                                        <label class="label is-unselectable">Hunter</label>
                                     </div>
                                     <div class="field has-addons">
                                         <div class="control">
@@ -181,11 +181,11 @@
                     </div>
                     <!-- Insert Graph Here -->
                     <div class="tile">
-                        
+
                     </div>
                     <!-- Insert List Here -->
                     <div class="tile">
-                    
+
                     </div>
                 </section>
             </div>
