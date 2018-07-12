@@ -15,50 +15,50 @@
     </head>
     <Body>
         <!-- Main container -->
-        <section class="hero is-transparent">
+        <section class="hero is-light">
             <!-- Navigation -->
             <div class="hero-head">
                 <nav class="navbar">
-                    <div class="container">
-                        <!-- Logo and Burger-->
-                        <div class="navbar-brand">
-                            <figure class="image responsive">
-                                <img src="Assets/logo/logo.png">
-                            </figure>
-                            <!-- Navbar Buttons -->
-                            <div class="navbar-burger" aria-label="menu" aria-expanded="false">
-                                <span aria-hidden="true">Home</span>
-                                <span aria-hidden="true">Submit Run</span>
-                                <!-- Show when Logged in -->
-                                <span aria-hidden="true" class="is-hidden">Account</span>
-                                <!-- Show when Logged out -->
-                                <span aria-hidden="true">Login</span>
-                                <span aria-hidden="true">Registration</span>
-                            </div>
+                    <!-- Logo and Burger-->
+                    <div class="navbar-brand">
+                        <figure class="image responsive">
+                            <img src="Assets/logo/logo.png">
+                        </figure>
+                        <!-- Navbar Buttons -->
+                        <div class="navbar-burger" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true">Home</span>
+                            <span aria-hidden="true">Submit Run</span>
+                            <!-- Show when Logged in -->
+                            <span aria-hidden="true" class="is-hidden">Account</span>
+                            <!-- Show when Logged out -->
+                            <span aria-hidden="true">Login</span>
+                            <span aria-hidden="true">Registration</span>
                         </div>
-                        <!-- Desktop Menu-->
-                        <div id="navbarMenuHeroA" class="navbar-menu">
-                            <div class="navbar-end">
-                                <!-- Show when Logged out -->
-                                <p class="level-item">
-                                    <a class="button is-light is-rounded" onclick="modalToggleLogin()">Login</a>
-                                </p>
-                                <p class="level-item">
-                                    <a class="button is-rounded" onclick="modalToggleReg()">Register</a>
-                                </p>
-                                <!-- Show when Logged in -->
-                                <p class="level-item"><a class="button is-dark is-hidden">Account</a></p>
-                                <p class="level-item">
-                                    <a class="button is-primary modal-button is-large is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
-                                </p>
-                            </div>
+                    </div>
+                    <!-- Desktop Menu-->
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-start">
+                            <!-- Show when Logged out -->
+                            <p class="navbar-item">
+                                <a class="button is-light is-rounded" onclick="modalToggleLogin()">Login</a>
+                            </p>
+                            <p class="navbar-item">
+                                <a class="button is-light is-rounded" onclick="modalToggleReg()">Register</a>
+                            </p>
+                            <!-- Show when Logged in -->
+                            <p class="navbar-item">
+                                <a class="button is-dark is-hidden">Account</a>
+                            </p>
+                            <p class="navbar-item">
+                                <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
+                            </p>
                         </div>
                     </div>
                 </nav>
             </div>
-            <!-- Filters and Content -->
+<!-- Title and Filter -->
             <div class="hero-body">
-                <div class="container has-text-centered">
+                <div class="has-text-centered">
                     <h1 class="title is-white is-unselectable">
                         SpeedRun Comparator
                     </h1>
@@ -66,84 +66,83 @@
                         Filters
                     </h2>
                     <!-- Filter options -->
-                    <div>
-                        <form class="field">
-                            <div class="form-body">
-                                <div class="field-body">
-                                    <!-- Monster Selection -->
-                                    <div class="field-label is-normal">
-                                        <label class="label is-unselectable">Monster</label>
+                    <form class="field">
+                        <div class="form-body">
+                            <div class="field-body">
+                                <!-- Monster Selection -->
+                                <div class="field-label is-normal">
+                                    <label class="label is-unselectable">Monster</label>
+                                </div>
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <span class="select">
+                                            <select>
+                                                <option> Low</option>
+                                                <option> High</option>
+                                                <option> Temp</option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                    <p class="control">
+                                        <span class="select">
+                                            <select>
+                                                <!-- Use JS to grab list of monsters available and add them as options-->
+                                                <option> Select Monster</option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                    <p class="control">
+                                        <a class="button is-dark">
+                                            Search
+                                        </a>
+                                    </p>
+                                </div>
+                                <!-- Weapon Selection -->
+                                <div class="field-label is-normal">
+                                    <label class="label is-unselectable">Weapon</label>
+                                </div>
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <span class="select">
+                                            <select>
+                                                <!-- Insert Weapon Types here i.e. GSD -->
+                                                <option> WEP </option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                    <p class="control">
+                                        <span class="select">
+                                            <select>
+                                                <!-- Use JS to grab list of weapons of said type available and add them as options-->
+                                                <option> Select Weapon</option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                    <p class="control">
+                                        <a class="button is-dark">
+                                            Search
+                                        </a>
+                                    </p>
+                                </div>
+                                <!-- Hunter Search -->
+                                <div class="field-label is-normal">
+                                    <label class="label is-unselectable">Hunter</label>
+                                </div>
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="Hunter ID / Empty for All">
                                     </div>
-                                    <div class="field has-addons">
-                                        <p class="control">
-                                            <span class="select">
-                                                <select>
-                                                    <option> Low</option>
-                                                    <option> High</option>
-                                                    <option> Temp</option>
-                                                </select>
-                                            </span>
-                                        </p>
-                                        <p class="control">
-                                            <span class="select">
-                                                <select>
-                                                    <!-- Use JS to grab list of monsters available and add them as options-->
-                                                    <option> Select Monster</option>
-                                                </select>
-                                            </span>
-                                        </p>
-                                        <p class="control">
-                                            <a class="button is-primary">
-                                                Search
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!-- Weapon Selection -->
-                                    <div class="field-label is-normal">
-                                        <label class="label is-unselectable">Weapon</label>
-                                    </div>
-                                    <div class="field has-addons">
-                                        <p class="control">
-                                            <span class="select">
-                                                <select>
-                                                    <!-- Insert Weapon Types here i.e. GSD -->
-                                                    <option> WEP </option>
-                                                </select>
-                                            </span>
-                                        </p>
-                                        <p class="control">
-                                            <span class="select">
-                                                <select>
-                                                    <!-- Use JS to grab list of weapons of said type available and add them as options-->
-                                                    <option> Select Weapon</option>
-                                                </select>
-                                            </span>
-                                        </p>
-                                        <p class="control">
-                                            <a class="button is-primary">
-                                                Search
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <!-- Hunter Search -->
-                                    <div class="field-label is-norml">
-                                        <label class="label is-unselectable">Hunter</label>
-                                    </div>
-                                    <div class="field has-addons">
-                                        <div class="control">
-                                            <input class="input" type="text" placeholder="Hunter ID / Empty for All">
-                                        </div>
-                                        <div class="control">
-                                            <a class="button">
-                                                Filter
-                                            </a>
-                                        </div>
+                                    <div class="control">
+                                        <a class="button is-dark">
+                                            Filter
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
+<!-- Main Container: Tiles / Graphs / Tables -->
                 <section role="main container">
                     <!-- Summary Card -->
                     <div class="tile">
@@ -192,7 +191,7 @@
             <!-- About Us Information -->
             <div class="hero-foot"></div>
         </section>
-        <!-- Modal Runs -->
+<!-- Modal Runs -->
         <div id="runDivRun" class="modal">
             <label class="label"> Submit New Run </label>
             <div class="modal-background"></div>
@@ -287,10 +286,10 @@
                 <p class="is-unselectable modalTitle">Login</p>
                 <div class="modal-background"></div>
                 <div class="modal-content">
-                    <div id="runSubmitPopOut"> 
+                    <div> 
                         <div>
                             <h3 align=CENTER>Login</h3>
-                            <div class="field" id="loginBar">
+                            <div class="field">
                                 <p class="control has-icons-left has-icons-right">
                                     <input class="input" type="email" placeholder="Email">
                                     <span class="icon is-small is-left">
@@ -301,7 +300,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <div class="field" id="loginBar">
+                            <div class="field">
                                 <p class="control has-icons-left">
                                     <input class="input" type="password" placeholder="Password">
                                     <span class="icon is-small is-left">
@@ -330,20 +329,20 @@
                     <div class="form-body">
                         <p class="is-unselectable modalTitle">Register</p>
                         <!-- Username Textfield -->
-                        <div class="field" id="loginBar">
+                        <div class="field">
                             <label class="label">Choose a unique Hunter ID</label>
                             <p class="control has-icons-left has-icons-right">
                                 <input class="input" type="userName" placeholder="Hunter ID">
                             </p>
                         </div>
                         <!-- Email Textfield -->
-                        <div class="field" id="loginBar">
+                        <div class="field">
                             <p class="control has-icons-left has-icons-right">
                                 <input class="input" type="email" placeholder="Email">
                             </p>
                         </div>
                         <!-- Password Textfield -->
-                        <div class="field" id="loginBar">
+                        <div class="field">
                             <p class="control has-icons-left">
                                 <input class="input" type="password" placeholder="Password">
                                 <span class="icon is-small is-left">
@@ -352,7 +351,7 @@
                             </p>
                         </div>
                         <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
-                        <div class="field" id="loginBar">
+                        <div class="field">
                             <p class="control has-icons-left">
                                 <input class="input" type="confirmPassword" placeholder="Confirm Password">
                                 <span class="icon is-small is-left">
@@ -361,7 +360,7 @@
                             </p>
                         </div>
                         <!-- Platform ID Textfield -->
-                        <div class="field has-addons" id="loginBar">
+                        <div class="field has-addons" >
                             <p class="control">
                                 <span class="select">
                                     <select>
@@ -378,12 +377,12 @@
                         <hr>
                         <form action="?" method="POST">
                             <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-                            <input type="submit" value="Submit" id="loginBar" class="button is-outlined is-primary">
+                            <input type="submit" value="Submit"  class="button is-outlined is-primary">
                         </form>
                         <hr>
                         <div class="field">
                             <p class="control">
-                                <button class="button is-success" id="loginBar">Register</button>
+                                <button class="button is-success" >Register</button>
                             </p>
                         </div>
                     </div>
