@@ -8,9 +8,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
-        <!-- Style Sheets -->
-        <link rel="stylesheet" href="Assets/CSS/style.css">
-
         <!-- Javascript Imports -->
         <script src="js/modal.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -148,74 +145,53 @@
                     </div>
                 </div>
                 <section role="main container">
-                    <!-- Summar Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                    </figure>
+                    <!-- Summary Card -->
+                    <div class="tile">
+                        <div class="card has-text-centered is-wide">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <h1>
+                                        Weapon Use Chart
+                                    </h1>
                                 </div>
-                                <div class="media-content">
-                                    <p class="title is-4">John Smith</p>
-                                    <p class="subtitle is-6">@johnsmith</p>
+                                <div class="content">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>ID</th>
+                                                <th>Speed</th>
+                                                <th>Weapon</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
                                 </div>
                             </div>
-
-                            <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                            </div>
+                            <!-- replace # with a number-->
+                            <footer class="card-footer">
+                                <a hreff="#" class="card-footer-item">Hunters: #</a>
+                                <a hreff="#" class="card-footer-item">Runs: #</a>
+                            </footer>
                         </div>
-                    </div>
-                    <div class="card has-text-centered is-wide">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <h1>
-                                    Weapon Use Chart
-                                </h1>
-                            </div>
-                            <div class="content">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Rank</th>
-                                            <th>ID</th>
-                                            <th>Speed</th>
-                                            <th>Weapon</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- replace # with a number-->
-                        <footer class="card-footer">
-                            <a hreff="#" class="card-footer-item">Hunters: #</a>
-                            <a hreff="#" class="card-footer-item">Runs: #</a>
-                        </footer>
                     </div>
                     <!-- Insert Graph Here -->
+                    <div class="tile">
+                        
+                    </div>
                     <!-- Insert List Here -->
+                    <div class="tile">
+                    
+                    </div>
                 </section>
             </div>
             <!-- About Us Information -->
             <div class="hero-foot"></div>
         </section>
-        <hr>
         <!-- Modal Runs -->
         <div id="runDivRun" class="modal">
             <label class="label"> Submit New Run </label>
@@ -267,8 +243,8 @@
                                 </div>
                             </div>
                         </div>
+                        <label class="label">Rank</label>
                         <div class="field">
-                            <label class="label">Rank</label>
                             <div class="control">
                                 <div class="select">
                                     <select name="selectRank">
