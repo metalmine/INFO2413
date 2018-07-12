@@ -56,7 +56,7 @@
                     </div>
                 </nav>
             </div>
-<!-- Title and Filter -->
+            <!-- Title and Filter -->
             <div class="hero-body">
                 <div class="has-text-centered">
                     <h1 class="title is-white is-unselectable">
@@ -105,7 +105,7 @@
                                     <p class="control">
                                         <span class="select">
                                             <select>
-                                                <!-- Insert Weapon Types here i.e. GSD -->
+                                                <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
                                                 <option> WEP </option>
                                             </select>
                                         </span>
@@ -113,7 +113,7 @@
                                     <p class="control">
                                         <span class="select">
                                             <select>
-                                                <!-- Use JS to grab list of weapons of said type available and add them as options-->
+                                                <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
                                                 <option> Select Weapon</option>
                                             </select>
                                         </span>
@@ -142,7 +142,7 @@
                         </div>
                     </form>
                 </div>
-<!-- Main Container: Tiles / Graphs / Tables -->
+                <!-- Main Container: Tiles / Graphs / Tables -->
                 <section role="main container">
                     <!-- Summary Card -->
                     <div class="tile">
@@ -171,7 +171,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- replace # with a number-->
+                            <!-- JS/PHP replace # with a number-->
                             <footer class="card-footer">
                                 <a hreff="#" class="card-footer-item">Hunters: #</a>
                                 <a hreff="#" class="card-footer-item">Runs: #</a>
@@ -191,7 +191,7 @@
             <!-- About Us Information -->
             <div class="hero-foot"></div>
         </section>
-<!-- Modal Runs -->
+        <!-- Modal Runs -->
         <div id="runDivRun" class="modal">
             <label class="label"> Submit New Run </label>
             <div class="modal-background"></div>
@@ -206,9 +206,9 @@
                     <form>
                         <label class="label">Character</label>
                         <div class="field has-addons">
-
                             <div class="control">
                                 <div class="select">
+                                    <!-- JS/PHP -->
                                     <select name="platform">
                                         <option>Platform</option>
                                         <option  value="ps4">PS4</option>
@@ -219,11 +219,13 @@
                             </div>
                             <div class="control">
                                 <div class="input">
+                                    <!-- JS/PHP -->
                                     <input class="input is-dark" type="text" placeholder="Platform ID">
                                 </div>
                             </div>
                             <div class="control">
                                 <div class="select is-fullwidth">
+                                    <!-- JS/PHP -->
                                     <select name="character">
                                         <option>Select Character</option>
                                     </select>
@@ -235,6 +237,7 @@
                             <div class="inputBar">
                                 <div class="control">
                                     <div class="select">
+                                        <!-- JS/PHP -->
                                         <select name="weapon">
                                             <option>Weapon</option>
                                         </select>
@@ -246,6 +249,7 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select">
+                                    <!-- JS/PHP -->
                                     <select name="selectRank">
                                         <option>Low</option>
                                         <option>High</option>
@@ -258,6 +262,7 @@
                         <div class="field has-addons">
                             <div class="control">
                                 <div class="select">
+                                    <!-- JS/PHP -->
                                     <select name="map">
                                         <option>Map</option>
                                     </select>
@@ -266,8 +271,9 @@
                             <!--Insert List of Monsters here available in the difficulty level selected.-->
                             <div class="control">
                                 <div class="select">
+                                    <!-- JS/PHP -->
                                     <select name="monster">
-                                        <option>Monster       </option>	
+                                        <option>Monster</option>	
                                     </select>    
                                 </div>
                             </div>
@@ -275,7 +281,7 @@
                     </form>
                 </section>
                 <footer class="modal-card-foot">
-                    <!-- add class: is-loading while processing and close it if successful-->
+                    <!-- JS/PHP add class: is-loading while processing and close it if successful-->
                     <button class="button is-success">Submit Run</button>
                 </footer>
             </div>
@@ -289,6 +295,7 @@
                     <div> 
                         <div>
                             <h3 align=CENTER>Login</h3>
+                            <!-- JS/PHP Email Check-->
                             <div class="field">
                                 <p class="control has-icons-left has-icons-right">
                                     <input class="input" type="email" placeholder="Email">
@@ -300,6 +307,7 @@
                                     </span>
                                 </p>
                             </div>
+                            <!-- JS/PHP Password Check-->
                             <div class="field">
                                 <p class="control has-icons-left">
                                     <input class="input" type="password" placeholder="Password">
