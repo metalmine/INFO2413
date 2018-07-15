@@ -156,50 +156,176 @@
                         </div>
                     </form>
                 </div>
+                <hr>
+                <h1 class="has-text-centered has-text-weight-bold">
+                    <!-- Replace this with Monster/Hunter ID -->
+                    Title
+                </h1>
+                <hr>
                 <!-- Main Container: Tiles / Graphs / Tables -->
                 <section role="main container">
                     <!-- Summary Card -->
-                    <div class="tile">
-                        <div class="card has-text-centered is-wide">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <h1>
-                                        Weapon Use Chart
-                                    </h1>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-vertical is-2">
+                            <div class="tile">
+                                <div class="card has-text-centered is-wide">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <h1>
+                                                Weapon Use Chart
+                                            </h1>
+                                        </div>
+                                        <div class="content">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Rank</th>
+                                                        <th>ID</th>
+                                                        <th>Time</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>1</th>
+                                                        <td>Metalmine</td>
+                                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>2</th>
+                                                        <td>Metalmine</td>
+                                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>3</th>
+                                                        <td>Metalmine</td>
+                                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- JS/PHP replace # with a number-->
+                                    <footer class="card-footer">
+                                        <a hreff="#" class="card-footer-item">Hunters: #</a>
+                                        <a hreff="#" class="card-footer-item">Runs: #</a>
+                                    </footer>
                                 </div>
-                                <div class="content">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Rank</th>
-                                                <th>ID</th>
-                                                <th>Speed</th>
-                                                <th>Weapon</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
                             </div>
-                            <!-- JS/PHP replace # with a number-->
-                            <footer class="card-footer">
-                                <a hreff="#" class="card-footer-item">Hunters: #</a>
-                                <a hreff="#" class="card-footer-item">Runs: #</a>
-                            </footer>
+                        </div>
+                        <!-- Insert Graph Here -->
+                        <div class="tile is-6">
+
+                        </div>
+                        <!-- Inser more tables here -->
+                        <div class="tile is-4 is-vertical">
+                            <div class="tabs is-toggle is-fullwidth ">
+                                <ul>
+                                    <!-- JS/PHP Add/Remove "is-active" on tab click -->
+                                    <li class="is-active"><a>Weapons</a></li>
+                                    <li class=""><a>Players</a></li>
+                                    <li class=""><a>Monsters</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs is-toggle is-toggle-rounded is-centered">
+                                <ul>
+                                    <!-- JS/PHP Add/Remove "is-active" on click -->
+                                    <li class="is-active">
+                                        <a>
+                                            <span>
+                                                Tool Assisted
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a>
+                                            <span>
+                                                Non-Tools Assisted
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Name</th>
+                                        <th>Time/Link</th>
+                                        <th>Tags</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
+                                    <tr>
+                                        <th>1</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>6</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>7</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>8</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>9</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>10</th>
+                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                        <td>Non-TA</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <!-- Insert Graph Here -->
-                    <div class="tile">
 
-                    </div>
-                    <!-- Insert List Here -->
-                    <div class="tile">
-
-                    </div>
                 </section>
             </div>
             <!-- About Us Information -->
