@@ -166,7 +166,7 @@
                 <section role="main container">
                     <!-- Summary Card -->
                     <div class="tile is-ancestor">
-                        <div class="tile is-vertical is-2">
+                        <div class="tile is-vertical">
                             <div class="tile">
                                 <div class="card has-text-centered is-wide">
                                     <div class="card-image">
