@@ -218,12 +218,13 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Insert Graph Here -->
+                        <!-- JS/PHP JESSICA Insert Graph Here -->
                         <div class="tile is-6">
 
                         </div>
-                        <!-- Inser more tables here -->
+                        <!-- Insert more tables here -->
                         <div class="tile is-4 is-vertical">
+                            <!-- JS/PHP -->
                             <div class="tabs is-toggle is-fullwidth ">
                                 <ul>
                                     <!-- JS/PHP Add/Remove "is-active" on tab click -->
@@ -251,6 +252,7 @@
                                     </li>
                                 </ul>
                             </div>
+                            <!-- JS/PHP replace the data here according to which tab people clicked above -->
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -373,16 +375,32 @@
                             </div>
                         </div>
                         <label class="label">Weapon</label>
-                        <div class="field has-addons">
+                        <div class="field is-grouped">
                             <div class="inputBar">
                                 <div class="control">
                                     <div class="select">
                                         <!-- JS/PHP -->
                                         <select name="weapon">
-                                            <option>Weapon</option>
+                                            <option>Select Weapon</option>
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tabs is-toggle">
+                                <ul>
+                                    <!-- JS/PHP Add/Remove "is-active" when clicked on / clicked other -->
+                                    <li class="is-active">
+                                        <a>
+                                            <span>Tool-Assisted</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a>
+                                            <span>Non Tool-Assisted</span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
                             </div>
                         </div>
                         <label class="label">Rank</label>
