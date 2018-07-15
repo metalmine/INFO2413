@@ -25,19 +25,36 @@
                             <img src="Assets/logo/logo.png">
                         </figure>
                         <!-- Navbar Buttons -->
+                        <!-- JS/PHP  upon clicking, add or remove to appropriate classes below-->
                         <div class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span aria-hidden="true">Home</span>
-                            <span aria-hidden="true">Submit Run</span>
-                            <!-- Show when Logged in -->
-                            <span aria-hidden="true" class="is-hidden">Account</span>
-                            <!-- Show when Logged out -->
-                            <span aria-hidden="true">Login</span>
-                            <span aria-hidden="true">Registration</span>
+                            <span id="nav-toggle" class="nav-toggle"></span>
+                            <span></span>
+                            <span></span>
+                            <div id="nav-menu" class="nav-right nav-menu">
+                                <a class="nav-item" href="/">
+                                    Home
+                                </a>
+                                <a class="nav-item" onclick="modalToggleLogin()">
+                                    Login
+                                </a>
+                                <a class="nav-item" onclick="modalToggleReg()">
+                                    Register
+                                </a>
+                                <a class="nav-itemis-hidden" href="#linkhere">
+                                    Account
+                                </a>
+                                <a class="nav-item" onclick="modalToggleRun()">
+                                    New Run
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <!-- Desktop Menu-->
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-start">
+                            <p class="navbar-item">
+                                <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
+                            </p>
                             <!-- Show when Logged out -->
                             <p class="navbar-item">
                                 <a class="button is-light is-rounded" onclick="modalToggleLogin()">Login</a>
@@ -48,9 +65,6 @@
                             <!-- Show when Logged in -->
                             <p class="navbar-item">
                                 <a class="button is-dark is-hidden">Account</a>
-                            </p>
-                            <p class="navbar-item">
-                                <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
                             </p>
                         </div>
                     </div>
@@ -193,9 +207,8 @@
         </section>
         <!-- Modal Runs -->
         <div id="runDivRun" class="modal">
-            <label class="label"> Submit New Run </label>
             <div class="modal-background"></div>
-            <div class="modal-card">\
+            <div class="modal-card">
                 <!-- Run Submission Title-->
                 <header class="modal-card-head">
                     <p class="modal-card-title">Submit New Run</p>
@@ -289,67 +302,28 @@
         <!-- Modal Login -->
         <div id="runDivLogin" class="modal">
             <form>
-                <p class="is-unselectable modalTitle">Login</p>
                 <div class="modal-background"></div>
-                <div class="modal-content">
-                    <div> 
-                        <div>
-                            <h3 align=CENTER>Login</h3>
-                            <!-- JS/PHP Email Check-->
-                            <div class="field">
-                                <p class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="Email">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <!-- JS/PHP Password Check-->
-                            <div class="field">
-                                <p class="control has-icons-left">
-                                    <input class="input" type="password" placeholder="Password">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="field">
-                                <p class="control">
-                                    <button class="button is-success">
-                                        Login
-                                    </button>
-                                </p>
-                            </div>
-                        </div>
-                        <button class="modal-close is-large" aria-label="close" onclick="modalToggleLogin()"></button>
-                    </div>
-                </div>
-            </form>
-        </div>  
-        <!-- Modal Registration -->
-        <div id="runDivReg" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <form class="field is-horizontal">
-                    <div class="form-body">
-                        <p class="is-unselectable modalTitle">Register</p>
-                        <!-- Username Textfield -->
-                        <div class="field">
-                            <label class="label">Choose a unique Hunter ID</label>
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="userName" placeholder="Hunter ID">
-                            </p>
-                        </div>
-                        <!-- Email Textfield -->
+                <div class="modal-card">
+                    <!-- Login Title -->
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Login</p>
+                        <button class="delete" aria-label="close" onclick="modalToggleLogin()"></button>
+                    </header>
+                    <!-- JS/PHP Login Form -->
+                    <section class="modal-card-body">
+                        <!-- JS/PHP Email Check-->
                         <div class="field">
                             <p class="control has-icons-left has-icons-right">
                                 <input class="input" type="email" placeholder="Email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
                             </p>
                         </div>
-                        <!-- Password Textfield -->
+                        <!-- JS/PHP Password Check-->
                         <div class="field">
                             <p class="control has-icons-left">
                                 <input class="input" type="password" placeholder="Password">
@@ -358,45 +332,93 @@
                                 </span>
                             </p>
                         </div>
-                        <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input class="input" type="confirmPassword" placeholder="Confirm Password">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <!-- Platform ID Textfield -->
-                        <div class="field has-addons" >
-                            <p class="control">
-                                <span class="select">
-                                    <select>
-                                        <option>PC / Laptop</option>
-                                        <option>XBox One</option>
-                                        <option>Playstaion 4</option>
-                                    </select>
-                                </span>
-                            </p>
-                            <p class="control">
-                                <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
-                            </p>
-                        </div>
-                        <hr>
-                        <form action="?" method="POST">
-                            <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-                            <input type="submit" value="Submit"  class="button is-outlined is-primary">
-                        </form>
-                        <hr>
-                        <div class="field">
-                            <p class="control">
-                                <button class="button is-success" >Register</button>
-                            </p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <!-- JS/PHP add class: is-loading while processing and close it if successful-->
+                        <button class="button is-success">Login</button>
+                    </footer>
+                </div>
+            </form>
+        </div>  
+        <!-- Modal Registration -->
+        <div id="runDivReg" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <!-- Registration Title -->
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Registration</p>
+                    <button class="delete" aria-label="close" onclick="modalToggleReg()"></button>
+                </header>
+                <!-- JS/PHP Lots of stuff here -->
+                <form class="modal-card-body">
+                    <div class="field is-horizontal">
+                        <div class="form-body">
+                            <!-- Username Textfield -->
+                            <div class="field">
+                                <label class="label">Choose a unique Hunter ID</label>
+                                <p class="control has-icons-left has-icons-right">
+                                    <input class="input" type="userName" placeholder="i.e Metalmine">
+                                </p>
+                            </div>
+                            <!-- Email Textfield -->
+                            <div class="field">
+                                <label class="label"> Enter a valid email address</label>
+                                <p class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" placeholder="i.e. admin@htdata.world">
+                                </p>
+                            </div>
+                            <!-- Password Textfield -->
+                            <div class="field">
+                                <label class="label"> Password </label>
+                                <p class="control has-icons-left">
+                                    <input class="input" type="password">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </p>
+                            </div>
+                            <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
+                            <div class="field">
+                                <label class="label"> Confirm Password </label>
+                                <p class="control has-icons-left">
+                                    <input class="input" type="confirmPassword">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </p>
+                            </div>
+                            <!-- Platform ID Textfield -->
+                            <label class="label"> Select Platform</label>
+                            <div class="field has-addons" >
+                                <p class="control">
+                                    <span class="select">
+                                        <select>
+                                            <option>PC / Laptop</option>
+                                            <option>XBox One</option>
+                                            <option>Playstaion 4</option>
+                                        </select>
+                                    </span>
+                                </p>
+                                <p class="control">
+                                    <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
+                                </p>
+                            </div>
+                            <form action="?" method="POST">
+                                <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
+                                <input type="submit" value="Submit"  class="button is-dark">
+                            </form>
                         </div>
                     </div>
                 </form>
+                <form class="modal-card-foot">
+                    <div class="field">
+                        <p class="control">
+                            <button class="button is-success" >Register</button>
+                        </p>
+                    </div>
+                </form>
             </div>
-            <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
+
         </div>  
     </Body>
 </html>
