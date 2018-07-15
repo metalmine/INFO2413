@@ -170,6 +170,7 @@
                             <div class="tile">
                                 <div class="card has-text-centered is-wide">
                                     <div class="card-image">
+                                        <!-- JS/PHP Replace this image with the weapon radio chart -->
                                         <figure class="image is-4by3">
                                             <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                                         </figure>
