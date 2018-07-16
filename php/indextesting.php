@@ -1,8 +1,19 @@
 <!DOCTYPE HTML>
+
+<?php include "../inc/dbinfo.inc"; ?>
+
+<?php
+
+  /* Connect to MySQL and select the database. */
+  $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+
+  if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
+
+  $database = mysqli_select_db($connection, DB_DATABASE);
+?>
+
 <html lang="en">
     <head>
-        <!-- Google Tracking -->
-        <script src="js/gtag.js"></script>
         <!-- Bulma Set-up -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -11,7 +22,6 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
         <!-- Javascript Imports -->
-        <script src="js/filter.js"></script>
         <script src="js/modal.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="js/navburger.js"></script>
@@ -28,11 +38,28 @@
                             <img src="Assets/logo/logo.png">
                         </figure>
                         <!-- Navbar Buttons -->
-                        <!-- JS/PHP  Gotta figure out how to do a menu-->
+                        <!-- JS/PHP  upon clicking, add or remove to appropriate classes below-->
                         <div class="navbar-burger" aria-label="menu" aria-expanded="false">
                             <span id="nav-toggle" class="nav-toggle"></span>
                             <span></span>
                             <span></span>
+                            <div id="nav-menu" class="nav-right nav-menu">
+                                <a class="nav-item" href="/">
+                                    Home
+                                </a>
+                                <a class="nav-item" onclick="modalToggleLogin()">
+                                    Login
+                                </a>
+                                <a class="nav-item" onclick="modalToggleReg()">
+                                    Register
+                                </a>
+                                <a class="nav-itemis-hidden" href="#linkhere">
+                                    Account
+                                </a>
+                                <a class="nav-item" onclick="modalToggleRun()">
+                                    New Run
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <!-- Desktop Menu-->
@@ -80,6 +107,7 @@
                                                 <option> Low</option>
                                                 <option> High</option>
                                                 <option> Temp</option>
+
                                             </select>
                                         </span>
                                     </p>
@@ -119,9 +147,8 @@
                                         </span>
                                     </p>
                                     <p class="control">
-                                        <!-- JS/PHP Add: "is-dark" on click -->
-                                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
-                                            Tool Assisted
+                                        <a class="button is-dark">
+                                            Search
                                         </a>
                                     </p>
                                 </div>
@@ -144,28 +171,116 @@
                     </form>
                 </div>
                 <hr>
-                <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-                    <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID -->
-                    Monster: All | Weapon: All | Hunters: All
+                <h1 class="has-text-centered has-text-weight-bold">
+                    <!-- Replace this with Monster/Hunter ID -->
+                    Title
                 </h1>
                 <hr>
                 <!-- Main Container: Tiles / Graphs / Tables -->
+
+
+
                 <section role="main container">
                     <!-- Summary Card -->
                     <div class="tile is-ancestor">
-                        <div class="tile is-vertical">
+                        <div class="tile is-vertical is-2">
                             <div class="tile">
                                 <div class="card has-text-centered is-wide">
                                     <div class="card-image">
-                                        <!-- JS/PHP Replace this image with the weapon radio chart -->
-                                        <figure class="image is-4by3">
-                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                       
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="Chart.js"></script>
+<canvas id="myChart" width="100" height="100"></canvas>
+
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+	
+        labels: [
+			"Great Sword",
+			"Sword & Shield",
+			"Dual Blades",
+			"Long Sword" ,
+			"Hammer",
+			"Hunting Horn", 
+			"Lance",
+			"Gunlance",
+			"Switch Axe",
+			"Charge Blade" ,
+			"Insect Glavie" ,
+			"Bow" ,
+			 "Light Bowgun" ,
+			 "Heavy Bowgun"],
+        datasets: [{
+            label: 'Amount of Weapons use',
+            data: [
+ 
+
+
+
+
+
+
+22, 39, 3, 5, 2, 3, 26, 4, 7, 10, 5, 3 ,6, 9],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+            ],
+			pointBorderColor: [
+                'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)'
+            ],
+			pointBackgroundColor: [
+				'rgba(255,99,132,1)',
+			    'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+			    'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)',
+				'rgba(255,99,132,1)'
+			],
+           
+        }]
+    },
+    options: {
+	        layout: {
+        }
+	}	
+});
+</script>
+
+
+                                        <figure>
+                                            
                                         </figure>
                                     </div>
                                     <div class="card-content">
                                         <div class="media">
                                             <h1>
-                                                <strong>% Use of Weapons</strong>
+                                                Weapon Use Chart
                                             </h1>
                                         </div>
                                         <div class="content">
@@ -174,24 +289,24 @@
                                                     <tr>
                                                         <th>Rank</th>
                                                         <th>ID</th>
-                                                        <th>Medals</th>
+                                                        <th>Time</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <th>1</th>
                                                         <td>Metalmine</td>
-                                                        <td><a href="/user/Metalmine.php">22</a></td>
+                                                        <td><a href="https://www.youtube.com">00:00</a></td>
                                                     </tr>
                                                     <tr>
                                                         <th>2</th>
-                                                        <td>ThunderDash247</td>
-                                                        <td><a href="/user/ThunderDash247.php">11</a></td>
+                                                        <td>Metalmine</td>
+                                                        <td><a href="https://www.youtube.com">00:00</a></td>
                                                     </tr>
                                                     <tr>
                                                         <th>3</th>
-                                                        <td>TheLegend27</td>
-                                                        <td><a href="/user/TheLegend27.php">2</a></td>
+                                                        <td>Metalmine</td>
+                                                        <td><a href="https://www.youtube.com">00:00</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -205,20 +320,56 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- JS/PHP JESSICA Insert Graph Here -->
-                        <div class="tile is-6">
 
-                        </div>
-                        <!-- Insert more tables here -->
+
+
+                        <!-- Insert Graph Here -->
+ <div class="tile is-6">
+      <div class="tile is-parent">
+       <article>
+<---center spot--->
+        </article>
+      </div>
+    </div>
+
+
+   
+                        <!-- Inser more tables here -->
                         <div class="tile is-4 is-vertical">
-                            <!-- JS/PHP replace the data here according to which tab people clicked above -->
+                            <div class="tabs is-toggle is-fullwidth ">
+                                <ul>
+                                    <!-- JS/PHP Add/Remove "is-active" on tab click -->
+                                    <li class="is-active"><a>Weapons</a></li>
+                                    <li class=""><a>Players</a></li>
+                                    <li class=""><a>Monsters</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs is-toggle is-toggle-rounded is-centered">
+                                <ul>
+                                    <!-- JS/PHP Add/Remove "is-active" on click -->
+                                    <li class="is-active">
+                                        <a>
+                                            <span>
+                                                Tool Assisted
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a>
+                                            <span>
+                                                Non-Tools Assisted
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>Rank</th>
                                         <th>Name</th>
                                         <th>Time/Link</th>
-                                        <th>Date[DD/MM/YY]</th>
+                                        <th>Tags</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -227,66 +378,67 @@
                                         <th>1</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>2</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>3</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>4</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>5</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>6</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>7</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>8</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>9</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                     <tr>
                                         <th>10</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
+                                        <td>Non-TA</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+</div>
 
                 </section>
             </div>
@@ -335,29 +487,17 @@
                         </div>
                         <label class="label">Weapon</label>
                         <div class="field has-addons">
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                                <option> WEP </option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                                <option> Select Weapon</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <!-- JS/PHP Add: "is-dark" on click -->
-                                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
-                                            Tool Assisted
-                                        </a>
-                                    </p>
+                            <div class="inputBar">
+                                <div class="control">
+                                    <div class="select">
+                                        <!-- JS/PHP -->
+                                        <select name="weapon">
+                                            <option>Weapon</option>
+                                        </select>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
                         <label class="label">Rank</label>
                         <div class="field">
                             <div class="control">
@@ -502,45 +642,4 @@
                             <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
                             <div class="field">
                                 <label class="label"> Confirm Password </label>
-                                <p class="control has-icons-left">
-                                    <input class="input" type="confirmPassword">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <!-- Platform ID Textfield -->
-                            <label class="label"> Select Platform</label>
-                            <div class="field has-addons" >
-                                <p class="control">
-                                    <span class="select">
-                                        <select>
-                                            <option>PC / Laptop</option>
-                                            <option>XBox One</option>
-                                            <option>Playstaion 4</option>
-                                        </select>
-                                    </span>
-                                </p>
-                                <p class="control">
-                                    <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
-                                </p>
-                            </div>
-                            <form action="?" method="POST">
-                                <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-                                <input type="submit" value="Submit"  class="button is-dark">
-                            </form>
-                        </div>
-                    </div>
-                </form>
-                <form class="modal-card-foot">
-                    <div class="field">
-                        <p class="control">
-                            <button class="button is-success" >Register</button>
-                        </p>
-                    </div>
-                </form>
-            </div>
-
-        </div>  
-    </Body>
-</html>
+          
