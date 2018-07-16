@@ -11,6 +11,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
         <!-- Javascript Imports -->
+        <script src="js/filter.js"></script>
         <script src="js/modal.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="js/navburger.js"></script>
@@ -27,28 +28,11 @@
                             <img src="Assets/logo/logo.png">
                         </figure>
                         <!-- Navbar Buttons -->
-                        <!-- JS/PHP  upon clicking, add or remove to appropriate classes below-->
+                        <!-- JS/PHP  Gotta figure out how to do a menu-->
                         <div class="navbar-burger" aria-label="menu" aria-expanded="false">
                             <span id="nav-toggle" class="nav-toggle"></span>
                             <span></span>
                             <span></span>
-                            <div id="nav-menu" class="nav-right nav-menu">
-                                <a class="nav-item" href="/">
-                                    Home
-                                </a>
-                                <a class="nav-item" onclick="modalToggleLogin()">
-                                    Login
-                                </a>
-                                <a class="nav-item" onclick="modalToggleReg()">
-                                    Register
-                                </a>
-                                <a class="nav-itemis-hidden" href="#linkhere">
-                                    Account
-                                </a>
-                                <a class="nav-item" onclick="modalToggleRun()">
-                                    New Run
-                                </a>
-                            </div>
                         </div>
                     </div>
                     <!-- Desktop Menu-->
@@ -135,8 +119,9 @@
                                         </span>
                                     </p>
                                     <p class="control">
-                                        <a class="button is-dark">
-                                            Search
+                                        <!-- JS/PHP Add: "is-dark" on click -->
+                                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
+                                            Tool Assisted
                                         </a>
                                     </p>
                                 </div>
@@ -159,9 +144,9 @@
                     </form>
                 </div>
                 <hr>
-                <h1 class="has-text-centered has-text-weight-bold">
-                    <!-- Replace this with Monster/Hunter ID -->
-                    Title
+                <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
+                    <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID -->
+                    Monster: All | Weapon: All | Hunters: All
                 </h1>
                 <hr>
                 <!-- Main Container: Tiles / Graphs / Tables -->
@@ -226,35 +211,6 @@
                         </div>
                         <!-- Insert more tables here -->
                         <div class="tile is-4 is-vertical">
-                            <!-- JS/PHP -->
-                            <div class="tabs is-toggle is-fullwidth ">
-                                <ul>
-                                    <!-- JS/PHP Add/Remove "is-active" on tab click -->
-                                    <li class="is-active"><a>Weapons</a></li>
-                                    <li class=""><a>Players</a></li>
-                                    <li class=""><a>Monsters</a></li>
-                                </ul>
-                            </div>
-                            <h1><strong>Tool Assisted Speed Run:</strong></h1>
-                            <div class="tabs is-toggle is-toggle-rounded is-small is-centered">
-                                <ul>
-                                    <!-- JS/PHP Add/Remove "is-active" on click -->
-                                    <li class="is-active">
-                                        <a>
-                                            <span>
-                                                Yes
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a>
-                                            <span>
-                                                No
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                             <!-- JS/PHP replace the data here according to which tab people clicked above -->
                             <table class="table">
                                 <thead>
@@ -262,7 +218,7 @@
                                         <th>Rank</th>
                                         <th>Name</th>
                                         <th>Time/Link</th>
-                                        <th>Tags</th>
+                                        <th>Date[DD/MM/YY]</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -271,61 +227,61 @@
                                         <th>1</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>2</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>3</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>4</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>5</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>6</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>7</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>8</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>9</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                     <tr>
                                         <th>10</th>
                                         <td><a href="https://mhdata.world/Name1">Name 1</a></td>
                                         <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>Non-TA</td>
+                                        <td>12/05/18</td>
                                     </tr>
                                 </tbody>
                             </table>
