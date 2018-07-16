@@ -180,7 +180,7 @@
                                     <div class="card-content">
                                         <div class="media">
                                             <h1>
-                                                Weapon Use Chart
+                                                <strong>% Use of Weapons</strong>
                                             </h1>
                                         </div>
                                         <div class="content">
