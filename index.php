@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
+        <!-- Google Tracking -->
+        <script src="js/gtag.js"></script>
         <!-- Bulma Set-up -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -233,20 +235,21 @@
                                     <li class=""><a>Monsters</a></li>
                                 </ul>
                             </div>
-                            <div class="tabs is-toggle is-toggle-rounded is-centered">
+                            <h1><strong>Tool Assisted Speed Run:</strong></h1>
+                            <div class="tabs is-toggle is-toggle-rounded is-small is-centered">
                                 <ul>
                                     <!-- JS/PHP Add/Remove "is-active" on click -->
                                     <li class="is-active">
                                         <a>
                                             <span>
-                                                Tool Assisted
+                                                Yes
                                             </span>
                                         </a>
                                     </li>
                                     <li class="">
                                         <a>
                                             <span>
-                                                Non-Tools Assisted
+                                                No
                                             </span>
                                         </a>
                                     </li>
