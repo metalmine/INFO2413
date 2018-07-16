@@ -189,24 +189,24 @@
                                                     <tr>
                                                         <th>Rank</th>
                                                         <th>ID</th>
-                                                        <th>Time</th>
+                                                        <th>Medals</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <th>1</th>
                                                         <td>Metalmine</td>
-                                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                                        <td><a href="/user/Metalmine.php">22</a></td>
                                                     </tr>
                                                     <tr>
                                                         <th>2</th>
-                                                        <td>Metalmine</td>
-                                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                                        <td>ThunderDash247</td>
+                                                        <td><a href="/user/ThunderDash247.php">11</a></td>
                                                     </tr>
                                                     <tr>
                                                         <th>3</th>
-                                                        <td>Metalmine</td>
-                                                        <td><a href="https://www.youtube.com">00:00</a></td>
+                                                        <td>TheLegend27</td>
+                                                        <td><a href="/user/TheLegend27.php">2</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
