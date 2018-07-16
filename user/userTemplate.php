@@ -25,7 +25,7 @@
                     <!-- Logo and Burger-->
                     <div class="navbar-brand">
                         <figure class="image responsive">
-                            <img src="Assets/logo/logo.png">
+                            <img src="/Assets/logo/logo.png">
                         </figure>
                         <!-- Navbar Buttons -->
                         <!-- JS/PHP  Gotta figure out how to do a menu-->
@@ -60,10 +60,11 @@
             <div class="hero-body">
                 <div class="has-text-centered">
                     <h1 class="title is-white is-unselectable">
-                        SpeedRun Comparator
+                        <!-- Insert Hunter ID -->
+                        Metalmine
                     </h1>
                     <h2 class="subtitle is-unselectable">
-                        Filters
+                        Best Runs
                     </h2>
                     <!-- Filter options -->
                     <form class="field">
@@ -125,35 +126,16 @@
                                         </a>
                                     </p>
                                 </div>
-                                <!-- Hunter Search -->
-                                <div class="field-label is-normal">
-                                    <label class="label is-unselectable">Hunter</label>
-                                </div>
-                                <div class="field has-addons">
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="Hunter ID / Empty for All">
-                                    </div>
-                                    <div class="control">
-                                        <a class="button is-dark">
-                                            Filter
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </form>
                 </div>
                 <hr>
-                <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-                    <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID -->
-                    Monster: All | Weapon: All | Hunter: All
-                </h1>
-                <hr>
                 <!-- Main Container: Tiles / Graphs / Tables -->
                 <section role="main container">
                     <!-- Summary Card -->
                     <div class="tile is-ancestor">
-                        <div class="tile is-vertical">
+                        <div class="tile" id="cardTile">
                             <div class="tile">
                                 <div class="card has-text-centered is-wide">
                                     <div class="card-image">
@@ -172,26 +154,31 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Rank</th>
-                                                        <th>ID</th>
+                                                        <th># of Runs</th>
+                                                        <th>Type</th>
                                                         <th>Medals</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <th>1</th>
-                                                        <td>Metalmine</td>
-                                                        <td><a href="/user/Metalmine.php">22</a></td>
+                                                        <th>23</th>
+                                                        <td>TA</td>
+                                                        <td>22</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>2</th>
-                                                        <td>ThunderDash247</td>
-                                                        <td><a href="/user/ThunderDash247.php">11</a></td>
+                                                        <th>45</th>
+                                                        <td>Non-TA</td>
+                                                        <td>11</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>3</th>
-                                                        <td>TheLegend27</td>
-                                                        <td><a href="/user/TheLegend27.php">2</a></td>
+                                                        <th>10</th>
+                                                        <td>Group TA</td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>55</th>
+                                                        <td>Group Non-TA</td>
+                                                        <td>2</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -199,15 +186,71 @@
                                     </div>
                                     <!-- JS/PHP replace # with a number-->
                                     <footer class="card-footer">
-                                        <a hreff="#" class="card-footer-item">Hunters: #</a>
                                         <a hreff="#" class="card-footer-item">Runs: #</a>
+                                        <a hreff="#" class="card-footer-item">Medals: #</a>
                                     </footer>
                                 </div>
                             </div>
                         </div>
                         <!-- JS/PHP JESSICA Insert Graph Here -->
-                        <div class="tile is-6">
-
+                        <div class="tile is-6" id="userInfoTile">
+                            <form class="box">
+                                <label class="label is-large">User Info</label>
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="Metalmine">
+                                    </div>
+                                    <div class="control">
+                                        <a class="button is-danger">Update</a>
+                                    </div>
+                                </div>
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <input class="input" type="email" placeholder="Example@gmail.com">
+                                    </div>
+                                    <div class="control">
+                                        <a class="button is-danger">Update</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <label class="label is-large">Characters</label>
+                                <!-- JS/PHP Add additional fields for every character -->
+                                <div class="field has-addons" ID="Character1">
+                                    <p class="control">
+                                        <span class="select">
+                                            <select>
+                                                <option>Playstation</option>
+                                                <option>XBox</option>
+                                                <option>Computer</option>
+                                            </select>
+                                        </span> 
+                                    </p>
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Insert Character Name">
+                                    </p>
+                                    <p class="control">
+                                       <a class="button is-danger">Update</a> 
+                                    </p>
+                                </div>
+                                <!-- JS/PHP Last one is to add additional characters. Must be verified -->
+                                <div class="field has-addons" ID="Character1">
+                                    <p class="control">
+                                        <span class="select">
+                                            <select>
+                                                <option>Playstation</option>
+                                                <option>XBox</option>
+                                                <option>Computer</option>
+                                            </select>
+                                        </span> 
+                                    </p>
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Insert Character Name">
+                                    </p>
+                                    <p class="control">
+                                       <a class="button is-warning">Add</a> 
+                                    </p>
+                                </div>
+                            </form>
                         </div>
                         <!-- Insert more tables here -->
                         <div class="tile is-4 is-vertical">
@@ -335,29 +378,29 @@
                         </div>
                         <label class="label">Weapon</label>
                         <div class="field has-addons">
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                                <option> WEP </option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                                <option> Select Weapon</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <!-- JS/PHP Add: "is-dark" on click -->
-                                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
-                                            Tool Assisted
-                                        </a>
-                                    </p>
-                                </div>
+                            <p class="control">
+                                <span class="select">
+                                    <select>
+                                        <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
+                                        <option> WEP </option>
+                                    </select>
+                                </span>
+                            </p>
+                            <p class="control">
+                                <span class="select">
+                                    <select>
+                                        <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
+                                        <option> Select Weapon</option>
+                                    </select>
+                                </span>
+                            </p>
+                            <p class="control">
+                                <!-- JS/PHP Add: "is-dark" on click -->
+                                <a class="button" id="filterTASToggle" onclick="tasToggle()">
+                                    Tool Assisted
+                                </a>
+                            </p>
+                        </div>
                         <label class="label">Rank</label>
                         <div class="field">
                             <div class="control">
