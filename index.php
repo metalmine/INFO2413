@@ -119,13 +119,13 @@
                                         </span>
                                     </p>
                                     <p class="control">
-                                        <!-- JS/PHP Add: "is-dark" on click -->
+                                        <!-- Toggles is-dark on click-->
                                         <a class="button" id="filterTASToggle" onclick="tasToggle()">
                                             Tool Assisted
                                         </a>
                                     </p>
                                 </div>
-                                <!-- Hunter Search -->
+                                <!-- JS/PHP Hunter Search -->
                                 <div class="field-label is-normal">
                                     <label class="label is-unselectable">Hunter</label>
                                 </div>
@@ -145,7 +145,7 @@
                 </div>
                 <hr>
                 <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-                    <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID -->
+                    <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
                     Monster: All | Weapon: All | Hunter: All
                 </h1>
                 <hr>
@@ -165,7 +165,7 @@
                                     <div class="card-content">
                                         <div class="media">
                                             <h1>
-                                                <strong>% Use of Weapons</strong>
+                                                <strong>Top 3 Fastest Hunters</strong>
                                             </h1>
                                         </div>
                                         <div class="content">
