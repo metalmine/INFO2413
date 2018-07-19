@@ -16,7 +16,7 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="js/navburger.js"></script>
     </head>
-    <Body>
+    <body>
         <!-- Main container -->
         <section class="hero is-light">
             <!-- Navigation -->
@@ -28,7 +28,7 @@
                             <img src="Assets/logo/logo.png">
                         </figure>
                         <!-- Navbar Buttons -->
-                        <!-- JS/PHP  Gotta figure out how to do a menu-->
+                        <!-- JS/PHP  Gotta figure out how to do a menu when on a smaller screen-->
                         <div class="navbar-burger" aria-label="menu" aria-expanded="false">
                             <span id="nav-toggle" class="nav-toggle"></span>
                             <span></span>
@@ -47,7 +47,7 @@
                             </p>
                             <!-- Show when Logged in -->
                             <p class="navbar-item">
-                                <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
+                                <a class="button is-dark is-rounded is-hidden" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
                             </p>
                             <p class="navbar-item">
                                 <a class="button is-dark is-hidden">Account</a>
@@ -77,17 +77,17 @@
                                     <p class="control">
                                         <span class="select">
                                             <select>
-                                                <option> Low</option>
-                                                <option> High</option>
-                                                <option> Temp</option>
+                                                <option>Low</option>
+                                                <option>High</option>
+                                                <option>Temp</option>
                                             </select>
                                         </span>
                                     </p>
                                     <p class="control">
                                         <span class="select">
                                             <select>
-                                                <!-- Use JS to grab list of monsters available and add them as options-->
-                                                <option> Select Monster</option>
+                                                <!-- JS/PHP Use JS to grab list of monsters available and add them as options-->
+                                                <option>Select Monster</option>
                                             </select>
                                         </span>
                                     </p>
@@ -106,7 +106,7 @@
                                         <span class="select">
                                             <select>
                                                 <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                                <option> WEP </option>
+                                                <option>WEP</option>
                                             </select>
                                         </span>
                                     </p>
@@ -114,7 +114,7 @@
                                         <span class="select">
                                             <select>
                                                 <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                                <option> Select Weapon</option>
+                                                <option>Select Weapon</option>
                                             </select>
                                         </span>
                                     </p>
@@ -541,5 +541,5 @@
                 </form>
             </div>
         </div>  
-    </Body>
+    </body>
 </html>
