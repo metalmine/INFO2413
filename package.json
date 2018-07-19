@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/metalmine/Monster-Hunter-Run-Comparator#readme",
   "dependencies": {
+    "bulma": "^0.7.1",
+    "bulma-start": "0.0.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
