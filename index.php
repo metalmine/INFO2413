@@ -38,9 +38,6 @@
                     <!-- Desktop Menu-->
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-start">
-                            <p class="navbar-item">
-                                <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
-                            </p>
                             <!-- Show when Logged out -->
                             <p class="navbar-item">
                                 <a class="button is-light is-rounded" onclick="modalToggleLogin()">Login</a>
@@ -49,6 +46,9 @@
                                 <a class="button is-light is-rounded" onclick="modalToggleReg()">Register</a>
                             </p>
                             <!-- Show when Logged in -->
+                            <p class="navbar-item">
+                                <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
+                            </p>
                             <p class="navbar-item">
                                 <a class="button is-dark is-hidden">Account</a>
                             </p>
