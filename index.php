@@ -2,7 +2,6 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
-
 // require db queries, do not put query in document
 ?>
 <!-- Main container -->
@@ -28,18 +27,231 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
-                                    <select>
-                                        <option>Low</option>
-                                        <option>High</option>
-                                        <option>Temp</option>
+                                    <select name='states' onchange="fillSelect(this.value,this.form['diff'])">
+							<option value="">Difficulty</option>
+							<option value="Low">Low</option>
+							<option value="High">High</option>
+							<option value="Tempered">Tempered</option>
                                     </select>
                                 </span>
                             </p>
                             <p class="control">
                                 <span class="select">
-                                    <select>
-                                        <!-- JS/PHP Use JS to grab list of monsters available and add them as options-->
-                                        <option>Select Monster</option>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+	
+	var diff = []; 
+	diff["Low"] = [ 
+	<?php
+	$stmt = $pdo->query("SELECT name FROM MONSTERS WHERE difficulty='low'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['name']; ?>",
+	<?php
+	}
+	?>
+
+];
+	diff["High"] = [
+	<?php
+	$stmt = $pdo->query("SELECT name FROM MONSTERS WHERE difficulty='High'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['name']; ?>",
+	<?php
+	}
+	?>
+];
+	diff["Tempered"] = [
+	<?php
+	$stmt = $pdo->query("SELECT name FROM MONSTERS WHERE difficulty='Tempered'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['name']; ?>",
+	<?php
+	}
+	?>
+
+];
+
+
+	function fillSelect(nValue,nList){
+
+		nList.options.length = 1;
+		var curr = diff[nValue];
+		for (each in curr)
+			{
+			 var nOption = document.createElement('option'); 
+			 nOption.appendChild(document.createTextNode(curr[each])); 
+			 nOption.setAttribute("value",curr[each]); 			 
+			 nList.appendChild(nOption); 
+			}
+	}
+
+var type = []; 
+type["GSD"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='GSD'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+
+type["LSD"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='LSD'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["HTH"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='HTH'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["DBL"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='DBL'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["SAS"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='SAS'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["LAN"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='LAN'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["GUL"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='GUL'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["AWS"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='AWS'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["CHB"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='CHB'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["ING"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='ING'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["BOW"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='BOW'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["LBG"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='LBG'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["HBG"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='HBG'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+];
+type["EVT"] = [
+	<?php
+	$stmt = $pdo->query("SELECT weaponName FROM WEAPONS WHERE type='EVT'");
+	foreach ($stmt as $row)
+	{ ?>
+	"<?php echo $row['weaponName']; ?>",
+	<?php
+	}
+	?>
+
+];
+
+
+
+	function typeSelect(nValue,nList){
+
+		nList.options.length = 1;
+		var curr = type[nValue];
+		for (each in curr)
+			{
+			 var nOption = document.createElement('option'); 
+			 nOption.appendChild(document.createTextNode(curr[each])); 
+			 nOption.setAttribute("value",curr[each]); 			 
+			 nList.appendChild(nOption); 
+			}
+	}
+</script>
+
+
+
+                                    <select name='diff'>
+						<option> Select Monster</option>
                                     </select>
                                 </span>
                             </p>
@@ -56,17 +268,30 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
-                                    <select>
-                                        <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                        <option>WEP</option>
+                                     <select name='states' onchange="typeSelect(this.value,this.form['type'])">
+                                 <option value="">Select Type</option>
+				<option value="GSD">Great Sword</option>
+				<option value="LSD">Long Sword</option>
+				<option value="HAM">Hammer</option>
+				<option value="HTH">Hunting Horn</option>
+				<option value="DBL">Dual Blades</option>
+				<option value="SAS">Sword and Sheild</option>
+				<option value="LAN">Lance</option>
+				<option value="GUL">Gun Lance</option>
+				<option value="AWS">Switch Axe</option>
+				<option value="CHB">Charge Blade</option>
+				<option value="ING">Insect Glaive</option>
+				<option value="BOW">Bow</option>
+				<option value="LBG">Light Bowgun</option>
+				<option value="HBG">Heavy Bowgun</option>
+				<option value="EVT">Event Weapons</option>
                                     </select>
                                 </span>
                             </p>
                             <p class="control">
                                 <span class="select">
-                                    <select>
-                                        <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                        <option>Select Weapon</option>
+                                    <select name='type'>
+					<option value="">Select Weapon</option>  
                                     </select>
                                 </span>
                             </p>
@@ -109,10 +334,169 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                     <div class="tile">
                         <div class="card has-text-centered is-wide">
                             <div class="card-image">
-                                <!-- JS/PHP Replace this image with the weapon radio chart -->
-                                <figure class="image is-4by3">
-                                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                </figure>
+
+                               <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                                        <script src="Chart.js"></script>
+                                        <canvas id="myChart" width="100" height="100"></canvas>
+
+                                                                                 <script src="Chart.js"></script>
+                                        <canvas id="myChart" width="100" height="100"></canvas>
+
+                                        <script>
+                                            var ctx = document.getElementById("myChart");
+                                            var myChart = new Chart(ctx, {
+                                                type: 'radar',
+                                                data: {
+
+                                                    labels: [
+                                                        "Great Sword",
+                                                        "Sword & Shield",
+                                                        "Dual Blades",
+                                                        "Long Sword" ,
+                                                        "Hammer",
+                                                        "Hunting Horn", 
+                                                        "Lance",
+                                                        "Gunlance",
+                                                        "Switch Axe",
+                                                        "Charge Blade" ,
+                                                        "Insect Glavie" ,
+                                                        "Bow" ,
+                                                        "Light Bowgun" ,
+                                                        "Heavy Bowgun",
+							"Event"],
+                                                    datasets: [{
+                                                        label: 'Amount of Weapons use',
+                                                        data: [
+
+                                                            
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
+echo $count
+?>
+, 
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='DBL'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LSD'")->fetchColumn();
+echo $count
+?> 
+, 
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HAM'")->fetchColumn();
+echo $count
+?>
+, 
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HTH'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LAN'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GUL'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='AWS'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='CHB'")->fetchColumn();
+echo $count
+?>
+, 
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='ING'")->fetchColumn();
+echo $count
+?>
+, 
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='BOW'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LBG'")->fetchColumn();
+echo $count
+?>
+, 
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HBG'")->fetchColumn();
+echo $count
+?>
+,
+<?php
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='EVT'")->fetchColumn();
+echo $count
+?>
+],
+                                                        backgroundColor: [
+                                                            'rgba(255, 99, 132, 0.2)'
+                                                        ],
+                                                        borderColor: [
+                                                            'rgba(255,99,132,1)',
+                                                        ],
+                                                        pointBorderColor: [
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+							    'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)'
+                                                        ],
+                                                        pointBackgroundColor: [
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+							    'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)',
+                                                            'rgba(255,99,132,1)'
+                                                        ],
+
+                                                    }]
+                                                },
+                                                options: {
+                                                    layout: {
+                                                    }
+                                                }	
+                                            });
+                                        </script>
+
+
+                                <figure>
+                               </figure>
                             </div>
                             <div class="card-content">
                                 <div class="media">
@@ -151,8 +535,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                             </div>
                             <!-- JS/PHP replace # with a number-->
                             <footer class="card-footer">
-                                <a hreff="#" class="card-footer-item">Hunters: #</a>
-                                <a hreff="#" class="card-footer-item">Runs: #</a>
+                                 <a hreff="#" class="card-footer-item">Hunters:
+				<?php
+				$count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
+				echo $count
+				?>
+				</a>
+
+                                <a hreff="#" class="card-footer-item">Runs: 
+				<?php
+				$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
+				echo $count
+				?>
+				</a>
                             </footer>
                         </div>
                     </div>
