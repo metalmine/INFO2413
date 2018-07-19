@@ -475,19 +475,19 @@
                             <div class="field">
                                 <label class="label">Email Address</label>
                                 <p class="control has-icons-left has-icons-right">
-                                    <!-- JS/PHP Add "is-success" to input if username is avialable | Add "is-danger" if username is not available-->
-                                    <input class="input" type="userName" placeholder="i.e example@gmail.com">
+                                    <!-- JS/PHP Add "is-success" to input if email is avialable | Add "is-danger" if email is not available-->
+                                    <input class="input" type="email" placeholder="i.e example@gmail.com">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
                                     <span class="icon is-small is-right">
-                                        <!-- JS/PHP "fa-check" if username is free, "fa-exclamation-triangle" if username is not available-->
+                                        <!-- JS/PHP "fa-check" if email is free, "fa-exclamation-triangle" if email is not available-->
                                         <i class="fas fa-check"></i>
                                     </span>
                                 </p>
-                                <!-- JS/PHP this appears when username is available: <p class="help is-success"> This username is available</p> -->
-                                <p class="help is-success"> This username is available</p>
-                                <!-- JS/PHP this appears when username is taken: <p class="help is-danger"> This username is available</p>-->
+                                <!-- JS/PHP this appears when email is available: <p class="help is-success"> This email is available</p> -->
+                                <p class="help is-success"> This email is available</p>
+                                <!-- JS/PHP this appears when email is taken: <p class="help is-danger"> This email is unavailable</p>-->
                             </div>
                             <!-- Password Textfield -->
                             <div class="field">
