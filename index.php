@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
 ?>
 <!-- Main container -->
 <section class="hero is-light">
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/navigation.php");?>
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php");?>
     <!-- Title and Filter -->
     <div class="hero-body">
         <div class="has-text-centered">
