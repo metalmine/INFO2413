@@ -40,10 +40,10 @@
                         <div class="navbar-start">
                             <!-- Show when Logged out -->
                             <p class="navbar-item">
-                                <a class="button is-light is-rounded" onclick="modalToggleLogin()">Login</a>
+                                <a class="button is-light is-rounded is-dark" onclick="modalToggleLogin()">Login</a>
                             </p>
                             <p class="navbar-item">
-                                <a class="button is-light is-rounded" onclick="modalToggleReg()">Register</a>
+                                <a class="button is-light is-rounded is-warning" onclick="modalToggleReg()">Register</a>
                             </p>
                             <!-- Show when Logged in -->
                             <p class="navbar-item">
@@ -396,6 +396,7 @@
                 <footer class="modal-card-foot">
                     <!-- JS/PHP add class: is-loading while processing and close it if successful-->
                     <button class="button is-success">Submit Run</button>
+                    <button class="button is-danger is-outlined">Cancel</button>
                 </footer>
             </div>
         </div>
@@ -436,6 +437,7 @@
                     <footer class="modal-card-foot">
                         <!-- JS/PHP add class: is-loading while processing and close it if successful-->
                         <button class="button is-success">Login</button>
+                        <button class="button is-danger is-outlined">Cancel</button>
                     </footer>
                 </div>
             </form>
@@ -489,7 +491,7 @@
                                 <p class="help is-success"> This email is available</p>
                                 <!-- JS/PHP this appears when email is taken: <p class="help is-danger"> This email is unavailable</p>-->
                             </div>
-                            <!-- Password Textfield -->
+                            <!--JS/PHP Password Textfield -->
                             <div class="field">
                                 <label class="label"> Password </label>
                                 <p class="control has-icons-left">
@@ -499,7 +501,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
+                            <!-- JS/PHP Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
                             <div class="field">
                                 <label class="label"> Confirm Password </label>
                                 <p class="control has-icons-left">
@@ -509,7 +511,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <!-- Platform ID Textfield -->
+                            <!-- JS/PHP Platform ID Textfield -->
                             <label class="label"> Select Platform</label>
                             <div class="field has-addons" >
                                 <p class="control">
@@ -535,7 +537,8 @@
                 <form class="modal-card-foot">
                     <div class="field">
                         <p class="control">
-                            <button class="button is-success" >Register</button>
+                            <button class="button is-success">Register</button>
+                            <button class="button is-danger is-outlined">Cancel</button>
                         </p>
                     </div>
                 </form>
