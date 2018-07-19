@@ -1,15 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Google Tracking -->
-        <script src="js/gtag.js"></script>
-        <!-- Bulma Set-up -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title>MHData</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
 
+<<<<<<< HEAD
+// require db queries, do not put query in document
+?>
+<!-- Main container -->
+<section class="hero is-light">
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php");?>
+
+    <!-- Title and Filter -->
+    <div class="hero-body">
+        <div class="has-text-centered">
+            <h1 class="title is-white is-unselectable">
+                SpeedRun Comparator
+            </h1>
+            <h2 class="subtitle is-unselectable">
+                Filters
+            </h2>
+            <!-- Filter options -->
+            <form class="field">
+                <div class="form-body">
+                    <div class="field-body">
+                        <!-- Monster Selection -->
+                        <div class="field-label is-normal">
+                            <label class="label is-unselectable">Monster</label>
+                        </div>
+                        <div class="field has-addons">
+                            <p class="control">
+                                <span class="select">
+                                    <select>
+                                        <option> Low</option>
+                                        <option> High</option>
+                                        <option> Temp</option>
+                                    </select>
+                                </span>
+                            </p>
+                            <p class="control">
+                                <span class="select">
+                                    <select>
+                                        <!-- Use JS to grab list of monsters available and add them as options-->
+                                        <option> Select Monster</option>
+                                    </select>
+                                </span>
+=======
         <!-- Javascript Imports -->
         <script src="js/filter.js"></script>
         <script src="js/modal.js"></script>
@@ -48,11 +83,19 @@
                             <!-- Show when Logged in -->
                             <p class="navbar-item">
                                 <a class="button is-dark is-rounded is-hidden" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
+>>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
                             </p>
-                            <p class="navbar-item">
-                                <a class="button is-dark is-hidden">Account</a>
+                            <p class="control">
+                                <a class="button is-dark">
+                                    Search
+                                </a>
                             </p>
                         </div>
+<<<<<<< HEAD
+                        <!-- Weapon Selection -->
+                        <div class="field-label is-normal">
+                            <label class="label is-unselectable">Weapon</label>
+=======
                     </div>
                 </nav>
             </div>
@@ -208,189 +251,105 @@
                         <!-- JS/PHP JESSICA Insert Graph Here -->
                         <div class="tile is-6">
 
+>>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
                         </div>
-                        <!-- Insert more tables here -->
-                        <div class="tile is-4 is-vertical">
-                            <!-- JS/PHP replace the data here according to which tab people clicked above -->
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Name</th>
-                                        <th>Time/Link</th>
-                                        <th>Date[DD/MM/YY]</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
-                                    <tr>
-                                        <th>1</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>2</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>3</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>4</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>5</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>6</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>7</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>8</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>9</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                    <tr>
-                                        <th>10</th>
-                                        <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                        <td><a href="https://www.youtube.com">00:00</a></td>
-                                        <td>12/05/18</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="field has-addons">
+                            <p class="control">
+                                <span class="select">
+                                    <select>
+                                        <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
+                                        <option> WEP </option>
+                                    </select>
+                                </span>
+                            </p>
+                            <p class="control">
+                                <span class="select">
+                                    <select>
+                                        <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
+                                        <option> Select Weapon</option>
+                                    </select>
+                                </span>
+                            </p>
+                            <p class="control">
+                                <!-- Toggles is-dark on click-->
+                                <a class="button" id="filterTASToggle" onclick="tasToggle()">
+                                    Tool Assisted
+                                </a>
+                            </p>
                         </div>
+                        <!-- JS/PHP Hunter Search -->
+                        <div class="field-label is-normal">
+                            <label class="label is-unselectable">Hunter</label>
+                        </div>
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Hunter ID / Empty for All">
+                            </div>
+                            <div class="control">
+                                <a class="button is-dark">
+                                    Filter
+                                </a>
+                            </div>
+                        </div>
+<<<<<<< HEAD
                     </div>
-
-                </section>
-            </div>
-            <!-- About Us Information -->
-            <div class="hero-foot"></div>
-        </section>
-        <!-- Modal Runs -->
-        <div id="runDivRun" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <!-- Run Submission Title-->
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Submit New Run</p>
-                    <button class="delete" aria-label="close" onclick="modalToggleRun()"></button>
-                </header>
-                <!-- Run Submission Form -->
-                <section class="modal-card-body"> 
-                    <form>
-                        <label class="label">Character</label>
-                        <div class="field has-addons">
-                            <div class="control">
-                                <div class="select">
-                                    <!-- JS/PHP -->
-                                    <select name="platform">
-                                        <option>Platform</option>
-                                        <option  value="ps4">PS4</option>
-                                        <option  value="xbone">Xbox ONE</option>
-                                        <option	 value="pc">PC</option>
-                                    </select>
-                                </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
+            <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
+            Monster: All | Weapon: All | Hunter: All
+        </h1>
+        <hr>
+        <!-- Main Container: Tiles / Graphs / Tables -->
+        <section role="main container">
+            <!-- Summary Card -->
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical">
+                    <div class="tile">
+                        <div class="card has-text-centered is-wide">
+                            <div class="card-image">
+                                <!-- JS/PHP Replace this image with the weapon radio chart -->
+                                <figure class="image is-4by3">
+                                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                </figure>
                             </div>
-                            <div class="control">
-                                <div class="input">
-                                    <!-- JS/PHP -->
-                                    <input class="input is-dark" type="text" placeholder="Platform ID">
+                            <div class="card-content">
+                                <div class="media">
+                                    <h1>
+                                        <strong>Top 3 Fastest Hunters</strong>
+                                    </h1>
                                 </div>
-                            </div>
-                            <div class="control">
-                                <div class="select is-fullwidth">
-                                    <!-- JS/PHP -->
-                                    <select name="character">
-                                        <option>Select Character</option>
-                                    </select>
+                                <div class="content">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>ID</th>
+                                                <th>Medals</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Metalmine</td>
+                                                <td><a href="/user/Metalmine.php">22</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>ThunderDash247</td>
+                                                <td><a href="/user/ThunderDash247.php">11</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>TheLegend27</td>
+                                                <td><a href="/user/TheLegend27.php">2</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div>
-                        </div>
-                        <label class="label">Weapon</label>
-                        <div class="field has-addons">
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                                <option> WEP </option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                                <option> Select Weapon</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <!-- JS/PHP Add: "is-dark" on click -->
-                                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
-                                            Tool Assisted
-                                        </a>
-                                    </p>
-                                </div>
-                        <label class="label">Rank</label>
-                        <div class="field">
-                            <div class="control">
-                                <div class="select">
-                                    <!-- JS/PHP -->
-                                    <select name="selectRank">
-                                        <option>Low</option>
-                                        <option>High</option>
-                                        <option>Tempered</option>
-                                    </select>
-                                </div>
-                            </div>	
-                        </div>
-                        <label class="label">Monster</label>
-                        <div class="field has-addons">
-                            <div class="control">
-                                <div class="select">
-                                    <!-- JS/PHP -->
-                                    <select name="map">
-                                        <option>Map</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--Insert List of Monsters here available in the difficulty level selected.-->
-                            <div class="control">
-                                <div class="select">
-                                    <!-- JS/PHP -->
-                                    <select name="monster">
-                                        <option>Monster</option>	
-                                    </select>    
-                                </div>
-                            </div>
-                        </div>
+=======
                     </form>
                 </section>
                 <footer class="modal-card-foot">
@@ -526,13 +485,107 @@
                                 <p class="control">
                                     <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
                                 </p>
+>>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
                             </div>
-                            <form action="?" method="POST">
-                                <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
-                                <input type="submit" value="Submit"  class="button is-dark">
-                            </form>
+                            <!-- JS/PHP replace # with a number-->
+                            <footer class="card-footer">
+                                <a hreff="#" class="card-footer-item">Hunters: #</a>
+                                <a hreff="#" class="card-footer-item">Runs: #</a>
+                            </footer>
                         </div>
                     </div>
+<<<<<<< HEAD
+                </div>
+                <!-- JS/PHP JESSICA Insert Graph Here -->
+                <div class="tile is-6">
+
+                </div>
+                <!-- Insert more tables here -->
+                <div class="tile is-4 is-vertical">
+                    <!-- JS/PHP replace the data here according to which tab people clicked above -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Time/Link</th>
+                                <th>Date[DD/MM/YY]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
+                            <tr>
+                                <th>1</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>9</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                            <tr>
+                                <th>10</th>
+                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                <td><a href="https://www.youtube.com">00:00</a></td>
+                                <td>12/05/18</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/runs-modal.php");?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/login-form.php");?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/registration-form.php");?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php");?>
+=======
                 </form>
                 <form class="modal-card-foot">
                     <div class="field">
@@ -546,3 +599,4 @@
         </div>  
     </body>
 </html>
+>>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
