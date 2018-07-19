@@ -1,0 +1,26 @@
+{
+  "name": "monster-hunter-run-comparator",
+  "version": "1.0.0",
+  "description": "[![Website](https://vignette.wikia.nocookie.net/monsterhunter/images/3/35/MHW-Research_Expedition_Emblem.png/revision/latest?cb=20171230175730)](http://www.mhdata.world)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metalmine/Monster-Hunter-Run-Comparator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metalmine/Monster-Hunter-Run-Comparator/issues"
+  },
+  "homepage": "https://github.com/metalmine/Monster-Hunter-Run-Comparator#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}
