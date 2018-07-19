@@ -3,13 +3,47 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
 
-<<<<<<< HEAD
 // require db queries, do not put query in document
 ?>
 <!-- Main container -->
 <section class="hero is-light">
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php");?>
-
+    <!-- Navigation -->
+    <div class="hero-head">
+        <nav class="navbar">
+            <!-- Logo and Burger-->
+            <div class="navbar-brand">
+                <figure class="image responsive">
+                    <img src="Assets/logo/logo.png">
+                </figure>
+                <!-- Navbar Buttons -->
+                <!-- JS/PHP  Gotta figure out how to do a menu when on a smaller screen-->
+                <div class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span id="nav-toggle" class="nav-toggle"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- Desktop Menu-->
+            <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-start">
+                    <!-- Show when Logged out -->
+                    <p class="navbar-item">
+                        <a class="button is-light is-rounded is-dark" onclick="modalToggleLogin()">Login</a>
+                    </p>
+                    <p class="navbar-item">
+                        <a class="button is-light is-rounded is-warning" onclick="modalToggleReg()">Register</a>
+                    </p>
+                    <!-- Show when Logged in -->
+                    <p class="navbar-item">
+                        <a class="button is-dark is-rounded is-hidden" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
+                    </p>
+                    <p class="navbar-item">
+                        <a class="button is-dark is-hidden">Account</a>
+                    </p>
+                </div>
+            </div>
+        </nav>
+    </div>
     <!-- Title and Filter -->
     <div class="hero-body">
         <div class="has-text-centered">
@@ -31,59 +65,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                             <p class="control">
                                 <span class="select">
                                     <select>
-                                        <option> Low</option>
-                                        <option> High</option>
-                                        <option> Temp</option>
+                                        <option>Low</option>
+                                        <option>High</option>
+                                        <option>Temp</option>
                                     </select>
                                 </span>
                             </p>
                             <p class="control">
                                 <span class="select">
                                     <select>
-                                        <!-- Use JS to grab list of monsters available and add them as options-->
-                                        <option> Select Monster</option>
+                                        <!-- JS/PHP Use JS to grab list of monsters available and add them as options-->
+                                        <option>Select Monster</option>
                                     </select>
                                 </span>
-=======
-        <!-- Javascript Imports -->
-        <script src="js/filter.js"></script>
-        <script src="js/modal.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="js/navburger.js"></script>
-    </head>
-    <body>
-        <!-- Main container -->
-        <section class="hero is-light">
-            <!-- Navigation -->
-            <div class="hero-head">
-                <nav class="navbar">
-                    <!-- Logo and Burger-->
-                    <div class="navbar-brand">
-                        <figure class="image responsive">
-                            <img src="Assets/logo/logo.png">
-                        </figure>
-                        <!-- Navbar Buttons -->
-                        <!-- JS/PHP  Gotta figure out how to do a menu when on a smaller screen-->
-                        <div class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span id="nav-toggle" class="nav-toggle"></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <!-- Desktop Menu-->
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-start">
-                            <!-- Show when Logged out -->
-                            <p class="navbar-item">
-                                <a class="button is-light is-rounded is-dark" onclick="modalToggleLogin()">Login</a>
-                            </p>
-                            <p class="navbar-item">
-                                <a class="button is-light is-rounded is-warning" onclick="modalToggleReg()">Register</a>
-                            </p>
-                            <!-- Show when Logged in -->
-                            <p class="navbar-item">
-                                <a class="button is-dark is-rounded is-hidden" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
->>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
                             </p>
                             <p class="control">
                                 <a class="button is-dark">
@@ -91,174 +85,16 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                 </a>
                             </p>
                         </div>
-<<<<<<< HEAD
                         <!-- Weapon Selection -->
                         <div class="field-label is-normal">
                             <label class="label is-unselectable">Weapon</label>
-=======
-                    </div>
-                </nav>
-            </div>
-            <!-- Title and Filter -->
-            <div class="hero-body">
-                <div class="has-text-centered">
-                    <h1 class="title is-white is-unselectable">
-                        SpeedRun Comparator
-                    </h1>
-                    <h2 class="subtitle is-unselectable">
-                        Filters
-                    </h2>
-                    <!-- Filter options -->
-                    <form class="field">
-                        <div class="form-body">
-                            <div class="field-body">
-                                <!-- Monster Selection -->
-                                <div class="field-label is-normal">
-                                    <label class="label is-unselectable">Monster</label>
-                                </div>
-                                <div class="field has-addons">
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <option>Low</option>
-                                                <option>High</option>
-                                                <option>Temp</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Use JS to grab list of monsters available and add them as options-->
-                                                <option>Select Monster</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <a class="button is-dark">
-                                            Search
-                                        </a>
-                                    </p>
-                                </div>
-                                <!-- Weapon Selection -->
-                                <div class="field-label is-normal">
-                                    <label class="label is-unselectable">Weapon</label>
-                                </div>
-                                <div class="field has-addons">
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                                <option>WEP</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <span class="select">
-                                            <select>
-                                                <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                                <option>Select Weapon</option>
-                                            </select>
-                                        </span>
-                                    </p>
-                                    <p class="control">
-                                        <!-- Toggles is-dark on click-->
-                                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
-                                            Tool Assisted
-                                        </a>
-                                    </p>
-                                </div>
-                                <!-- JS/PHP Hunter Search -->
-                                <div class="field-label is-normal">
-                                    <label class="label is-unselectable">Hunter</label>
-                                </div>
-                                <div class="field has-addons">
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="Hunter ID / Empty for All">
-                                    </div>
-                                    <div class="control">
-                                        <a class="button is-dark">
-                                            Filter
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <hr>
-                <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-                    <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
-                    Monster: All | Weapon: All | Hunter: All
-                </h1>
-                <hr>
-                <!-- Main Container: Tiles / Graphs / Tables -->
-                <section role="main container">
-                    <!-- Summary Card -->
-                    <div class="tile is-ancestor">
-                        <div class="tile is-vertical">
-                            <div class="tile">
-                                <div class="card has-text-centered is-wide">
-                                    <div class="card-image">
-                                        <!-- JS/PHP Replace this image with the weapon radio chart -->
-                                        <figure class="image is-4by3">
-                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <h1>
-                                                <strong>Top 3 Fastest Hunters</strong>
-                                            </h1>
-                                        </div>
-                                        <div class="content">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Rank</th>
-                                                        <th>ID</th>
-                                                        <th>Medals</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>1</th>
-                                                        <td>Metalmine</td>
-                                                        <td><a href="/user/Metalmine.php">22</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>2</th>
-                                                        <td>ThunderDash247</td>
-                                                        <td><a href="/user/ThunderDash247.php">11</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>3</th>
-                                                        <td>TheLegend27</td>
-                                                        <td><a href="/user/TheLegend27.php">2</a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- JS/PHP replace # with a number-->
-                                    <footer class="card-footer">
-                                        <a hreff="#" class="card-footer-item">Hunters: #</a>
-                                        <a hreff="#" class="card-footer-item">Runs: #</a>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- JS/PHP JESSICA Insert Graph Here -->
-                        <div class="tile is-6">
-
->>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
                         </div>
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
                                     <select>
                                         <!-- JS/PHP Insert Weapon Types here i.e. GSD -->
-                                        <option> WEP </option>
+                                        <option>WEP</option>
                                     </select>
                                 </span>
                             </p>
@@ -266,7 +102,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                 <span class="select">
                                     <select>
                                         <!-- JS/PHP Use JS to grab list of weapons of said type available and add them as options-->
-                                        <option> Select Weapon</option>
+                                        <option>Select Weapon</option>
                                     </select>
                                 </span>
                             </p>
@@ -291,7 +127,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                 </a>
                             </div>
                         </div>
-<<<<<<< HEAD
                     </div>
                 </div>
             </form>
@@ -349,143 +184,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                         </tbody>
                                     </table>
                                 </div>
-=======
-                    </form>
-                </section>
-                <footer class="modal-card-foot">
-                    <!-- JS/PHP add class: is-loading while processing and close it if successful-->
-                    <button class="button is-success">Submit Run</button>
-                    <button class="button is-danger is-outlined">Cancel</button>
-                </footer>
-            </div>
-        </div>
-        <!-- Modal Login -->
-        <div id="runDivLogin" class="modal">
-            <form>
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <!-- Login Title -->
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Login</p>
-                        <button class="delete" aria-label="close" onclick="modalToggleLogin()"></button>
-                    </header>
-                    <!-- JS/PHP Login Form -->
-                    <section class="modal-card-body">
-                        <!-- JS/PHP Email Check-->
-                        <div class="field">
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="Email">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <!-- JS/PHP Password Check-->
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input class="input" type="password" placeholder="Password">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <!-- JS/PHP add class: is-loading while processing and close it if successful-->
-                        <button class="button is-success">Login</button>
-                        <button class="button is-danger is-outlined">Cancel</button>
-                    </footer>
-                </div>
-            </form>
-        </div>  
-        <!-- Modal Registration -->
-        <div id="runDivReg" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <!-- Registration Title -->
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Registration</p>
-                    <button class="delete" aria-label="close" onclick="modalToggleReg()"></button>
-                </header>
-                <!-- JS/PHP Lots of stuff here -->
-                <form class="modal-card-body">
-                    <div class="field is-horizontal">
-                        <div class="form-body">
-                            <!-- Username Textfield -->
-                            <div class="field">
-                                <label class="label">Choose a unique Hunter ID</label>
-                                <p class="control has-icons-left has-icons-right">
-                                    <!-- JS/PHP Add "is-success" to input if username is avialable | Add "is-danger" if username is not available-->
-                                    <input class="input" type="userName" placeholder="i.e Metalmine">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <!-- JS/PHP "fa-check" if username is free, "fa-exclamation-triangle" if username is not available-->
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                </p>
-                                <!-- JS/PHP this appears when username is available: <p class="help is-success"> This username is available</p> -->
-                                <p class="help is-success"> This username is available</p>
-                                <!-- JS/PHP this appears when username is taken: <p class="help is-danger"> This username is available</p>-->
-                            </div>
-                            <!-- Email Textfield -->
-                            <div class="field">
-                                <label class="label">Email Address</label>
-                                <p class="control has-icons-left has-icons-right">
-                                    <!-- JS/PHP Add "is-success" to input if email is avialable | Add "is-danger" if email is not available-->
-                                    <input class="input" type="email" placeholder="i.e example@gmail.com">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <!-- JS/PHP "fa-check" if email is free, "fa-exclamation-triangle" if email is not available-->
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                </p>
-                                <!-- JS/PHP this appears when email is available: <p class="help is-success"> This email is available</p> -->
-                                <p class="help is-success"> This email is available</p>
-                                <!-- JS/PHP this appears when email is taken: <p class="help is-danger"> This email is unavailable</p>-->
-                            </div>
-                            <!--JS/PHP Password Textfield -->
-                            <div class="field">
-                                <label class="label"> Password </label>
-                                <p class="control has-icons-left">
-                                    <input class="input" type="password">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <!-- JS/PHP Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
-                            <div class="field">
-                                <label class="label"> Confirm Password </label>
-                                <p class="control has-icons-left">
-                                    <input class="input" type="confirmPassword">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </p>
-                            </div>
-                            <!-- JS/PHP Platform ID Textfield -->
-                            <label class="label"> Select Platform</label>
-                            <div class="field has-addons" >
-                                <p class="control">
-                                    <span class="select">
-                                        <select>
-                                            <option>PC / Laptop</option>
-                                            <option>XBox One</option>
-                                            <option>Playstaion 4</option>
-                                        </select>
-                                    </span>
-                                </p>
-                                <p class="control">
-                                    <input class="input" type="platformIDRegister" placeholder="Platform Name/ID">
-                                </p>
->>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
                             </div>
                             <!-- JS/PHP replace # with a number-->
                             <footer class="card-footer">
@@ -494,7 +192,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                             </footer>
                         </div>
                     </div>
-<<<<<<< HEAD
                 </div>
                 <!-- JS/PHP JESSICA Insert Graph Here -->
                 <div class="tile is-6">
@@ -585,18 +282,3 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/login-form.php");?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/registration-form.php");?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php");?>
-=======
-                </form>
-                <form class="modal-card-foot">
-                    <div class="field">
-                        <p class="control">
-                            <button class="button is-success">Register</button>
-                            <button class="button is-danger is-outlined">Cancel</button>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>  
-    </body>
-</html>
->>>>>>> 9c3d231e4ec59d615abbc88cc6f1915b9cb0088c
