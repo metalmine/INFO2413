@@ -6,6 +6,7 @@ $page['scripts'] = [
 ];
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
+require_once('/includes/load.php');
 ?>
 <script>
     var jsonData = []
@@ -43,6 +44,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
             }
         }
     }
+
     // TODO: move to seperate file
     let ctx = document.getElementById("myChart")
     let myChart = new Chart(ctx, {
@@ -204,7 +206,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                         </div>
                         <div class="field has-addons">
                             <div class="control">
-                                <input class="input is-disabled" type="text" placeholder="Hunter ID / Empty for All">
+                                <input class="input" type="text" placeholder="Hunter ID / Empty for All">
                             </div>
                             <div class="control">
                                 <a class="button is-dark">
@@ -218,7 +220,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
         </div>
         <hr>
         <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-            <!--TODO: JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
+            <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
             Monster: All | Weapon: All | Hunter: All
         </h1>
         <hr>
@@ -239,7 +241,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                         <strong>Top 3 Fastest Hunters</strong>
                                     </h1>
                                 </div>
-                                <!--TODO: JS/PHP fill the table with top 3 hunters -->
                                 <div class="content">
                                     <table class="table">
                                         <thead>

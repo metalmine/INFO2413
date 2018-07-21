@@ -1,6 +1,5 @@
 <!-- Modal Login -->
 <div id="runDivLogin" class="modal">
-    <form>
         <div class="modal-background"></div>
         <div class="modal-card">
             <!-- Login Title -->
@@ -9,11 +8,11 @@
                 <button class="delete" aria-label="close" onclick="modalToggleLogin()"></button>
             </header>
             <!-- JS/PHP Login Form -->
-            <section class="modal-card-body">
+            <form class="modal-card-body" id="login" action="../includes/login.php" name="login" method="post">
                 <!-- JS/PHP Email Check-->
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                        <input class="input" type="email" placeholder="Email">
+                        <input class="input" type="text" name="email" placeholder="Email" maxlength="60" id="email">
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
@@ -25,17 +24,16 @@
                 <!-- JS/PHP Password Check-->
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" type="password" placeholder="Password">
+                        <input class="input" type="password" name="password" placeholder="Password" maxlength="60" id="password">
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
                     </p>
                 </div>
-            </section>
             <footer class="modal-card-foot">
                 <!-- JS/PHP add class: is-loading while processing and close it if successful-->
-                <button class="button is-success">Login</button>
+                <button class="button is-success" type="submit" name="submit" value="Submit">Login</button>
             </footer>
+          </form>
         </div>
-    </form>
 </div>
