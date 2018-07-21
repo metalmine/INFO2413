@@ -417,42 +417,42 @@ require_once('load.php');
         </div>
         <!-- Modal Login -->
         <div id="runDivLogin" class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <!-- Login Title -->
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Login</p>
-                        <button class="delete" aria-label="close" onclick="modalToggleLogin()"></button>
-                    </header>
-                    <!-- JS/PHP Login Form -->
-                    <form class="modal-card-body" id="login" action="logintest.php" name="login" method="post">
-                        <!-- JS/PHP Email Check-->
-                        <div class="field">
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="text" name="email" placeholder="Email" maxlength="60" id="email">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <!-- JS/PHP Password Check-->
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input class="input" type="password" name="password" placeholder="Password" maxlength="60" id="password">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <!-- Login Title -->
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Login</p>
+                    <button class="delete" aria-label="close" onclick="modalToggleLogin()"></button>
+                </header>
+                <!-- JS/PHP Login Form -->
+                <form class="modal-card-body" id="login" action="logintest.php" name="login" method="post">
+                    <!-- JS/PHP Email Check-->
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" name="email" placeholder="Email" maxlength="60" id="email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <!-- JS/PHP Password Check-->
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input" type="password" name="password" placeholder="Password" maxlength="60" id="password">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
                     <footer class="modal-card-foot">
                         <!-- JS/PHP add class: is-loading while processing and close it if successful-->
                         <button class="button is-success" type="submit" name="submit" value="Submit">Login</button>
                     </footer>
-                  </form>
-                </div>
+                </form>
+            </div>
         </div>
         <!-- Modal Registration -->
         <div id="runDivReg" class="modal">
@@ -481,7 +481,7 @@ require_once('load.php');
                                         <!-- JS/PHP "fa-check" if username is free, "fa-exclamation-triangle" if username is not available-->
                                         <i class="fas fa-check"></i>
                                     </span>
-                                        <span id='register_username_errorloc' class="help is-danger"></span>
+                                    <span id='register_username_errorloc' class="help is-danger"></span>
 
                                 </p>
                                 <!-- JS/PHP this appears when username is available: <p class="help is-success"> This username is available</p> -->
@@ -546,20 +546,20 @@ require_once('load.php');
                                     <span id='register_platformId_errorloc' class="help is-danger"><?=$platformId_error;?></span>
                                 </p>
                             </div>
-                                <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
+                            <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
                         </div>
                     </div>
 
-                <div class="modal-card-foot">
-                    <div class="field">
-                        <p class="control">
-                            <button class="button is-success" type="submit"  value="Submit">Register</button>
-                        </p>
+                    <div class="modal-card-foot">
+                        <div class="field">
+                            <p class="control">
+                                <button class="button is-success" type="submit"  value="Submit">Register</button>
+                            </p>
+                        </div>
                     </div>
-                </div>
                 </form>
                 <script type="text/javascript">
-                var frmvalidator  = new Validator("register");
+                    var frmvalidator  = new Validator("register");
                     frmvalidator.EnableOnPageErrorDisplay();
                     frmvalidator.EnableMsgsTogether();
                     frmvalidator.addValidation("username","req","Please provide your username");

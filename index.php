@@ -17,18 +17,18 @@ require_once('/includes/load.php');
 
     // TODO: move to seperate file
     function fillSelect(nValue, nList) {
-		nList.options.length = 1
-		let curr = jsonData['diff'][nValue]
+        nList.options.length = 1
+        let curr = jsonData['diff'][nValue]
 
-		for (let key in curr) {
+        for (let key in curr) {
             if (curr.hasOwnProperty(key)) {
                 let nOption = document.createElement('option')
                 nOption.appendChild(document.createTextNode(curr[key].name))
                 nOption.setAttribute("value", curr[key].name)
                 nList.appendChild(nOption)
-			}
+            }
         }
-	}
+    }
 
     // TODO: move to seperate file
     function typeSelect(nValue, nList) {
@@ -80,14 +80,14 @@ require_once('/includes/load.php');
                 ],
                 pointBorderColor: [
                     <?php
-                    $count = 14;
-                    $array = [];
+    $count = 14;
+        $array = [];
 
-                    while ($count-- > 0) {
-                        array_push($array , "'rgba(255,99,132,1)'");
-                    }
+        while ($count-- > 0) {
+            array_push($array , "'rgba(255,99,132,1)'");
+        }
 
-                    echo implode(",", $array);
+        echo implode(",", $array);
                     ?>
                 ],
                 pointBackgroundColor: [
@@ -139,10 +139,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                             <p class="control">
                                 <span class="select">
                                     <select name='states' onchange="fillSelect(this.value, this.form['diff'])">
-            							<option value="">Difficulty</option>
-            							<option value="Low">Low</option>
-            							<option value="High">High</option>
-            							<option value="Tempered">Tempered</option>
+                                        <option value="">Difficulty</option>
+                                        <option value="Low">Low</option>
+                                        <option value="High">High</option>
+                                        <option value="Tempered">Tempered</option>
                                     </select>
                                 </span>
                             </p>
@@ -168,21 +168,21 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                 <span class="select">
                                     <select name='states' onchange="typeSelect(this.value,this.form['type'])">
                                         <option value="">Select Type</option>
-                        				<option value="GSD">Great Sword</option>
-                        				<option value="LSD">Long Sword</option>
-                        				<option value="HAM">Hammer</option>
-                        				<option value="HTH">Hunting Horn</option>
-                        				<option value="DBL">Dual Blades</option>
-                        				<option value="SAS">Sword and Sheild</option>
-                        				<option value="LAN">Lance</option>
-                        				<option value="GUL">Gun Lance</option>
-                        				<option value="AWS">Switch Axe</option>
-                        				<option value="CHB">Charge Blade</option>
-                        				<option value="ING">Insect Glaive</option>
-                        				<option value="BOW">Bow</option>
-                        				<option value="LBG">Light Bowgun</option>
-                        				<option value="HBG">Heavy Bowgun</option>
-                        				<option value="EVT">Event Weapons</option>
+                                        <option value="GSD">Great Sword</option>
+                                        <option value="LSD">Long Sword</option>
+                                        <option value="HAM">Hammer</option>
+                                        <option value="HTH">Hunting Horn</option>
+                                        <option value="DBL">Dual Blades</option>
+                                        <option value="SAS">Sword and Sheild</option>
+                                        <option value="LAN">Lance</option>
+                                        <option value="GUL">Gun Lance</option>
+                                        <option value="AWS">Switch Axe</option>
+                                        <option value="CHB">Charge Blade</option>
+                                        <option value="ING">Insect Glaive</option>
+                                        <option value="BOW">Bow</option>
+                                        <option value="LBG">Light Bowgun</option>
+                                        <option value="HBG">Heavy Bowgun</option>
+                                        <option value="EVT">Event Weapons</option>
                                     </select>
                                 </span>
                             </p>
@@ -273,20 +273,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                             <!-- JS/PHP replace # with a number-->
                             <footer class="card-footer">
                                 <a hreff="#" class="card-footer-item">Hunters:
-                				<?php
-                				$count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
-                				echo $count
-                                // TODO: move to top of page
-                				?>
-                				</a>
+                                    <?php
+                                    $count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
+                                    echo $count
+                                        // TODO: move to top of page
+                                    ?>
+                                </a>
 
                                 <a hreff="#" class="card-footer-item">Runs:
-                				<?php
-                				$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
-                				echo $count
-                                // TODO: move to top of page
-                				?>
-                				</a>
+                                    <?php
+                                        $count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
+                                    echo $count
+                                        // TODO: move to top of page
+                                    ?>
+                                </a>
                             </footer>
                         </div>
                     </div>
