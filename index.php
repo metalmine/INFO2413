@@ -204,7 +204,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                         </div>
                         <div class="field has-addons">
                             <div class="control">
-                                <input class="input" type="text" placeholder="Hunter ID / Empty for All">
+                                <input class="input is-disabled" type="text" placeholder="Hunter ID / Empty for All">
                             </div>
                             <div class="control">
                                 <a class="button is-dark">
