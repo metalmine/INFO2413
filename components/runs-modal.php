@@ -20,20 +20,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="control">
-                        <div class="input">
-                            <!-- JS/PHP -->
-                            <input class="input is-dark" type="text" placeholder="Platform ID">
-                        </div>
-                    </div>
-                    <div class="control">
-                        <div class="select is-fullwidth">
-                            <!-- JS/PHP -->
-                            <select name="character">
-                                <option>Select Character</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
                 <label class="label">Weapon</label>
                 <div class="field has-addons">
@@ -73,37 +59,43 @@
                         </a>
                     </p>
                 </div>
-                <label class="label">Rank</label>
-                <div class="field">
-                    <div class="control">
-                        <div class="select">
-                            <!-- JS/PHP -->
-                            <select name="selectRank">
-                                <option>Low</option>
-                                <option>High</option>
-                                <option>Tempered</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
                 <label class="label">Monster</label>
+                <div class="field has-addons">
+                    <p class="control">
+                        <span class="select">
+                            <select name="states" id="select-difficulty">
+                                <option value="">Difficulty</option>
+                                <option value="Low">Low</option>
+                                <option value="High">High</option>
+                                <option value="Tempered">Tempered</option>
+                            </select>
+                        </span>
+                    </p>
+                    <p class="control">
+                        <span class="select">
+                            <select name='diff' id="select-monster">
+                                <option>Select Monster</option>
+                            </select>
+                        </span>
+                    </p>
+                    <p class="control">
+                        <a class="button is-dark">
+                            Search
+                        </a>
+                    </p>
+                </div>
+                <label class="label">Video</label>
                 <div class="field has-addons">
                     <div class="control">
                         <div class="select">
                             <!-- JS/PHP -->
-                            <select name="map">
-                                <option>Map</option>
+                            <select name="Country">
+                                <option>Country Name</option>
                             </select>
                         </div>
                     </div>
-                    <!--Insert List of Monsters here available in the difficulty level selected.-->
                     <div class="control">
-                        <div class="select">
-                            <!-- JS/PHP -->
-                            <select name="monster">
-                                <option>Monster</option>
-                            </select>
-                        </div>
+                        <input class="input" type="text" placeholder="Youtube Link">
                     </div>
                 </div>
             </form>
