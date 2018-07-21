@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
 try {
     $stmt = $pdo->query("SELECT
             count(*) AS 'count'
-        FROM runs_weapons_maps_monsters
+        FROM RUNS_WEAPONS_MAPS_MONSTERS
         GROUP BY type");
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
