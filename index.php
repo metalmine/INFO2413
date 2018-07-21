@@ -43,7 +43,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
             }
         }
     }
-
     // TODO: move to seperate file
     let ctx = document.getElementById("myChart")
     let myChart = new Chart(ctx, {

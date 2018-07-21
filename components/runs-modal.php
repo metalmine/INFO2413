@@ -11,15 +11,12 @@
         <section class="modal-card-body">
             <form>
                 <label class="label">Character</label>
-                <div class="field has-addons">
+                <div class="field">
                     <div class="control">
                         <div class="select">
-                            <!-- JS/PHP -->
-                            <select name="platform">
-                                <option>Platform</option>
-                                <option  value="ps4">PS4</option>
-                                <option  value="xbone">Xbox ONE</option>
-                                <option	 value="pc">PC</option>
+                            <!-- JS/PHP Fill in with character ids with platform inside <strong> i.e. Metalmine<strong>PC</strong>-->
+                            <select name="Character ID">
+                                <option>Char ID</option>
                             </select>
                         </div>
                     </div>
