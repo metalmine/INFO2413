@@ -218,7 +218,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
         </div>
         <hr>
         <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-            <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
+            <!--TODO: JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
             Monster: All | Weapon: All | Hunter: All
         </h1>
         <hr>
@@ -239,6 +239,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                         <strong>Top 3 Fastest Hunters</strong>
                                     </h1>
                                 </div>
+                                <!--TODO: JS/PHP fill the table with top 3 hunters -->
                                 <div class="content">
                                     <table class="table">
                                         <thead>
