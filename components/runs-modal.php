@@ -1,5 +1,6 @@
 <!-- Modal Runs -->
 <div id="runDivRun" class="modal">
+<form>
     <div class="modal-background"></div>
     <div class="modal-card">
         <!-- Run Submission Title-->
@@ -9,7 +10,7 @@
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
-            <form>
+            
                 <label class="label">Character</label>
                 <div class="field">
                     <div class="control">
@@ -78,11 +79,6 @@
                             </select>
                         </span>
                     </p>
-                    <p class="control">
-                        <a class="button is-dark">
-                            Search
-                        </a>
-                    </p>
                 </div>
                 <label class="label">Video</label>
                 <div class="field has-addons">
@@ -98,11 +94,12 @@
                         <input class="input" type="text" placeholder="Youtube Link">
                     </div>
                 </div>
-            </form>
+            
         </section>
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
             <button class="button is-success">Submit Run</button>
         </footer>
     </div>
+    </form>
 </div>

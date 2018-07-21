@@ -12,7 +12,6 @@
             <div class="modal-card-body">
                 <div class="field is-horizontal">
                     <div class="form-body">
-
                         <!-- Username Textfield -->
                         <div class="field">
                             <label class="label">Choose a unique Hunter ID</label>
@@ -94,7 +93,6 @@
                         <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
                     </div>
                 </div>
-
                 <div class="modal-card-foot">
                     <div class="field">
                         <p class="control">
