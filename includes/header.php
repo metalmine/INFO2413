@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google Tracking -->
+        <script src="js/gtag.js"></script>
         <!-- Bulma Set-up -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,29 +14,19 @@
                 echo "MHData";
             ?>
         </title>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-        <script>
-            var jsonData = []
-        </script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29096235-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
-            gtag('config', 'UA-29096235-2');
-        </script>
-        <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js" defer></script>
-        <script src="js/filter.js" defer></script>
-        <script src="js/modal.js" defer></script>
+        <!-- Javascript Imports -->
+        <script src="js/filter.js"></script>
+        <script src="js/modal.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="js/navburger.js" defer></script>
-        <!-- <script src="js/gen_validatorv4.js" type="text/javascript"></script> -->
+        <script src="js/navburger.js"></script>
+        <script src="js/gen_validatorv4.js"></script>
         <?php
         if (!empty($page) && !empty($page['scripts']))
             foreach ($page['scripts'] as $script)
-                echo "<script src=\"$script\" defer></script>";
+                echo "<script src=\"$script\"></script>";
         ?>
     </head>
     <body>

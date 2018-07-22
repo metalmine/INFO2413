@@ -4,8 +4,9 @@ class Login {
 
     public function __construct() {
         global $db;
-
+        if (session_status() == PHP_SESSION_NONE){
         session_start();
+        }
 
         $this->db = $db;
     }
@@ -95,14 +96,14 @@ class Login {
     }
 
     private function email_exists($where_value, $where_field = 'email') {
-        $email = $this->db->get_results("
+        $user = $this->db->get_results("
             SELECT * FROM USERS
             WHERE {$where_field} = :where_value",
                                         ['where_value'=>$where_value]
                                        );
 
-        if ( false !== $email ) {
-            return $email[0];
+        if ( false !== $user ) {
+            return $user[0];
         }
 
         return false;

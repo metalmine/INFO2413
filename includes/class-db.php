@@ -95,34 +95,34 @@ if ( !class_exists( 'PDO_DB' ) ) {
             // Append where ID to $data
             $data['where_id'] = $where_id;
 
-            // Prepary our query for binding
-            $stmt = $this->db->prepare("UPDATE {$table} SET {$placeholders} WHERE ID = :where_id");
+			// Prepary our query for binding
+			$stmt = $this->db->prepare("UPDATE {$table} SET {$placeholders} WHERE ID = :where_id");
 
-            // Execute the query
-            $stmt->execute($data);
+			// Execute the query
+			$stmt->execute($data);
 
-            // Check for successful insertion
-            if ( $stmt->rowCount() ) {
-                return true;
-            }
+			// Check for successful insertion
+			if ( $stmt->rowCount() ) {
+				return true;
+			}
 
-            return false;
-        }
-        public function delete($table, $where_field = 'ID', $where_value) {
-            // Prepary our query for binding
-            $stmt = $this->db->prepare("DELETE FROM {$table} WHERE {$where_field} = :where_value");
+			return false;
+		}
+		public function delete($table, $where_field = 'ID', $where_value) {
+			// Prepary our query for binding
+			$stmt = $this->db->prepare("DELETE FROM {$table} WHERE {$where_field} = :where_value");
 
-            // Execute the query
-            $stmt->execute(array('where_value'=>$where_value));
+			// Execute the query
+			$stmt->execute(array('where_value'=>$where_value));
 
-            // Check for successful insertion
-            if ( $stmt->rowCount() ) {
-                return true;
-            }
+			// Check for successful insertion
+			if ( $stmt->rowCount() ) {
+				return true;
+			}
 
-            return false;
-        }
-    }
+			return false;
+		}
+	}
 }
 
 $db = new PDO_DB(DB_DATABASE, DB_USERNAME, DB_PASSWORD, 'utf8mb4', DB_SERVER);

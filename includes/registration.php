@@ -9,5 +9,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 if ( isset( $register_status ) ){
 
     echo $register_status['message'];
-    echo '<br><p><a href="index.php">home</a></p>';
+    echo '<br><p><a href="../index.php">home</a></p>';
 }

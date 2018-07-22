@@ -10,12 +10,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 if ( $login->verify_session() ) {
     $user = $login->user;
 
-    header('Location: index.html');
-    echo '<script>alert("Logined In!");</script>';
+    header('Location: ../index.php');
     exit;
-
+        echo '<script>alert("Logined In!");</script>';
 } else {
     //include( 'login.php' );
     echo '<p>Your username and password are incorrect. Try again.</p>';
-    echo '<br><p><a href="index.php">home</a></p>';
+    echo '<p><a href="../index.php">home</a></p>';
 }
