@@ -65,14 +65,14 @@ class Login {
 
         // Create if doesn't exist
         $insert = $this->db->insert('USERS',
-            array(
-                'username'  =>  $post['username'],
-                'password'  =>  password_hash($post['password'], PASSWORD_DEFAULT),
-                'email'     =>  $post['email'],
-                'platform'  =>  $post['platform'],
-                'platformId'  =>  $post['platformId'],
-            )
-        );
+                                    array(
+                                        'username'  =>  $post['username'],
+                                        'password'  =>  password_hash($post['password'], PASSWORD_DEFAULT),
+                                        'email'     =>  $post['email'],
+                                        'platform'  =>  $post['platform'],
+                                        'platformId'  =>  $post['platformId'],
+                                    )
+                                   );
 
         if ( $insert == true ) {
             return array('status'=>1,'message'=>'Account created successfully, You can now login in');
@@ -85,8 +85,8 @@ class Login {
         $user = $this->db->get_results("
             SELECT * FROM USERS
             WHERE {$where_field} = :where_value",
-            ['where_value'=>$where_value]
-        );
+                                       ['where_value'=>$where_value]
+                                      );
 
         if ( false !== $user ) {
             return $user[0];
@@ -99,8 +99,8 @@ class Login {
         $user = $this->db->get_results("
             SELECT * FROM USERS
             WHERE {$where_field} = :where_value",
-            ['where_value'=>$where_value]
-        );
+                                        ['where_value'=>$where_value]
+                                       );
 
         if ( false !== $user ) {
             return $user[0];
