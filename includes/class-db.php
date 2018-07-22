@@ -97,7 +97,7 @@ if ( !class_exists( 'PDO_DB' ) ) {
 
 			// Prepary our query for binding
 			$stmt = $this->db->prepare("UPDATE {$table} SET {$placeholders} WHERE ID = :where_id");
-			
+
 			// Execute the query
 			$stmt->execute($data);
 

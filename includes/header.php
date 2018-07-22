@@ -22,7 +22,7 @@
         <script src="js/modal.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="js/navburger.js"></script>
-        <script src="js/gen_validatorv4.js" type="text/javascript"></script>
+        <script src="js/gen_validatorv4.js"></script>
         <?php
         if (!empty($page) && !empty($page['scripts']))
             foreach ($page['scripts'] as $script)

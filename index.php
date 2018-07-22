@@ -6,7 +6,7 @@ $page['scripts'] = [
 ];
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
-require_once('/includes/load.php');
+
 ?>
 <script>
     var jsonData = []
