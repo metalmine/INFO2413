@@ -13,3 +13,8 @@ function modalToggleReg() {
   var element = document.getElementById("runDivReg");
   element.classList.toggle("is-active");
 }
+function modalToggleAcc() {
+  "use strict";
+  var element = document.getElementById("runDivAcc");
+  element.classList.toggle("is-active");
+}

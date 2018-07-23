@@ -1,12 +1,12 @@
 <!-- Modal Runs -->
-<div id="runDivRun" class="modal">
+<div id="runDivAcc" class="modal">
 <form>
     <div class="modal-background"></div>
     <div class="modal-card">
         <!-- Run Submission Title-->
         <header class="modal-card-head">
-            <p class="modal-card-title">Submit New Run</p>
-            <button class="delete" aria-label="close" onclick="modalToggleRun()"></button>
+            <p class="modal-card-title">Account Details</p>
+            <button class="delete" aria-label="close" onclick="modalToggleAcc()"></button>
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
@@ -54,7 +54,7 @@
                     </p>
                     <p class="control">
                         <!-- Toggles is-dark on click-->
-                        <a class="button" id="runTASToggle" onclick="tasToggleRun()">
+                        <a class="button" id="filterTASToggle" onclick="tasToggle()">
                             Tool Assisted
                         </a>
                     </p>
@@ -91,9 +91,6 @@
                     </div>
                     <div class="control">
                         <input class="input" type="text" placeholder="Youtube Link">
-                    </div>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Run Time: MM:SS">
                     </div>
                 </div>
         </section>
