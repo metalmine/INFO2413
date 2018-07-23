@@ -10,7 +10,7 @@
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
-            
+
                 <label class="label">Character</label>
                 <div class="field">
                     <div class="control">
@@ -94,7 +94,7 @@
                         <input class="input" type="text" placeholder="Youtube Link">
                     </div>
                 </div>
-            
+
         </section>
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->

@@ -1,22 +1,24 @@
 <!DOCTYPE HTML>
 
-<?php include "../inc/dbinfo.inc"; ?>
+<?php include "../inc/dbinfo.inc";?>
 
 <?php
 
-  /* Connect to MySQL and select the database. */
-  $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+/* Connect to MySQL and select the database. */
+$connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
-  if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
-  $database = mysqli_select_db($connection, DB_DATABASE);
+$database = mysqli_select_db($connection, DB_DATABASE);
 ?>
 
 <html lang="en">
     <head>
         <!-- Bulma Set-up -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>MHData</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -187,7 +189,7 @@
                             <div class="tile">
                                 <div class="card has-text-centered is-wide">
                                     <div class="card-image">
-                                       
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="Chart.js"></script>
@@ -198,14 +200,14 @@ var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'radar',
     data: {
-	
+
         labels: [
 			"Great Sword",
 			"Sword & Shield",
 			"Dual Blades",
 			"Long Sword" ,
 			"Hammer",
-			"Hunting Horn", 
+			"Hunting Horn",
 			"Lance",
 			"Gunlance",
 			"Switch Axe",
@@ -217,7 +219,7 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'Amount of Weapons use',
             data: [
- 
+
 
 
 
@@ -262,19 +264,19 @@ var myChart = new Chart(ctx, {
 				'rgba(255,99,132,1)',
 				'rgba(255,99,132,1)'
 			],
-           
+
         }]
     },
     options: {
 	        layout: {
         }
-	}	
+	}
 });
 </script>
 
 
                                         <figure>
-                                            
+
                                         </figure>
                                     </div>
                                     <div class="card-content">
@@ -333,7 +335,7 @@ var myChart = new Chart(ctx, {
     </div>
 
 
-   
+
                         <!-- Inser more tables here -->
                         <div class="tile is-4 is-vertical">
                             <div class="tabs is-toggle is-fullwidth ">
@@ -455,7 +457,7 @@ var myChart = new Chart(ctx, {
                     <button class="delete" aria-label="close" onclick="modalToggleRun()"></button>
                 </header>
                 <!-- Run Submission Form -->
-                <section class="modal-card-body"> 
+                <section class="modal-card-body">
                     <form>
                         <label class="label">Character</label>
                         <div class="field has-addons">
@@ -509,7 +511,7 @@ var myChart = new Chart(ctx, {
                                         <option>Tempered</option>
                                     </select>
                                 </div>
-                            </div>	
+                            </div>
                         </div>
                         <label class="label">Monster</label>
                         <div class="field has-addons">
@@ -526,8 +528,8 @@ var myChart = new Chart(ctx, {
                                 <div class="select">
                                     <!-- JS/PHP -->
                                     <select name="monster">
-                                        <option>Monster</option>	
-                                    </select>    
+                                        <option>Monster</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -579,7 +581,7 @@ var myChart = new Chart(ctx, {
                     </footer>
                 </div>
             </form>
-        </div>  
+        </div>
         <!-- Modal Registration -->
         <div id="runDivReg" class="modal">
             <div class="modal-background"></div>
@@ -642,4 +644,3 @@ var myChart = new Chart(ctx, {
                             <!-- Password Confirmation Textfield: Display a check mark if it matches the Password Textfield -->
                             <div class="field">
                                 <label class="label"> Confirm Password </label>
-          

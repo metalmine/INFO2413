@@ -159,12 +159,12 @@
                 <p class"is-unselectable modalTitle">Submit New Run</p>
                 <div class="modal-background"></div>
                 <div class="modal-content">
-                    <div id="runSubmitPopOut"> 
+                    <div id="runSubmitPopOut">
                         <div class="inputBar">
                             <div class="control">
                                 <div class="select">
                                     <select name="characterName">
-                                        <option>Pick Character</option>		
+                                        <option>Pick Character</option>
                                     </select>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                             <div class="control">
                                 <div class="select">
                                     <select name="platformID">
-                                        <option>Pick Platform ID</option>		
+                                        <option>Pick Platform ID</option>
                                     </select>
                                     <br>
                                 </div>
@@ -224,7 +224,7 @@
                                 T
                             </label>
                         </div>
-                        <br>	
+                        <br>
                         <div class="control">
                             <div class="select">
                                 <select name="map">
@@ -237,8 +237,8 @@
                         <div class="control">
                             <div class="select">
                                 <select name="monster">
-                                    <option>Monster       </option>	
-                                </select>    
+                                    <option>Monster       </option>
+                                </select>
                             </div>
                         </div>
                         <br>
@@ -253,7 +253,7 @@
                     <p class="is-unselectable modalTitle">Login</p>
                     <div class="modal-background"></div>
                     <div class="modal-content">
-                        <div id="runSubmitPopOut"> 
+                        <div id="runSubmitPopOut">
                             <div>
                                 <h3 align=CENTER>Login</h3>
                                 <div class="field" id="loginBar">
@@ -287,7 +287,7 @@
                         </div>
                     </div>
                 </form>
-            </div>  
+            </div>
             <!-- Modal Registration -->
             <div id="runDivReg" class="modal">
                 <div class="modal-background"></div>
@@ -360,7 +360,7 @@
                     <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
                 </div>
                 <button class="modal-close is-large" aria-label="close" onclick="modalToggleReg()"></button>
-            </div>  
-        </div>	
+            </div>
+        </div>
     </Body>
 </html>

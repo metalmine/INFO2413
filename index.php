@@ -2,17 +2,17 @@
 $page['title'] = '';
 $page['meta'] = '';
 $page['scripts'] = [
-    '/Charts/Chart.js'
+    '/Charts/Chart.js',
 ];
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/session.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/db.php";
 
 ?>
 <script>
     var jsonData = []
-    jsonData['diff'] = <?php include($_SERVER['DOCUMENT_ROOT'] . '/sql/monsters-difficulty-list-get.php') ?>;
-    jsonData['type'] = <?php include($_SERVER['DOCUMENT_ROOT'] . '/sql/weapons-type-list-get.php') ?>;
-    jsonData['runs_weapons_maps_monsters'] = <?php include($_SERVER['DOCUMENT_ROOT'] . '/sql/runs_weapons_maps_monsters-get.php') ?>;
+    jsonData['diff'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/monsters-difficulty-list-get.php'?>;
+    jsonData['type'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/weapons-type-list-get.php'?>;
+    jsonData['runs_weapons_maps_monsters'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/runs_weapons_maps_monsters-get.php'?>;
     // TODO: ^^translation to charts^^
 
     // TODO: move to seperate file
@@ -80,27 +80,27 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
                 ],
                 pointBorderColor: [
                     <?php
-                    $count = 14;
-                    $array = [];
+$count = 14;
+$array = [];
 
-                    while ($count-- > 0) {
-                        array_push($array , "'rgba(255,99,132,1)'");
-                    }
+while ($count-- > 0) {
+    array_push($array, "'rgba(255,99,132,1)'");
+}
 
-                    echo implode(",", $array);
-                    ?>
+echo implode(",", $array);
+?>
                 ],
                 pointBackgroundColor: [
                     <?php
-                    $count = 15;
-                    $array = [];
+$count = 15;
+$array = [];
 
-                    while ($count-- > 0) {
-                        array_push($array , "'rgba(255,99,132,1)'");
-                    }
+while ($count-- > 0) {
+    array_push($array, "'rgba(255,99,132,1)'");
+}
 
-                    echo implode(",", $array);
-                    ?>
+echo implode(",", $array);
+?>
                 ],
 
             }]
@@ -112,12 +112,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
     })
 </script>
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
 // require db queries, do not put query in document
 ?>
 <!-- Main container -->
 <section class="hero is-light">
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php");?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php";?>
     <!-- Title and Filter -->
     <div class="hero-body">
         <div class="has-text-centered">
@@ -274,18 +274,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                             <footer class="card-footer">
                                 <a hreff="#" class="card-footer-item">Hunters:
                 				<?php
-                				$count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
-                				echo $count
-                                // TODO: move to top of page
-                				?>
+$count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
+echo $count
+// TODO: move to top of page
+?>
                 				</a>
 
                                 <a hreff="#" class="card-footer-item">Runs:
                 				<?php
-                				$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
-                				echo $count
-                                // TODO: move to top of page
-                				?>
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
+echo $count
+// TODO: move to top of page
+?>
                 				</a>
                             </footer>
                         </div>
@@ -376,7 +376,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
         </section>
     </div>
 </section>
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/runs-modal.php");?>
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/login-form.php");?>
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/registration-form.php");?>
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php");?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/runs-modal.php";?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/login-form.php";?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/registration-form.php";?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php";?>

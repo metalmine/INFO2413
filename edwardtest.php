@@ -1,5 +1,5 @@
 <?php
-require_once('load.php');
+require_once 'load.php';
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -45,7 +45,7 @@ require_once('load.php');
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-start">
                             <!-- Show when Logged out -->
-                            <?php if(empty($_SESSION['email'])): ?>
+                            <?php if (empty($_SESSION['email'])): ?>
                             <p class="navbar-item">
                                 <a class="button is-light is-rounded" onclick="modalToggleLogin()">Login</a>
                             </p>
@@ -63,7 +63,7 @@ require_once('load.php');
                             <p class="navbar-item">
                                 <a class="button is-danger is-rounded" href='logout.php'>Logout</a>
                             </p>
-                            <?php endif; ?>
+                            <?php endif;?>
                         </div>
                     </div>
                 </nav>

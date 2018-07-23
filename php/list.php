@@ -1,15 +1,17 @@
 <html>
 
-<?php include "../inc/dbinfo.inc"; ?>
+<?php include "../inc/dbinfo.inc";?>
 
 <?php
 
-  /* Connect to MySQL and select the database. */
-  $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+/* Connect to MySQL and select the database. */
+$connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
-  if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
-  $database = mysqli_select_db($connection, DB_DATABASE);
+$database = mysqli_select_db($connection, DB_DATABASE);
 ?>
 
 
@@ -17,8 +19,8 @@
 <script type="text/javascript">
 
 
-	
-		var type = []; 
+
+		var type = [];
 		type["GSD"] = [
 
  "Buster Sword I",
@@ -112,7 +114,7 @@
  "Wyvern Jawblade",
  "Great Wyvern Jawblade",
  "Berserker Sword",
- "Anguish" 
+ "Anguish"
 	];
 
 	type["LSD"] = [
@@ -139,13 +141,13 @@
  "Last Dance III",
  "Brazen Ridge I",
  "Brazen Ridge II",
- "Wyvernblade “Leaf”",
- "Wyvernblade “Verde”",
- "Wyvernblade “Holly”",
- "Wyvernblade “Fall”",
- "Wyvernblade “Blood”",
- "Wyvernblade “Azure”",
- "Wyvernblade “Indigo”",
+ "Wyvernblade ï¿½Leafï¿½",
+ "Wyvernblade ï¿½Verdeï¿½",
+ "Wyvernblade ï¿½Hollyï¿½",
+ "Wyvernblade ï¿½Fallï¿½",
+ "Wyvernblade ï¿½Bloodï¿½",
+ "Wyvernblade ï¿½Azureï¿½",
+ "Wyvernblade ï¿½Indigoï¿½",
  "Bone Shotel I",
  "Bone Shotel II",
  "Bone Shotel III",
@@ -198,7 +200,7 @@
  "Divine Slasher",
  "Reaver Cruelty",
  "Reaver Calamity",
- 
+
 ];
 
 	type["HAM"] = [
@@ -911,7 +913,7 @@
 	type["BOW"] = [
 
 ];
-	
+
 	type["LBG"] = [
 
 ];
@@ -932,10 +934,10 @@
 		var curr = type[nValue];
 		for (each in curr)
 			{
-			 var nOption = document.createElement('option'); 
-			 nOption.appendChild(document.createTextNode(curr[each])); 
-			 nOption.setAttribute("value",curr[each]); 			 
-			 nList.appendChild(nOption); 
+			 var nOption = document.createElement('option');
+			 nOption.appendChild(document.createTextNode(curr[each]));
+			 nOption.setAttribute("value",curr[each]);
+			 nList.appendChild(nOption);
 			}
 	}
 
@@ -960,7 +962,7 @@
 				<option value="BOW">Bow</option>
 				<option value="LBG">Light Bowgun</option>
 				<option value="HBG">Heavy Bowgun</option>
-				<option value="EVT">Event Weapons</option>	
+				<option value="EVT">Event Weapons</option>
 
 			</select>
 
