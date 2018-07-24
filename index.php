@@ -161,13 +161,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                         </div>
                         <!-- Weapon Selection -->
                         <div class="field-label is-normal">
-                            <label class="label is-unselectable">Weapon</label>
+                            <label class="label is-unselectable">Optional Filters:</label>
                         </div>
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
                                     <select name='states' onchange="typeSelect(this.value,this.form['type'])">
-                                        <option value="">Select Type</option>
+                                        <option value="">Weapon Type</option>
                         				<option value="GSD">Great Sword</option>
                         				<option value="LSD">Long Sword</option>
                         				<option value="HAM">Hammer</option>
@@ -194,17 +194,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                 </span>
                             </p>
                             <p class="control">
-                                <!-- Toggles is-dark on click-->
                                 <a class="button" id="filterTASToggle" onclick="tasToggle()">
                                     Tool Assisted
                                 </a>
                             </p>
-                        </div>
-                        <!-- JS/PHP Hunter Search -->
-                        <div class="field-label is-normal">
-                            <label class="label is-unselectable">Hunter</label>
-                        </div>
-                        <div class="field has-addons">
                             <div class="control">
                                 <input class="input" type="text" placeholder="Hunter ID / Empty for All">
                             </div>
@@ -218,11 +211,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                 </div>
             </form>
         </div>
-        <hr>
-        <h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-            <!-- JS/PHP Replace this with Monster/Weapon/Hunter ID post filter -->
-            Monster: All | Weapon: All | Hunter: All
-        </h1>
         <hr>
         <!-- Main Container: Tiles / Graphs / Tables -->
         <section role="main container">
