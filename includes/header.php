@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <!-- Google Tracking -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29096235-2"></script>
         <script src="js/gtag.js"></script>
         <!-- Bulma Set-up -->
         <meta charset="utf-8">
