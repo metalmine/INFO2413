@@ -1,6 +1,6 @@
 <!-- Modal Runs -->
 <div id="runDivRun" class="modal">
-<form>
+<form id="runSubmit" action="../includes/submit.php" name="runSubmit" method="post">
     <div class="modal-background"></div>
     <div class="modal-card">
         <!-- Run Submission Title-->
@@ -25,7 +25,7 @@
                 <div class="field has-addons">
                     <p class="control">
                         <span class="select">
-                            <select name='states' onchange="typeSelect(this.value,this.form['type'])">
+                            <select name='weaponType' onchange="typeSelect(this.value,this.form['weaponName'])">
                                 <option value="">Select Type</option>
                                 <option value="GSD">Great Sword</option>
                                 <option value="LSD">Long Sword</option>
@@ -47,7 +47,7 @@
                     </p>
                     <p class="control">
                         <span class="select">
-                            <select name='type'>
+                            <select name='weaponName'>
                                 <option value="">Select Weapon</option>
                             </select>
                         </span>
@@ -63,7 +63,7 @@
                 <div class="field has-addons">
                     <p class="control">
                         <span class="select">
-                            <select name="states" id="select-difficulty">
+                            <select name="monsterRank" id="select-difficulty" onchange="fillSelect(this.value, this.form['monsterName'])">
                                 <option value="">Difficulty</option>
                                 <option value="Low">Low</option>
                                 <option value="High">High</option>
@@ -73,7 +73,7 @@
                     </p>
                     <p class="control">
                         <span class="select">
-                            <select name='diff' id="select-monster">
+                            <select name='monsterName' id="select-monster">
                                 <option>Select Monster</option>
                             </select>
                         </span>
@@ -90,16 +90,16 @@
                         </div>
                     </div>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Youtube Link">
+                        <input class="input" type="text" name="youtube" placeholder="Youtube Link">
                     </div>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Run Time: MM:SS">
+                        <input class="input" type="text" name="time" placeholder="Run Time: MM:SS">
                     </div>
                 </div>
         </section>
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
-            <button class="button is-success">Submit Run</button>
+            <button class="button is-success" type="submit"  value="Submit">Submit Run</button>
             <button class="button is-success">Cancel</button>
         </footer>
     </div>
