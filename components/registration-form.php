@@ -97,6 +97,7 @@
                     <div class="field">
                         <p class="control">
                             <button class="button is-success" type="submit"  value="Submit">Register</button>
+                            <button class="button is-success">Cancel</button>
                         </p>
                     </div>
                 </div>

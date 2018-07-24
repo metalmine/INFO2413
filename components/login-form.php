@@ -33,6 +33,7 @@
             <footer class="modal-card-foot">
                 <!-- JS/PHP add class: is-loading while processing and close it if successful-->
                 <button class="button is-success" type="submit" name="submit" value="Submit">Login</button>
+                <button class="button is-success">Cancel</button>
             </footer>
         </form>
     </div>
