@@ -8,7 +8,7 @@
             </figure>
             <!-- Navbar Buttons -->
             <!-- JS/PHP  Gotta figure out how to do a menu-->
-            <div class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <div class="navbar-burger" aria-label="menu" data-target="navbarMenuHeroA" aria-expanded="false">
                 <span id="nav-toggle" class="nav-toggle"></span>
                 <span></span>
                 <span></span>

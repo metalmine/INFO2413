@@ -12,7 +12,7 @@
             <!-- JS/PHP Email Check-->
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" name="email" placeholder="Email" maxlength="60" id="email">
+                    <input class="input" type="text" name="email" placeholder="Email" maxlength="60" id="emailLogin">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -24,7 +24,7 @@
             <!-- JS/PHP Password Check-->
             <div class="field">
                 <p class="control has-icons-left">
-                    <input class="input" type="password" name="password" placeholder="Password" maxlength="60" id="password">
+                    <input class="input" type="password" name="password" placeholder="Password" maxlength="60" id="passwordLogin">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>

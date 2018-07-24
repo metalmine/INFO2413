@@ -37,7 +37,7 @@
                             <label class="label">Email Address</label>
                             <p class="control has-icons-left has-icons-right">
                                 <!-- JS/PHP Add "is-success" to input if username is avialable | Add "is-danger" if username is not available-->
-                                <input class="input" type="text" placeholder="i.e example@email.com" name="email" id="email" maxlength="60">
+                                <input class="input" type="text" placeholder="i.e example@email.com" name="email" id="emailReg" maxlength="60">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -55,7 +55,7 @@
                         <div class="field">
                             <label class="label"> Password </label>
                             <p class="control has-icons-left">
-                                <input class="input" type="password" name="password" id="password" maxlength="60">
+                                <input class="input" type="password" name="password" id="passwordReg" maxlength="60">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
