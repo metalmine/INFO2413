@@ -14,6 +14,7 @@
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
             <button class="button is-success">Submit Run</button>
+            <button class="button is-danger is-outlined">Cancel</button>
         </footer>
     </div>
     </form>
