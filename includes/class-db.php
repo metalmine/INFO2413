@@ -3,6 +3,7 @@
 if (!class_exists('PDO_DB')) {
     class PDO_DB
     {
+      public $lastInsertId = null;
         public function __construct($db_name, $db_user, $db_pass, $db_charset, $db_host)
         {
             $dsn = "mysql:host=$db_host;dbname=$db_name;charset=$db_charset";
@@ -17,7 +18,6 @@ if (!class_exists('PDO_DB')) {
         public function query($query)
         {
             $stmt = $this->db->query($query);
-
             while ($row = $stmt->fetch()) {
                 $results[] = $row;
             }
@@ -76,7 +76,7 @@ if (!class_exists('PDO_DB')) {
 
             // Execute the query
             $stmt->execute($data);
-
+            $this->lastInsertId = $this->db->lastInsertId();
             // Check for successful insertion
             if ($stmt->rowCount()) {
                 return true;
@@ -130,6 +130,15 @@ if (!class_exists('PDO_DB')) {
 
             return false;
         }
+
+        public function get_id($table, $select_field, $where_field,$where_value)
+        {
+          $stmt = $this->db->prepare("SELECT {$select_field} FROM {$table} WHERE {$where_field} = :where_value");
+          $stmt->execute(array('where_value' => $where_value));
+          $result = $stmt->fetch(FETCH_ASSOC);
+
+          return $result;
+      }
     }
 }
 

@@ -10,15 +10,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/db.php";
 ?>
 <script>
     var jsonData = []
-    jsonData['diff'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/monsters-difficulty-list-get.php'?>;
-    jsonData['type'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/weapons-type-list-get.php'?>;
+    jsonData['monsterName'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/monsters-difficulty-list-get.php'?>;
+    jsonData['weaponName'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/weapons-type-list-get.php'?>;
     jsonData['runs_weapons_maps_monsters'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/runs_weapons_maps_monsters-get.php'?>;
     // TODO: ^^translation to charts^^
 
     // TODO: move to seperate file
     function fillSelect(nValue, nList) {
 		nList.options.length = 1
-		let curr = jsonData['diff'][nValue]
+		let curr = jsonData['monsterName'][nValue]
 
 		for (let key in curr) {
             if (curr.hasOwnProperty(key)) {
@@ -33,7 +33,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/db.php";
     // TODO: move to seperate file
     function typeSelect(nValue, nList) {
         nList.options.length = 1
-        let curr = jsonData['type'][nValue]
+        let curr = jsonData['weaponName'][nValue]
 
         for (let key in curr) {
             if (curr.hasOwnProperty(key)) {
@@ -138,7 +138,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
-                                    <select name='states' onchange="fillSelect(this.value, this.form['diff'])">
+                                    <select name='monsterRank' onchange="fillSelect(this.value, this.form['monsterName'])">
             							<option value="">Difficulty</option>
             							<option value="Low">Low</option>
             							<option value="High">High</option>
@@ -148,7 +148,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             </p>
                             <p class="control">
                                 <span class="select">
-                                    <select name='diff'>
+                                    <select name='monsterName'>
                                         <option>Select Monster</option>
                                     </select>
                                 </span>
@@ -166,7 +166,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
-                                    <select name='states' onchange="typeSelect(this.value,this.form['type'])">
+                                    <select name='weaponType' onchange="typeSelect(this.value,this.form['weaponName'])">
                                         <option value="">Weapon Type</option>
                         				<option value="GSD">Great Sword</option>
                         				<option value="LSD">Long Sword</option>
@@ -188,7 +188,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             </p>
                             <p class="control">
                                 <span class="select">
-                                    <select name='type'>
+                                    <select name='weaponName'>
                                         <option value="">Select Weapon</option>
                                     </select>
                                 </span>
