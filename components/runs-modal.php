@@ -13,12 +13,8 @@
                 <label class="label">Character</label>
                 <div class="field">
                     <div class="control">
-                        <div class="select">
-                            <!-- JS/PHP Fill in with character ids with platform inside <strong> i.e. Metalmine<strong>PC</strong>-->
-                            <select name="Character ID">
-                                <option>Char ID</option>
-                            </select>
-                        </div>
+                        <!-- TODO: Replace placeholder with active character ID -->
+                        <input class="input is-disabled" type="text" name="characterID" placeholder="Metalmine">
                     </div>
                 </div>
                 <label class="label">Weapon</label>
