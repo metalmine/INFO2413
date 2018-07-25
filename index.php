@@ -226,7 +226,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             <div class="card-content">
                                 <div class="media">
                                     <h1>
-                                        <strong>Top 3 Fastest Hunters</strong>
+                                        <strong>Top Hunters</strong>
                                     </h1>
                                 </div>
                                 <div class="content">
@@ -241,18 +241,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                         <tbody>
                                             <tr>
                                                 <th>1</th>
-                                                <td>Metalmine</td>
-                                                <td><a href="/user/Metalmine.php">22</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td>ThunderDash247</td>
-                                                <td><a href="/user/ThunderDash247.php">11</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>TheLegend27</td>
-                                                <td><a href="/user/TheLegend27.php">2</a></td>
+                                                <td>example user</td>
+                                                <td><a href="/user/example.php">22</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -261,10 +251,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             <!-- JS/PHP replace # with a number-->
                             <footer class="card-footer">
                                 <a hreff="#" class="card-footer-item">Hunters:
-                				<?php
+                                <?php
                                 $count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
-                                echo $count
-                                // TODO: move to top of page
+                                echo $count// TODO: move to top of page
                                 ?>
                 				</a>
 
