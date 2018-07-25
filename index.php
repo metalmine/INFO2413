@@ -216,8 +216,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
         <section role="main container">
             <!-- Summary Card -->
             <div class="tile is-ancestor">
-                <div class="tile is-vertical">
-                    <div class="tile">
+                <div class="tile is-parent is-vertical">
+                    <div class="tile is-child">
                         <div class="card has-text-centered is-wide">
                             <div class="card-image">
                                 <canvas id="myChart" width="100" height="100"></canvas>
@@ -280,81 +280,83 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                     </div>
                 </div>
                 <!-- Insert more tables here -->
-                <div class="tile is-4 is-vertical">
-                    <!-- JS/PHP replace the data here according to which tab people clicked above -->
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>Name</th>
-                                <th>Time/Link</th>
-                                <th>Date[DD/MM/YY]</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
-                            <tr>
-                                <th>1</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>5</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>6</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>7</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>8</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>9</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                            <tr>
-                                <th>10</th>
-                                <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                <td><a href="https://www.youtube.com">00:00</a></td>
-                                <td>12/05/18</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="tile is-4 is-parent">
+                    <div class="tile is-child">
+                        <!-- JS/PHP replace the data here according to which tab people clicked above -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Time/Link</th>
+                                    <th>Date[DD/MM/YY]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
+                                <tr>
+                                    <th>1</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>6</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>7</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>8</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>9</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                                <tr>
+                                    <th>10</th>
+                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
+                                    <td><a href="https://www.youtube.com">00:00</a></td>
+                                    <td>12/05/18</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                     <!-- JS/PHP JESSICA Insert Graph Here -->
                 <div class="tile is-6">
