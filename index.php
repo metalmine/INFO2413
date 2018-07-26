@@ -186,8 +186,9 @@ var currentWeaponType = document.querySelect('[name="type"]');
         <section role="main container">
             <!-- Summary Card -->
             <div class="tile is-ancestor">
-                <div class="tile is-vertical">
-                    <div class="tile">
+                <div class="tile is-parent">
+                    <!-- Info Card -->
+                    <div class="tile is-child">
                         <div class="card has-text-centered is-wide">
                             <div class="card-image">
 
@@ -237,11 +238,9 @@ var currentWeaponType = document.querySelect('[name="type"]');
                             </footer>
                         </div>
                     </div>
-                </div>
-                <!-- Insert more tables here -->
-                <div class="tile is-6 is-parent">
+                    <!-- Table -->
                     <div class="tile is-child">
-                        <!-- JS/PHP replace the data here according to which tab people clicked above -->
+                        <!-- TODO: JS/PHP replace the data here according to which tab people clicked above -->
                         <table class="table">
                             <thead>
                                 <tr>
@@ -262,9 +261,7 @@ var currentWeaponType = document.querySelect('[name="type"]');
                             </tbody>
                         </table>
                     </div>
-                </div>
-                    <!-- JS/PHP JESSICA Insert Graph Here -->
-                <div class="tile is-6 is-parent">
+                    <!-- Graph -->
                     <div class="tile is-child">
                         <canvas id="myMainChart"></canvas>
                         <script>
