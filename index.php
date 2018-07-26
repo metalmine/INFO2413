@@ -282,7 +282,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
+				<?php 
+$stmt = $pdo->query('SELECT DISTINCT RUNS.runId, USERS.userId, username, time, submitedAt FROM USERS JOIN USERS_RUNS ON USERS.userId = USERS_RUNS.userId JOIN RUNS ON RUNS.runId = USERS_RUNS.runId ORDER BY runId DESC LIMIT 10');
+foreach ($stmt as $row)
+{
+    echo "<tr> <th> " . $row['runId'] . "</th> <td>", $row['username'] . "</td> <td>", $row['time'] . "</td> <td>", $row['submitedAt'] . "</td> </tr>";
+}?> 
+
                             </tbody>
                         </table>
                     </div>
