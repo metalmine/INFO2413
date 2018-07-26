@@ -192,51 +192,51 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                                         label: 'Amount of Weapons use',
                                                         data: [
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='DBL'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='DBL'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LSD'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LSD'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HAM'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HAM'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HTH'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HTH'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LAN'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LAN'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GUL'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GUL'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='AWS'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='AWS'")->fetchColumn();
+echo $weapon?>,
 
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='CHB'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='CHB'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='ING'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='ING'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='BOW'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='BOW'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LBG'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LBG'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HBG'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HBG'")->fetchColumn();
+echo $weapon?>,
                                                             <?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='EVT'")->fetchColumn();
-							echo $weapon ?>,
+$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='EVT'")->fetchColumn();
+echo $weapon?>,
                                                         ],
                                                         backgroundColor: [
                                                             'rgba(255, 99, 132, 0.2)'
@@ -246,26 +246,26 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                                         ],
                                                         pointBorderColor: [
                                                             <?php
-                    		$count = 14;
-                   		 $array = [];
+$count = 14;
+$array = [];
 
-                    		while ($count-- > 0) {
-                    		   array_push($array , "'rgba(255,99,132,1)'");
-                   		 }
- 		                   echo implode(",", $array);
-                	    ?>
+while ($count-- > 0) {
+    array_push($array, "'rgba(255,99,132,1)'");
+}
+echo implode(",", $array);
+?>
                                                         ],
                                                         pointBackgroundColor: [
                                                             <?php
-                    		$count = 15;
-                   		 $array = [];
+$count = 15;
+$array = [];
 
-                    		while ($count-- > 0) {
-                     		   array_push($array , "'rgba(255,99,132,1)'");
-                  		  }
+while ($count-- > 0) {
+    array_push($array, "'rgba(255,99,132,1)'");
+}
 
-                   		 echo implode(",", $array);
-                    	?>
+echo implode(",", $array);
+?>
                                                         ],
 
                                                     }]
@@ -309,17 +309,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                     <footer class="card-footer">
                                         <a hreff="#" class="card-footer-item">Hunters:
                                             <?php
-                                        $count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
-                                        echo $count // TODO: move to top of page
-                                    ?>
+$count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
+echo $count // TODO: move to top of page
+?>
                                         </a>
 
                                         <a hreff="#" class="card-footer-item">Runs:
                                             <?php
-                                        $count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
-                                        echo $count
-                                    // TODO: move to top of page
-                                    ?>
+$count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
+echo $count
+// TODO: move to top of page
+?>
                                         </a>
                                     </footer>
                                 </div>
@@ -344,7 +344,120 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             <!-- Graph -->
                             <div class="tile is-6 is-child">
                                 <canvas id="MonsterAverage"></canvas>
-                                <script src="js/MonsterAverage.js"></script>
+                                <script>
+                                    var ctx1 = document.getElementById("MonsterAverage");
+                                    var MonsterAverage = new Chart(ctx1, {
+                                        type: 'horizontalBar',
+                                        data: {
+                                            labels: ["Anjanath",
+                                                "Barroth",
+                                                "Diablos",
+                                                "Great Girros",
+                                                "Great Jagras",
+                                                "Jyuratodus",
+                                                "Kirin",
+                                                "Kulu-Ya-Ku",
+                                                "Legiana",
+                                                "Odigaron",
+                                                "Paolumu",
+                                                "Pukei-Pukei",
+                                                "Radobaan",
+                                                "Rathalos",
+                                                "Rathian",
+                                                "Tobi-Kadachi",
+                                                "Tzitzi-Ya-Ku",
+                                                "Zorah Magdaros"
+                                            ],
+                                            datasets: [{
+                                                label: 'Average Run time Per Monster (Low Rank)',
+                                                data: [12, 39, 3, 5, 2, 3, 26, 4, 7, 10, 5, 3, 6, 9, 4, 6, 2, 7, 2, 7, 2, 7, 9, 3, 1, 7, 4, 5, 5, 2, 8],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)',
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)',
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)',
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)',
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)',
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)',
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            layout: {}
+                                        }
+                                    });
+                                </script>
                                 <figure></figure>
                             </div>
                         </div>
