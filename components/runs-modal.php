@@ -10,13 +10,8 @@
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
-                <label class="label">
-                    <?PHP
-if (isset($_SESSION['platformId'])) {echo $_SESSION['platformId'];}
-?>
-                    <?PHP
-if (isset($_SESSION['platformId'])) {echo $_SESSION['platformId'];} else {;}
-?>No Character Found">
+                <label class="label"> Character Name:
+                    <?PHP if (isset($_SESSION['platformId'])) {echo $_SESSION['platformId'];}?>
                 </label>
                 <label class="label">Weapon</label>
                 <div class="field has-addons">
