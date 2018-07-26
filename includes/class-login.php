@@ -19,7 +19,6 @@ class Login
     {
         $email = $_SESSION['email'];
 
-        //$userId = $this->userId = $_SESSION["userId"];
         $user = $this->email_exists($email);
 
         if (false !== $user) {
@@ -44,6 +43,9 @@ class Login
             if (password_verify($post['password'], $user->password)) {
                 $_SESSION['email'] = $user->email;
                 $_SESSION['userId'] = $user->userId;
+
+                //TODO: Pull more then one platformId and make new table for them
+                $_SESSION['platformId'] = $user->platformId;
 
                 return true;
             }
