@@ -14,7 +14,7 @@
                 <div class="field">
                     <div class="control">
                         <!-- TODO: Replace placeholder with active character ID -->
-                        <input class="input is-disabled" type="text" name="characterID" placeholder="Metalmine">
+                        <input class="input is-disabled" type="text" name="characterID"  value="<?PHP if(isset($_SESSION['platformId'])){echo $_SESSION['platformId'];}?>" placeholder="<?PHP if(isset($_SESSION['platformId'])){echo $_SESSION['platformId'];} else?>No Character Found">
                     </div>
                 </div>
                 <label class="label">Weapon</label>
@@ -55,6 +55,8 @@
                         </a>
                     </p>
                 </div>
+                <span id='runSubmit_weaponType_errorloc' class="help is-danger"></span>
+                <span id='runSubmit_weaponName_errorloc' class="help is-danger"></span>
                 <label class="label">Monster</label>
                 <div class="field has-addons">
                     <p class="control">
@@ -70,11 +72,13 @@
                     <p class="control">
                         <span class="select">
                             <select name='monsterName' id="select-monster">
-                                <option>Select Monster</option>
+                                <option value="">Select Monster</option>
                             </select>
                         </span>
                     </p>
                 </div>
+                <span id='runSubmit_monsterRank_errorloc' class="help is-danger"></span>
+                <span id='runSubmit_monsterName_errorloc' class="help is-danger"></span>
                 <label class="label">Video</label>
                 <div class="field has-addons">
                     <div class="control">
@@ -92,6 +96,8 @@
                         <input class="input" type="text" name="time" placeholder="Run Time: MM:SS">
                     </div>
                 </div>
+                <span id='runSubmit_youtube_errorloc' class="help is-danger"></span>
+                <span id='runSubmit_time_errorloc' class="help is-danger"></span>
         </section>
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
@@ -100,4 +106,15 @@
         </footer>
     </div>
     </form>
+    <script type="text/javascript">
+        var frmvalidator  = new Validator("runSubmit");
+        frmvalidator.EnableOnPageErrorDisplay();
+        frmvalidator.EnableMsgsTogether();
+        frmvalidator.addValidation("weaponType","req","Please provide your Weapon Type");
+        frmvalidator.addValidation("weaponName","req","Please provide your Weapon Name");
+        frmvalidator.addValidation("monsterRank","req","Please provide your Monster Rank");
+        frmvalidator.addValidation("monsterName","req","Please provide your Monster Name");
+        frmvalidator.addValidation("youtube","req","Please provide your Youtube Link");
+        frmvalidator.addValidation("time","req","Please provide your Completion Time");
+    </script>
 </div>
