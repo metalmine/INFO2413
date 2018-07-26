@@ -10,13 +10,14 @@
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
-                <label class="label">Character</label>
-                <div class="field">
-                    <div class="control">
-                        <!-- TODO: Replace placeholder with active character ID -->
-                        <input class="input is-disabled" type="text" name="characterID"  value="<?PHP if(isset($_SESSION['platformId'])){echo $_SESSION['platformId'];}?>" placeholder="<?PHP if(isset($_SESSION['platformId'])){echo $_SESSION['platformId'];} else?>No Character Found">
-                    </div>
-                </div>
+                <label class="label">
+                    <?PHP
+if (isset($_SESSION['platformId'])) {echo $_SESSION['platformId'];}
+?>
+                    <?PHP
+if (isset($_SESSION['platformId'])) {echo $_SESSION['platformId'];} else {;}
+?>No Character Found">
+                </label>
                 <label class="label">Weapon</label>
                 <div class="field has-addons">
                     <p class="control">
