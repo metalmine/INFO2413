@@ -86,14 +86,15 @@
                                 </span>
                             </p>
                             <p class="control">
-                                <input class="input" type="text" placeholder="Platform Name/ID" name="platformId" id="platformId" maxlength="60">
+                                <input class="input" type="text" placeholder="Character Name: i.e. theLegend27" name="platformId" id="platformId" maxlength="60">
                                 <span id='register_platformId_errorloc' class="help is-danger"><?=$platformId_error;?></span>
                             </p>
                         </div>
                         <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
                     </div>
                 </div>
-                <div class="modal-card-foot">
+            </div>
+            <div class="modal-card-foot">
                     <div class="field">
                         <p class="control">
                             <button class="button is-success" type="submit"  value="Submit">Register</button>
@@ -101,7 +102,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
             <script type="text/javascript">
                 var frmvalidator  = new Validator("register");
                 frmvalidator.EnableOnPageErrorDisplay();
