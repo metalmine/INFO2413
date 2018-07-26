@@ -283,12 +283,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             </thead>
                             <tbody>
                                 <!-- JS/PHP Replace name with links to weapon/monster to wiki and player to account link -->
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
