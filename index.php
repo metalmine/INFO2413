@@ -164,130 +164,113 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                     <div class="tile is-2 is-child">
                         <div class="card has-text-centered is-wide">
                             <div class="card-image">
- <canvas id="myChart" width="100" height="100"></canvas>
-<script>
-    let ctx = document.getElementById("myChart")
-    let myChart = new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: [
-                "Great Sword",
-                "Sword & Shield",
-                "Dual Blades",
-                "Long Sword" ,
-                "Hammer",
-                "Hunting Horn",
-                "Lance",
-                "Gunlance",
-                "Switch Axe",
-                "Charge Blade" ,
-                "Insect Glavie" ,
-                "Bow" ,
-                "Light Bowgun" ,
-                "Heavy Bowgun",
-                "Event"
-            ],
-            datasets: [{
-                label: 'Amount of Weapons use',
-                data: [
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='DBL'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LSD'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HAM'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HTH'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LAN'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GUL'")->fetchColumn();
-echo $weapon 
-?> ,
+ 				<canvas id="WeaponRadarChart" width="100" height="100"></canvas>
+				<script>
+    				let ctx = document.getElementById("WeaponRadarChart")
+  				let WeaponRadarChart = new Chart(ctx, {
+      				type: 'radar',
+       					data: {
+           				 labels: [
+            				    "Great Sword",
+            				    "Sword & Shield",
+              				    "Dual Blades",
+                			    "Long Sword" ,
+               				    "Hammer",
+                			    "Hunting Horn",
+                		    	    "Lance",
+               				    "Gunlance",
+               			   	    "Switch Axe",
+               			 	    "Charge Blade" ,
+               				    "Insect Glavie" ,
+               			 	    "Bow" ,
+               				    "Light Bowgun" ,
+               				    "Heavy Bowgun",
+                			    "Event"
+           					 ],
+            			datasets: [{
+             		        label: 'Amount of Weapons use',
+                		data: [
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='DBL'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LSD'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HAM'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HTH'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LAN'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GUL'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='AWS'")->fetchColumn();
+							echo $weapon ?> ,
 
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='AWS'")->fetchColumn();
-echo $weapon 
-?> ,
-
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='CHB'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='ING'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='BOW'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LBG'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HBG'")->fetchColumn();
-echo $weapon 
-?> ,
-<?php
-$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='EVT'")->fetchColumn();
-echo $weapon 
-?> ,
-       ],
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='CHB'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='ING'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='BOW'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LBG'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HBG'")->fetchColumn();
+							echo $weapon ?> ,
+					<?php
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='EVT'")->fetchColumn();
+							echo $weapon ?> ,
+       					],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)'
-                ],
+               			 ],
                 borderColor: [
                     'rgba(255,99,132,1)',
                 ],
                 pointBorderColor: [
-                    <?php
-                    $count = 14;
-                    $array = [];
+                   	 <?php
+                    		$count = 14;
+                   		 $array = [];
 
-                    while ($count-- > 0) {
-                        array_push($array , "'rgba(255,99,132,1)'");
-                    }
-
-                    echo implode(",", $array);
-                    ?>
+                    		while ($count-- > 0) {
+                    		   array_push($array , "'rgba(255,99,132,1)'");
+                   		 }
+ 		                   echo implode(",", $array);
+                	    ?>
                 ],
                 pointBackgroundColor: [
-                    <?php
-                    $count = 15;
-                    $array = [];
+                  	  <?php
+                    		$count = 15;
+                   		 $array = [];
 
-                    while ($count-- > 0) {
-                        array_push($array , "'rgba(255,99,132,1)'");
-                    }
+                    		while ($count-- > 0) {
+                     		   array_push($array , "'rgba(255,99,132,1)'");
+                  		  }
 
-                    echo implode(",", $array);
-                    ?>
+                   		 echo implode(",", $array);
+                    	?>
                 ],
 
             }]
         },
-        options: {
-            layout: {
+      		 options: {
+              	 layout: {
             }
         }
     })
@@ -363,10 +346,10 @@ echo $weapon
                     </div>
                     <!-- Graph -->
                     <div class="tile is-6 is-child">
-                        <canvas id="myMainChart"></canvas>
+                        <canvas id="MonsterAverage"></canvas>
                         <script>
-                            var ctx1 = document.getElementById("myMainChart");
-                            var myMainChart = new Chart(ctx1, {
+                            var ctx1 = document.getElementById("MonsterAverage");
+                            var MonsterAverage = new Chart(ctx1, {
                                 type: 'horizontalBar',
                                 data: {
                                 labels: ["Anjanath",
