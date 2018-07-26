@@ -2,18 +2,18 @@
 $page['title'] = '';
 $page['meta'] = '';
 $page['scripts'] = [
-    '/Charts/Chart.js'
+    '/Charts/Chart.js',
 ];
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/session.php");
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/session.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/db.php";
 
 ?>
 <script>
     var jsonData = []
-    jsonData['diff'] = <?php include($_SERVER['DOCUMENT_ROOT'] . '/sql/monsters-difficulty-list-get.php') ?>;
-    jsonData['type'] = <?php include($_SERVER['DOCUMENT_ROOT'] . '/sql/weapons-type-list-get.php') ?>;
-    jsonData['runs_weapons_maps_monsters'] = <?php include($_SERVER['DOCUMENT_ROOT'] . '/sql/runs_weapons_maps_monsters-get.php') ?>;
-    
+    jsonData['diff'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/monsters-difficulty-list-get.php'?>;
+    jsonData['type'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/weapons-type-list-get.php'?>;
+    jsonData['runs_weapons_maps_monsters'] = <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/runs_weapons_maps_monsters-get.php'?>;
+
     // TODO: ^^translation to charts^^
 
     // TODO: move to seperate file
@@ -48,12 +48,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/db.php");
 </script>
 
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
 // require db queries, do not put query in document
 ?>
 <!-- Main container -->
 <section class="hero is-light">
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php");?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/navigation.php";?>
     <!-- Title and Filter -->
     <div class="hero-body">
         <div class="has-text-centered">
@@ -74,7 +74,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
-				<form action="" method="post">
+				    <form action="" method="post">
                                     <select name='states' onchange="fillSelect(this.value, this.form['diff'])">
             							<option value="">Difficulty</option>
             							<option value="Low">Low</option>
@@ -83,23 +83,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                     </select>
                                 </span>
                             </p>
-			
                             <p class="control">
                                 <span class="select">
                                     <select name='diff'>
                                         <option>Select Monster</option>
-					<p id="type"></p>
+					                    <p id="type"></p>
                                     </select>
                                 </span>
                             </p>
                             <p class="control">
-                                <a class="button is-dark">
-				Search
-                                </a>
+                                <a class="button is-dark">Search</a>
                             </p>
                         </div>
-
-
                         <!-- Weapon Selection -->
                         <div class="field-label is-normal">
                             <label class="label is-unselectable">Weapon</label>
@@ -107,7 +102,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                         <div class="field has-addons">
                             <p class="control">
                                 <span class="select">
-
                                     <select name='states' onchange="typeSelect(this.value,this.form['type'])">
                                         <option value="">Select Type</option>
                         				<option value="GSD">Great Sword</option>
@@ -129,8 +123,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
                                 </span>
                             </p>
                             <p class="control">
-
-				
 				<div id="select">
                                 <span class="select">
 				<form action="" method="post">
@@ -166,32 +158,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
             </form>
         </div>
         <hr>
-<script>
-var currentWeaponType = document.querySelect('[name="type"]');
-</script>
-     
-<h1 class="has-text-centered has-text-weight-bold" id="currentFilter">       	   
-    Monster:
-
-
-
- </h1>
-
-<h1 class="has-text-centered has-text-weight-bold" id="currentFilter">
-| Weapon: All | Hunter: All
-</h1>
-
-        <hr>
+        <script>
+        var currentWeaponType = document.querySelect('[name="type"]');
+        </script>
         <!-- Main Container: Tiles / Graphs / Tables -->
         <section role="main container">
             <!-- Summary Card -->
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
                     <!-- Info Card -->
-                    <div class="tile is-child">
+                    <div class="tile is-2 is-child">
                         <div class="card has-text-centered is-wide">
                             <div class="card-image">
-
                                 <figure></figure>
                             </div>
                             <div class="card-content">
@@ -222,24 +200,24 @@ var currentWeaponType = document.querySelect('[name="type"]');
                             <!-- JS/PHP replace # with a number-->
                             <footer class="card-footer">
                                 <a hreff="#" class="card-footer-item">Hunters:
-                                <?php
-                                $count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
-                                echo $count// TODO: move to top of page
-                                ?>
+                                    <?php
+                                        $count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
+                                        echo $count // TODO: move to top of page
+                                    ?>
                 				</a>
 
                                 <a hreff="#" class="card-footer-item">Runs:
-                				<?php
-                                $count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
-                                echo $count
-                                // TODO: move to top of page
-                                ?>
+                                    <?php
+                                        $count = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS")->fetchColumn();
+                                        echo $count
+                                    // TODO: move to top of page
+                                    ?>
                 				</a>
                             </footer>
                         </div>
                     </div>
                     <!-- Table -->
-                    <div class="tile is-child">
+                    <div class="tile is-4 is-child">
                         <!-- TODO: JS/PHP replace the data here according to which tab people clicked above -->
                         <table class="table">
                             <thead>
@@ -251,18 +229,17 @@ var currentWeaponType = document.querySelect('[name="type"]');
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php 
+                                <?php
                                 $stmt = $pdo->query('SELECT DISTINCT RUNS.runId, USERS.userId, username, time, submitedAt FROM USERS JOIN USERS_RUNS ON USERS.userId = USERS_RUNS.userId JOIN RUNS ON RUNS.runId = USERS_RUNS.runId ORDER BY runId DESC LIMIT 10');
-                                foreach ($stmt as $row)
-                                    {
-                                            echo "<tr> <th> " . $row['runId'] . "</th> <td>", $row['username'] . "</td> <td>", $row['time'] . "</td> <td>", $row['submitedAt'] . "</td> </tr>";
-                                    }
-                                ?> 
+                                foreach ($stmt as $row) {
+                                    echo "<tr> <th> " . $row['runId'] . "</th> <td>", $row['username'] . "</td> <td>", $row['time'] . "</td> <td>", $row['submitedAt'] . "</td> </tr>";
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
                     <!-- Graph -->
-                    <div class="tile is-child">
+                    <div class="tile is-6 is-child">
                         <canvas id="myMainChart"></canvas>
                         <script>
                             var ctx = document.getElementById("myMainChart");
@@ -274,21 +251,21 @@ var currentWeaponType = document.querySelect('[name="type"]');
                                     "Diablos",
                                     "Great Girros",
                                     "Great Jagras",
-                                    "Jyuratodus", 
-                                    "Kirin", 
+                                    "Jyuratodus",
+                                    "Kirin",
                                     "Kulu-Ya-Ku",
-                                    "Legiana", 
+                                    "Legiana",
                                     "Odigaron",
-                                    "Paolumu", 
+                                    "Paolumu",
                                     "Pukei-Pukei",
-                                    "Radobaan", 
+                                    "Radobaan",
                                     "Rathalos",
-                                    "Rathian", 
-                                    "Tobi-Kadachi", 
-                                    "Tzitzi-Ya-Ku", 
+                                    "Rathian",
+                                    "Tobi-Kadachi",
+                                    "Tzitzi-Ya-Ku",
                                     "Zorah Magdaros"
-                            
-                                    
+
+
                                     ],
                                 datasets: [{
                                     label: 'Average Run time Per Monster (Low Rank)',
@@ -331,7 +308,7 @@ var currentWeaponType = document.querySelect('[name="type"]');
                                         'rgba(153, 102, 255, 0.2)',
                                         'rgba(255, 159, 64, 0.2)',
                                         'rgba(255, 99, 132, 0.2)'
-                                        
+
                                     ],
                                     borderColor: [
                                         'rgba(255,99,132,1)',
@@ -377,12 +354,12 @@ var currentWeaponType = document.querySelect('[name="type"]');
                                 }]
                                 },
                                 options: {
-                                        layout: 
+                                        layout:
                                         {
                                         }
-                                        }	
+                                        }
                             });
-                        </script>	
+                        </script>
                         <figure></figure>
                     </div>
                 </div>
