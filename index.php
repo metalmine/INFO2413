@@ -269,7 +269,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                     </div>
                 </div>
                 <!-- Insert more tables here -->
-                <div class="tile is-4 is-parent">
+                <div class="tile is-6 is-parent">
                     <div class="tile is-child">
                         <!-- JS/PHP replace the data here according to which tab people clicked above -->
                         <table class="table">
@@ -289,66 +289,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                     <td><a href="https://www.youtube.com">00:00</a></td>
                                     <td>12/05/18</td>
                                 </tr>
-                                <tr>
-                                    <th>2</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>3</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>4</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>5</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>6</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>7</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>8</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>9</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
-                                <tr>
-                                    <th>10</th>
-                                    <td><a href="https://mhdata.world/Name1">Name 1</a></td>
-                                    <td><a href="https://www.youtube.com">00:00</a></td>
-                                    <td>12/05/18</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                     <!-- JS/PHP JESSICA Insert Graph Here -->
-                <div class="tile is-6">
+                <div class="tile is-4">
                 </div>
             </div>
         </section>
