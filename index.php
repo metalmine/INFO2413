@@ -310,7 +310,8 @@ echo $count
                                     <thead>
                                         <tr>
                                             <th>Rank</th>
-                                            <th>Name</th>
+                                            <th>Hunter</th>
+                                            <th>Monster</th>
                                             <th>Time/Link</th>
                                             <th>Date[DD/MM/YY]</th>
                                         </tr>
