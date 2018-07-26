@@ -14,36 +14,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/db.php";
         jsonData['runs_weapons_maps_monsters'] =
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/sql/runs_weapons_maps_monsters-get.php'?>;
         // TODO: ^^translation to charts^^
-        // TODO: move to seperate file
-        function fillSelect(nValue, nList) {
-            nList.options.length = 1
-            let curr = jsonData['diff'][nValue]
-            for (let key in curr) {
-                if (curr.hasOwnProperty(key)) {
-                    let nOption = document.createElement('option')
-                    nOption.appendChild(document.createTextNode(curr[key].name))
-                    nOption.setAttribute("value", curr[key].name)
-                    nList.appendChild(nOption)
-                }
-            }
-        }
-        // TODO: move to seperate file
-        function typeSelect(nValue, nList) {
-            nList.options.length = 1
-            let curr = jsonData['type'][nValue]
-            for (let key in curr) {
-                if (curr.hasOwnProperty(key)) {
-                    let nOption = document.createElement('option')
-                    nOption.appendChild(document.createTextNode(curr[key].weaponName))
-                    nOption.setAttribute("value", curr[key].weaponName)
-                    nList.appendChild(nOption)
-                }
-            }
-        }
     </script>
 
-    <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
 // require db queries, do not put query in document
 ?>
         <!-- Main container -->
@@ -85,6 +58,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                                 <p id="type"></p>
                                             </select>
                                         </span>
+                                    </p>
+                                    <p class="control">
+                                        <!-- Toggles is-dark on click-->
+                                        <a class="button" id="filterCapToggle" onclick="capToggle()">
+                                            Capture
+                                        </a>
                                     </p>
                                     <p class="control">
                                         <a class="button is-dark">Search</a>
@@ -194,47 +173,47 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                                             <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='DBL'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LSD'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HAM'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HTH'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LAN'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GUL'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='AWS'")->fetchColumn();
 echo $weapon?>,
 
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='CHB'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='ING'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='BOW'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='LBG'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='HBG'")->fetchColumn();
 echo $weapon?>,
-                                                            <?php
+                                                                                                                            <?php
 $weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='EVT'")->fetchColumn();
 echo $weapon?>,
                                                         ],
