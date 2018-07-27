@@ -2,7 +2,7 @@
 class Login
 {
     public $user;
-    public $runid = null;
+    public $lastInsertId = null;
     //public $userId;
 
     public function __construct()
@@ -44,7 +44,11 @@ class Login
                 $_SESSION['email'] = $user->email;
                 $_SESSION['userId'] = $user->userId;
 
-                //TODO: Pull more then one platformId and make new table for them
+
+                $user = $this->getPlatId($_SESSION['userId']);
+                $platId = $user->platId;
+                $user = $this->getPlatformId($platId);
+
                 $_SESSION['platformId'] = $user->platformId;
 
                 return true;
@@ -81,12 +85,26 @@ class Login
                 'username' => $post['username'],
                 'password' => password_hash($post['password'], PASSWORD_DEFAULT),
                 'email' => $post['email'],
+            )
+        );
+        $userId = $this->db->lastInsertId;
+
+        $insert2 = $this->db->insert('PLATFORMS',
+            array(
                 'platform' => $post['platform'],
                 'platformId' => $post['platformId'],
             )
         );
+        $platId = $this->db->lastInsertId;
 
-        if ($insert == true) {
+        $insert3 = $this->db->insert('USERS_PLATFORMS',
+            array(
+                'userId' => $userId,
+                'platId' => $platId,
+            )
+        );
+
+        if ($insert == true || $insert2 == true || $insert3 == true) {
             return array('status' => 1, 'message' => 'Account created successfully, You can now login in');
         }
 
@@ -116,6 +134,34 @@ class Login
             ['where_value' => $where_value]
         );
 
+        if (false !== $user) {
+            return $user[0];
+        }
+
+        return false;
+    }
+
+    private function getPlatformId($where_value, $where_field = 'platId')
+    {
+        $user = $this->db->get_results("
+            SELECT * FROM PLATFORMS
+            WHERE {$where_field} = :platId_value",
+            ['platId_value' => $where_value]
+          );
+        if (false !== $user) {
+            return $user[0];
+        }
+
+        return false;
+    }
+
+    private function getPlatId($where_value, $where_field = 'userId')
+    {
+        $user = $this->db->get_results("
+            SELECT * FROM USERS_PLATFORMS
+            WHERE {$where_field} = :userId_value",
+            ['userId_value' => $where_value]
+          );
         if (false !== $user) {
             return $user[0];
         }
@@ -163,44 +209,32 @@ class Login
         }
 
       $userId = $_SESSION['userId'];
-       //$user = $this->email_exists($post['email']);
+
       $user = $this->getWeapon($post['weaponName']);
       $weaponId = $user->weaponId;
       $weaponTree = $user->tree;
 
-      /*  $getWeaponTree = $this->db->get_results("
-              SELECT tree FROM WEAPONS
-              WHERE weaponName = :weapon_value",
-              ['weapon_value' => $post['weaponName']]
-          );
-          */
-        $user = $this->getMonster($post['monsterName']);
-        $monsterId = $user->monsterId;
+      $user = $this->getMonster($post['monsterName']);
+      $monsterId = $user->monsterId;
 
-        $insert = $this->db->insert('RUNS',
-            array(
-                'time' => $post['time'],
+      $insert = $this->db->insert('RUNS',
+          array(
+                'time' => "00:{$post['time']}",
                 'youtube' => $post['youtube'],
-            )
+              )
         );
-    /*    $user = $this->db->get_results("
-              SELECT * FROM RUNS
-              WHERE youtube = :youtube_value",
-              ['youtube_value' => $post['youtube']]
-      ); */
-      //  $runId = $user->runId;
-    //  $last_id = $this->db->lastInsertId();
-      $runid = $this->db->lastInsertId;
-        $insert2 = $this->db->insert('USERS_RUNS',
+      $runId = $this->db->lastInsertId;
+
+      $insert2 = $this->db->insert('USERS_RUNS',
                 array(
                     'userId' => $userId,
-                    'runId' => $runid,
-                )
+                    'runId' => $runId,
+                  )
             );
 
         $insert3 = $this->db->insert('RUNS_WEAPONS_MAPS_MONSTERS',
                     array(
-                        'runId' => $runid,
+                        'runId' => $runId,
                         'weaponId' => $weaponId,
                         'type' => $post['weaponType'],
                         'tree' => $weaponTree,
