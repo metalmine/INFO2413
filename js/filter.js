@@ -1,15 +1,4 @@
 function tasToggle() {
-<<<<<<< HEAD
-  "use strict";
-  var element = document.getElementById("filterTASToggle");
-  element.classList.toggle("is-danger");
-}
-function tasToggleRun() {
-  "use strict";
-  var element = document.getElementById("runTASToggle");
-  element.classList.toggle("is-danger");
-}
-=======
     'use strict';
     var element = document.getElementById("filterTASToggle");
     element.classList.toggle("is-danger");
@@ -46,4 +35,3 @@ function typeSelect(nValue, nList) {
         }
     }
 }
->>>>>>> JessicaDevitt-patch-1

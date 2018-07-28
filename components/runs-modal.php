@@ -89,7 +89,7 @@
                         <input class="input" type="text" name="youtube" placeholder="Youtube Link">
                     </div>
                     <div class="control">
-                        <input class="input" type="text" name="time" placeholder="Run Time: MM:SS">
+                        <input class="input" type="text" placeholder="Run Time: MM.SS">
                     </div>
                 </div>
                 <span id='runSubmit_youtube_errorloc' class="help is-danger"></span>
