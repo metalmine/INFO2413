@@ -1,6 +1,6 @@
 <!-- Modal Runs -->
 <div id="runDivRun" class="modal">
-<form>
+<form id="runSubmit" action="../includes/submit.php" name="runSubmit" method="post">
     <div class="modal-background"></div>
     <div class="modal-card">
         <!-- Run Submission Title-->
@@ -10,22 +10,14 @@
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
-                <label class="label">Character</label>
-                <div class="field">
-                    <div class="control">
-                        <div class="select">
-                            <!-- JS/PHP Fill in with character ids with platform inside <strong> i.e. Metalmine<strong>PC</strong>-->
-                            <select name="Character ID">
-                                <option>Char ID</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                <label class="label"> Character Name:
+                    <?PHP if (isset($_SESSION['platformId'])) {echo $_SESSION['platformId'];}?>
+                </label>
                 <label class="label">Weapon</label>
                 <div class="field has-addons">
                     <p class="control">
                         <span class="select">
-                            <select name='states' onchange="typeSelect(this.value,this.form['type'])">
+                            <select name='weaponType' onchange="typeSelect(this.value,this.form['weaponName'])">
                                 <option value="">Select Type</option>
                                 <option value="GSD">Great Sword</option>
                                 <option value="LSD">Long Sword</option>
@@ -47,7 +39,7 @@
                     </p>
                     <p class="control">
                         <span class="select">
-                            <select name='type'>
+                            <select name='weaponName'>
                                 <option value="">Select Weapon</option>
                             </select>
                         </span>
@@ -59,11 +51,13 @@
                         </a>
                     </p>
                 </div>
+                <span id='runSubmit_weaponType_errorloc' class="help is-danger"></span>
+                <span id='runSubmit_weaponName_errorloc' class="help is-danger"></span>
                 <label class="label">Monster</label>
                 <div class="field has-addons">
                     <p class="control">
                         <span class="select">
-                            <select name="states" id="select-difficulty">
+                            <select name="monsterRank" id="select-difficulty" onchange="fillSelect(this.value, this.form['monsterName'])">
                                 <option value="">Difficulty</option>
                                 <option value="Low">Low</option>
                                 <option value="High">High</option>
@@ -73,12 +67,14 @@
                     </p>
                     <p class="control">
                         <span class="select">
-                            <select name='diff' id="select-monster">
-                                <option>Select Monster</option>
+                            <select name='monsterName' id="select-monster">
+                                <option value="">Select Monster</option>
                             </select>
                         </span>
                     </p>
                 </div>
+                <span id='runSubmit_monsterRank_errorloc' class="help is-danger"></span>
+                <span id='runSubmit_monsterName_errorloc' class="help is-danger"></span>
                 <label class="label">Video</label>
                 <div class="field has-addons">
                     <div class="control">
@@ -90,17 +86,31 @@
                         </div>
                     </div>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Youtube Link">
+                        <input class="input" type="text" name="youtube" placeholder="Youtube Link">
                     </div>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Run Time: MM:SS">
+                        <input class="input" type="text" placeholder="Run Time: MM.SS">
                     </div>
                 </div>
+                <span id='runSubmit_youtube_errorloc' class="help is-danger"></span>
+                <span id='runSubmit_time_errorloc' class="help is-danger"></span>
         </section>
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
-            <button class="button is-success">Submit Run</button>
+            <button class="button is-success" type="submit"  value="Submit">Submit Run</button>
+            <button class="button is-success">Cancel</button>
         </footer>
     </div>
     </form>
+    <script type="text/javascript">
+        var frmvalidator  = new Validator("runSubmit");
+        frmvalidator.EnableOnPageErrorDisplay();
+        frmvalidator.EnableMsgsTogether();
+        frmvalidator.addValidation("weaponType","req","Please provide your Weapon Type");
+        frmvalidator.addValidation("weaponName","req","Please provide your Weapon Name");
+        frmvalidator.addValidation("monsterRank","req","Please provide your Monster Rank");
+        frmvalidator.addValidation("monsterName","req","Please provide your Monster Name");
+        frmvalidator.addValidation("youtube","req","Please provide your Youtube Link");
+        frmvalidator.addValidation("time","req","Please provide your Completion Time");
+    </script>
 </div>

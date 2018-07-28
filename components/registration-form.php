@@ -37,7 +37,7 @@
                             <label class="label">Email Address</label>
                             <p class="control has-icons-left has-icons-right">
                                 <!-- JS/PHP Add "is-success" to input if username is avialable | Add "is-danger" if username is not available-->
-                                <input class="input" type="text" placeholder="i.e example@email.com" name="email" id="email" maxlength="60">
+                                <input class="input" type="text" placeholder="i.e example@email.com" name="email" id="emailReg" maxlength="60">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -55,7 +55,7 @@
                         <div class="field">
                             <label class="label"> Password </label>
                             <p class="control has-icons-left">
-                                <input class="input" type="password" name="password" id="password" maxlength="60">
+                                <input class="input" type="password" name="password" id="passwordReg" maxlength="60">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -86,21 +86,22 @@
                                 </span>
                             </p>
                             <p class="control">
-                                <input class="input" type="text" placeholder="Platform Name/ID" name="platformId" id="platformId" maxlength="60">
+                                <input class="input" type="text" placeholder="Character Name: i.e. theLegend27" name="platformId" id="platformId" maxlength="60">
                                 <span id='register_platformId_errorloc' class="help is-danger"><?=$platformId_error;?></span>
                             </p>
                         </div>
                         <div class="g-recaptcha" data-sitekey=" 6LcjSmEUAAAAADDdufH1L0nMO8fOdzn0Ca9PhFXv"></div>
                     </div>
                 </div>
-                <div class="modal-card-foot">
+            </div>
+            <div class="modal-card-foot">
                     <div class="field">
                         <p class="control">
                             <button class="button is-success" type="submit"  value="Submit">Register</button>
+                            <button class="button is-success">Cancel</button>
                         </p>
                     </div>
                 </div>
-            </div>
             <script type="text/javascript">
                 var frmvalidator  = new Validator("register");
                 frmvalidator.EnableOnPageErrorDisplay();

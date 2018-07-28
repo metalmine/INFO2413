@@ -2,6 +2,8 @@
 class Login
 {
     public $user;
+    public $lastInsertId = null;
+    //public $userId;
 
     public function __construct()
     {
@@ -16,6 +18,7 @@ class Login
     public function verify_session()
     {
         $email = $_SESSION['email'];
+
         $user = $this->email_exists($email);
 
         if (false !== $user) {
@@ -39,6 +42,14 @@ class Login
         if (false !== $user) {
             if (password_verify($post['password'], $user->password)) {
                 $_SESSION['email'] = $user->email;
+                $_SESSION['userId'] = $user->userId;
+
+
+                $user = $this->getPlatId($_SESSION['userId']);
+                $platId = $user->platId;
+                $user = $this->getPlatformId($platId);
+
+                $_SESSION['platformId'] = $user->platformId;
 
                 return true;
             }
@@ -74,12 +85,26 @@ class Login
                 'username' => $post['username'],
                 'password' => password_hash($post['password'], PASSWORD_DEFAULT),
                 'email' => $post['email'],
+            )
+        );
+        $userId = $this->db->lastInsertId;
+
+        $insert2 = $this->db->insert('PLATFORMS',
+            array(
                 'platform' => $post['platform'],
                 'platformId' => $post['platformId'],
             )
         );
+        $platId = $this->db->lastInsertId;
 
-        if ($insert == true) {
+        $insert3 = $this->db->insert('USERS_PLATFORMS',
+            array(
+                'userId' => $userId,
+                'platId' => $platId,
+            )
+        );
+
+        if ($insert == true || $insert2 == true || $insert3 == true) {
             return array('status' => 1, 'message' => 'Account created successfully, You can now login in');
         }
 
@@ -114,6 +139,116 @@ class Login
         }
 
         return false;
+    }
+
+    private function getPlatformId($where_value, $where_field = 'platId')
+    {
+        $user = $this->db->get_results("
+            SELECT * FROM PLATFORMS
+            WHERE {$where_field} = :platId_value",
+            ['platId_value' => $where_value]
+          );
+        if (false !== $user) {
+            return $user[0];
+        }
+
+        return false;
+    }
+
+    private function getPlatId($where_value, $where_field = 'userId')
+    {
+        $user = $this->db->get_results("
+            SELECT * FROM USERS_PLATFORMS
+            WHERE {$where_field} = :userId_value",
+            ['userId_value' => $where_value]
+          );
+        if (false !== $user) {
+            return $user[0];
+        }
+
+        return false;
+    }
+
+    private function getWeapon($where_value, $where_field = 'weaponName')
+    {
+        $user = $this->db->get_results("
+            SELECT * FROM WEAPONS
+            WHERE {$where_field} = :weapon_value",
+            ['weapon_value' => $where_value]
+          );
+        if (false !== $user) {
+            return $user[0];
+        }
+
+        return false;
+    }
+
+    private function getMonster($where_value, $where_field = 'name')
+    {
+        $user = $this->db->get_results("
+            SELECT * FROM MONSTERS
+            WHERE {$where_field} = :monster_value",
+            ['monster_value' => $where_value]
+              );
+        if (false !== $user) {
+            return $user[0];
+        }
+
+        return false;
+    }
+
+    public function submit($post)
+    {
+        // Required fields
+        $required = array('weaponType', 'weaponName', 'monsterRank', 'monsterName', 'youtube', 'time');
+
+        foreach ($required as $key) {
+            if (empty($post[$key])) {
+                return array('status' => 0, 'message' => sprintf('Please enter your %s', $key));
+            }
+        }
+
+      $userId = $_SESSION['userId'];
+
+      $user = $this->getWeapon($post['weaponName']);
+      $weaponId = $user->weaponId;
+      $weaponTree = $user->tree;
+
+      $user = $this->getMonster($post['monsterName']);
+      $monsterId = $user->monsterId;
+
+      $insert = $this->db->insert('RUNS',
+          array(
+                'time' => "00:{$post['time']}",
+                'youtube' => $post['youtube'],
+              )
+        );
+      $runId = $this->db->lastInsertId;
+
+      $insert2 = $this->db->insert('USERS_RUNS',
+                array(
+                    'userId' => $userId,
+                    'runId' => $runId,
+                  )
+            );
+
+        $insert3 = $this->db->insert('RUNS_WEAPONS_MAPS_MONSTERS',
+                    array(
+                        'runId' => $runId,
+                        'weaponId' => $weaponId,
+                        'type' => $post['weaponType'],
+                        'tree' => $weaponTree,
+                        'monsterId' => $monsterId,
+                        'difficulty' => $post['monsterRank'],
+                    )
+                );
+
+
+        if ($insert == true || $insert2 == true || $insert3 == true) {
+            return array('status' => 1, 'message' => 'Submitted!');
+        }
+
+        return array('status' => 0, 'message' => 'An unknown error occurred.');
     }
 }
 
