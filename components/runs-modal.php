@@ -6,7 +6,7 @@
         <!-- Run Submission Title-->
         <header class="modal-card-head">
             <p class="modal-card-title">Submit New Run</p>
-            <button class="delete" aria-label="close" onclick="modalToggleRun()"></button>
+            <button class="delete" aria-label="close" onclick="modalToggleRun()" type="reset"></button>
         </header>
         <!-- Run Submission Form -->
         <section class="modal-card-body">
@@ -98,7 +98,7 @@
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
             <button class="button is-success" type="submit"  value="Submit">Submit Run</button>
-            <button class="button is-success">Cancel</button>
+            <button class="button is-success" type="reset" onclick="modalToggleLogin()">Cancel</button>
         </footer>
     </div>
     </form>

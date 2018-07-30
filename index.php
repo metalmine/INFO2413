@@ -172,6 +172,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             <div class="card-image">
  				<canvas id="WeaponRadarChart" width="100" height="100"></canvas>
 				<script>
+console.log("target");
     				let ctx = document.getElementById("WeaponRadarChart")
   				let WeaponRadarChart = new Chart(ctx, {
       				type: 'radar',
@@ -293,16 +294,24 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Rank</th>
-                                                <th>ID</th>
-                                                <th>Medals</th>
+                                                <th>UserId</th>
+                                                <th>Username</th>
+                                                <th>Hunts</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th>1</th>
-                                                <td>example user</td>
-                                                <td><a href="/user/example.php">22</a></td>
+                              <?php
+                                	$stmt = $pdo->query('SELECT USERS_RUNS.userId, username, COUNT(USERS_RUNS.userId) AS `value_occurrence`
+FROM  USERS_RUNS
+JOIN USERS ON USERS.userId = USERS_RUNS.userId
+GROUP BY userId
+ORDER BY `value_occurrence` DESC
+LIMIT 3');
+                                foreach ($stmt as $row) {
+                                    echo "<tr> <th> " . $row['userId'] . "</th> <td>", $row['username'] . "</td> <td>",  $row['value_occurrence'] .  "</td> </tr>";
+                                }
+                                ?>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -323,7 +332,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                                         echo $count
                                     // TODO: move to top of page
                                     ?>
-  			
 	</a>
                             </footer>
                         </div>
@@ -334,7 +342,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Rank</th>
+                                    <th>RunId</th>
                                     <th>Name</th>
 				    <th>Monster</th>
                                     <th>Time/Link</th>
@@ -343,13 +351,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
                             </thead>
                             <tbody>
                                 <?php
-                                	$stmt = $pdo->query('SELECT DISTINCT RUNS.runId, username, MONSTERS.name, time, submitedAt
-								FROM USERS 
-								JOIN USERS_RUNS ON USERS.userId = USERS_RUNS.userId 
-								JOIN RUNS ON RUNS.runId = USERS_RUNS.runId 
+                                	$stmt = $pdo->query('SELECT DISTINCT RUNS.runId, username, MONSTERS.name, weaponName, time, submitedAt
+								FROM USERS
+								JOIN USERS_RUNS ON USERS.userId = USERS_RUNS.userId
+								JOIN RUNS ON RUNS.runId = USERS_RUNS.runId
 								JOIN RUNS_WEAPONS_MAPS_MONSTERS ON RUNS.runId = RUNS_WEAPONS_MAPS_MONSTERS.runId
 								JOIN MONSTERS ON MONSTERS.monsterId = RUNS_WEAPONS_MAPS_MONSTERS.monsterId
-								ORDER BY runId 
+								JOIN WEAPONS ON WEAPONS.weaponId = RUNS_WEAPONS_MAPS_MONSTERS.weaponId AND WEAPONS.type = RUNS_WEAPONS_MAPS_MONSTERS.type AND WEAPONS.tree = RUNS_WEAPONS_MAPS_MONSTERS.tree
+								ORDER BY runId
 								DESC LIMIT 10');
                                 foreach ($stmt as $row) {
                                     echo "<tr> <th> " . $row['runId'] . "</th> <td>", $row['username'] . "</td> <td>", $row['name'] . "</td> <td>",  $row['time'] . "</td> <td>", $row['submitedAt'] . "</td> </tr>";
@@ -384,7 +393,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
 					"Kushala Daora",
 					"Lavasioth",
                                     	"Legiana",
-					"Nergigante", 
+					"Nergigante",
                                     	"Odigaron",
                                     	"Paolumu",
                                     	"Pukei-Pukei",
@@ -399,9 +408,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
 					"Vaal Hazak",
 					"Xeno'jiiva",
                                     	"Zorah Magdaros",
-					 document.getElementById("target") 
-
-	
+    					document.getElementById("target"),
                                     ],
 
 
@@ -537,7 +544,6 @@ WHERE MONSTERS.monsterId = '30'")->fetchColumn(); echo $monster
 $monster = $pdo->query("SELECT AVG(time) FROM RUNS_WEAPONS_MAPS_MONSTERS JOIN MONSTERS ON MONSTERS.monsterId = RUNS_WEAPONS_MAPS_MONSTERS.monsterId JOIN RUNS ON RUNS.runId = RUNS_WEAPONS_MAPS_MONSTERS.runId
 WHERE MONSTERS.monsterId = '31'")->fetchColumn(); echo $monster
 ?> ,
-				    
 				],
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
@@ -646,7 +652,6 @@ var filterRuns = function (weaponType) {
 
     return run.weaponType === weaponType;
   });
-  
   console.log(weaponType)
   console.log(filteredRuns);
 
@@ -685,4 +690,5 @@ filterRuns();
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/runs-modal.php";?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/login-form.php";?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/registration-form.php";?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . "/components/account-modal.php";?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php";?>

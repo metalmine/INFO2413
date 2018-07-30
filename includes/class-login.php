@@ -243,9 +243,52 @@ class Login
                     )
                 );
 
+        $insert4 = $this->db->insert('APPROVALS',
+                          array(
+                              'runId' => $runId,
+                            )
+                      );
 
-        if ($insert == true || $insert2 == true || $insert3 == true) {
+        if ($insert == true || $insert2 == true || $insert3 == true || $insert4 == true) {
             return array('status' => 1, 'message' => 'Submitted!');
+        }
+
+        return array('status' => 0, 'message' => 'An unknown error occurred.');
+    }
+
+    public function changePassword($post)
+    {
+        // Required fields
+        $required = array('oldPassword', 'newPassword', 'confirmPassword');
+
+        foreach ($required as $key) {
+            if (empty($post[$key])) {
+                return array('status' => 0, 'message' => sprintf('Please enter your %s', $key));
+            }
+        }
+
+        $email = $_SESSION['email'];
+        $user = $this->email_exists($email);
+
+        $newPassword = $post['newPassword'];
+        $confirmPassword = $post['confirmPassword'];
+
+        if($newPassword==$confirmPassword){
+          if (password_verify($post['oldPassword'], $user->password)) {
+            $update = $this->db->updateUser('USERS',
+                array(
+                    'password'  =>  password_hash($post['newPassword'], PASSWORD_DEFAULT),
+                ), $user->userId
+            );
+          }else{
+              return array('status' => 0, 'message' => 'Current Password Is Incorrect.');
+          }
+        } else{
+          return array('status' => 0, 'message' => 'New Password Does Not Match.');
+        }
+
+        if ($update == true ) {
+            return array('status' => 1, 'message' => 'Password Changed!');
         }
 
         return array('status' => 0, 'message' => 'An unknown error occurred.');

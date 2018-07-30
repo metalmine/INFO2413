@@ -31,7 +31,7 @@
                     <a class="button is-dark is-rounded" data-target="modal" aria-haspopup="true" onclick="modalToggleRun()">New Run</a>
                 </p>
                 <p class="navbar-item">
-                    <a class="button is-dark is-rounded">Account</a>
+                    <a class="button is-dark is-rounded" onclick="modalToggleAcc()">Account</a>
                 </p>
                 <p class="navbar-item">
                     <a class="button is-danger is-rounded" href='../includes/logout.php'>Logout</a>

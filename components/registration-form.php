@@ -6,7 +6,7 @@
             <!-- Registration Title -->
             <header class="modal-card-head">
                 <p class="modal-card-title">Registration</p>
-                <button class="delete" aria-label="close" onclick="modalToggleReg()"></button>
+                <button class="delete" aria-label="close" onclick="modalToggleReg()" type="reset"></button>
             </header>
             <!-- JS/PHP Lots of stuff here -->
             <div class="modal-card-body">
@@ -98,7 +98,7 @@
                     <div class="field">
                         <p class="control">
                             <button class="button is-success" type="submit"  value="Submit">Register</button>
-                            <button class="button is-success">Cancel</button>
+                            <button class="button is-success" type="reset" onclick="modalToggleLogin()">Cancel</button>
                         </p>
                     </div>
                 </div>
