@@ -98,7 +98,7 @@
                     <div class="field">
                         <p class="control">
                             <button class="button is-success" type="submit"  value="Submit">Register</button>
-                            <button class="button is-success" type="reset" onclick="modalToggleLogin()">Cancel</button>
+                            <button class="button is-success" type="reset" onclick="modalToggleReg()">Cancel</button>
                         </p>
                     </div>
                 </div>
