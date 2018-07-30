@@ -173,7 +173,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
  				<canvas id="WeaponRadarChart" width="100" height="100"></canvas>
 				<script>
 console.log("target");
-
     				let ctx = document.getElementById("WeaponRadarChart")
   				let WeaponRadarChart = new Chart(ctx, {
       				type: 'radar',
@@ -199,7 +198,7 @@ console.log("target");
              		        label: 'Amount of Weapons use',
                 		data: [
 					<?php
-						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type=''")->fetchColumn();
+						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='GSD'")->fetchColumn();
 							echo $weapon ?> ,
 					<?php
 						$weapon = $pdo->query("SELECT count(*) FROM RUNS_WEAPONS_MAPS_MONSTERS WHERE type='SAS'")->fetchColumn();
@@ -306,7 +305,7 @@ console.log("target");
                                 	$stmt = $pdo->query('SELECT USERS_RUNS.userId, username, COUNT(USERS_RUNS.userId) AS `value_occurrence`
 FROM  USERS_RUNS
 JOIN USERS ON USERS.userId = USERS_RUNS.userId
-GROUP BY runId
+GROUP BY userId
 ORDER BY `value_occurrence` DESC
 LIMIT 3');
                                 foreach ($stmt as $row) {
@@ -324,7 +323,7 @@ LIMIT 3');
                                     <?php
                                         $count = $pdo->query("SELECT count(*) FROM USERS")->fetchColumn();
                                         echo $count // TODO: move to top of page
-                                    ?>
+                                    ?> 
 			</a>
 
                                 <a hreff="#" class="card-footer-item">Runs:
@@ -333,7 +332,6 @@ LIMIT 3');
                                         echo $count
                                     // TODO: move to top of page
                                     ?>
-
 	</a>
                             </footer>
                         </div>
@@ -362,7 +360,6 @@ LIMIT 3');
 								JOIN WEAPONS ON WEAPONS.weaponId = RUNS_WEAPONS_MAPS_MONSTERS.weaponId AND WEAPONS.type = RUNS_WEAPONS_MAPS_MONSTERS.type AND WEAPONS.tree = RUNS_WEAPONS_MAPS_MONSTERS.tree
 								ORDER BY runId
 								DESC LIMIT 10');
-
                                 foreach ($stmt as $row) {
                                     echo "<tr> <th> " . $row['runId'] . "</th> <td>", $row['username'] . "</td> <td>", $row['name'] . "</td> <td>",  $row['time'] . "</td> <td>", $row['submitedAt'] . "</td> </tr>";
                                 }
@@ -412,9 +409,6 @@ LIMIT 3');
 					"Xeno'jiiva",
                                     	"Zorah Magdaros",
     					document.getElementById("target"),
-
-
-
                                     ],
 
 
@@ -461,12 +455,7 @@ WHERE MONSTERS.monsterId = '8'")->fetchColumn(); echo $monster
 <?php
 $monster = $pdo->query("SELECT AVG(time) FROM RUNS_WEAPONS_MAPS_MONSTERS JOIN MONSTERS ON MONSTERS.monsterId = RUNS_WEAPONS_MAPS_MONSTERS.monsterId JOIN RUNS ON RUNS.runId = RUNS_WEAPONS_MAPS_MONSTERS.runId
 WHERE MONSTERS.monsterId = '9'")->fetchColumn(); echo $monster
-?>
-
-
-
-
-,
+?> ,
 <?php
 $monster = $pdo->query("SELECT AVG(time) FROM RUNS_WEAPONS_MAPS_MONSTERS JOIN MONSTERS ON MONSTERS.monsterId = RUNS_WEAPONS_MAPS_MONSTERS.monsterId JOIN RUNS ON RUNS.runId = RUNS_WEAPONS_MAPS_MONSTERS.runId
 WHERE MONSTERS.monsterId = '10'")->fetchColumn(); echo $monster
@@ -555,7 +544,6 @@ WHERE MONSTERS.monsterId = '30'")->fetchColumn(); echo $monster
 $monster = $pdo->query("SELECT AVG(time) FROM RUNS_WEAPONS_MAPS_MONSTERS JOIN MONSTERS ON MONSTERS.monsterId = RUNS_WEAPONS_MAPS_MONSTERS.monsterId JOIN RUNS ON RUNS.runId = RUNS_WEAPONS_MAPS_MONSTERS.runId
 WHERE MONSTERS.monsterId = '31'")->fetchColumn(); echo $monster
 ?> ,
-
 				],
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
@@ -664,7 +652,6 @@ var filterRuns = function (weaponType) {
 
     return run.weaponType === weaponType;
   });
-
   console.log(weaponType)
   console.log(filteredRuns);
 
