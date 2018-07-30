@@ -115,6 +115,37 @@ if (!class_exists('PDO_DB')) {
 
             return false;
         }
+        public function updateUser($table, $data, $where_id)
+        {
+            // Check for $table or $data not set
+            if ((empty($table) || empty($data)) || empty($data)) {
+                return false;
+            }
+
+            // Parse data for column and placeholder names
+            foreach ($data as $key => $value) {
+                $placeholders .= sprintf('%s=:%s,', $key, $key);
+            }
+
+            // Trim excess commas
+            $placeholders = rtrim($placeholders, ',');
+
+            // Append where ID to $data
+            $data['where_id'] = $where_id;
+
+            // Prepary our query for binding
+            $stmt = $this->db->prepare("UPDATE {$table} SET {$placeholders} WHERE userId = :where_id");
+
+            // Execute the query
+            $stmt->execute($data);
+
+            // Check for successful insertion
+            if ($stmt->rowCount()) {
+                return true;
+            }
+
+            return false;
+        }
         public function delete($table, $where_field = 'ID', $where_value)
         {
             // Prepary our query for binding
