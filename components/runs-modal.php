@@ -98,7 +98,7 @@
         <footer class="modal-card-foot">
             <!-- JS/PHP add class: is-loading while processing and close it if successful-->
             <button class="button is-success" type="submit"  value="Submit">Submit Run</button>
-            <button class="button is-success" type="reset" onclick="modalToggleLogin()">Cancel</button>
+            <button class="button is-success" type="reset" onclick="modalToggleRun()">Cancel</button>
         </footer>
     </div>
     </form>
