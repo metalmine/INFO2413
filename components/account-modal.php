@@ -13,7 +13,7 @@
                     <!--Account Detail Tiles-->
                     <div class="tile is-parent is-vertical">
                         <!--Active character selection-->
-                        <div class="tile  is-6 is-child">
+                        <div class="tile is-6 is-child">
                             <label class="label">Active Character:</label>
                             <div class="field has-addons">
                                 <div class="control">
@@ -38,7 +38,7 @@
                         </div>
                         <!--Password Change-->
                       <form id="account" name="account" action="../includes/reset.php" method="post">
-                        <div class="tile is-6 is-child">
+                        <div class="tile is-child">
                             <label class="label">Edit Password</label>
                             <div class="field">
                                 <label class="label">Current Password:</label>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <!--10 most recent runs by hunter-->
-                    <div class="tile is-parent">
+                    <div class="tile is-6 is-parent">
                         <table class="table">
                             <thead>
                                 <tr>
